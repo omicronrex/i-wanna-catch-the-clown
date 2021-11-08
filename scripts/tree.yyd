@@ -1,0 +1,168 @@
+|engine_settings
+|engine_debug
++lists
+	|list_loop_points
+	|list_avoidance_bullets
+	|list_nonstick
+	|list_instance_activation
++saving
+	|settings_default
+	|savedata_default
+	|savedata_select
+	|savedata_newgame
+	|savedata_load
+	|savedata_save
+	|autosave_asap
+	|settings
+	|savedata
+	|save_persistent_objects
+	|load_persistent_objects
+	+savefile
+		|savedata_read
+		|savedata_write
+		|settings_read
+		|settings_write
+		|autosave_do
+	+objsave
+		|get_objsave_hash
+		|get_objsave
+		|set_objsave
+		|end_objsave
+		|write_objsave
+		|read_objsave
++system
+	+util
+		|format_time
+		|mmf_animspeed
+		|mmf_speed
+		|key_get_name
+		|get_path_speed
+		|inside_view
+	+input
+		|input_init
+		|input_default
+		|input_anykey
+		|input_update
+		|input_consume
+		|input_clear
+		|joystick_default
+		|lock_controls
+		|unlock_controls
+	+rendering
+		|envelope_init
+		|envelope_prepare
+		|envelope_compose
+		|update_fullscreen
+		|vsync_a_bit
+	+avoidance
+		|avoid_bullet
+		|wait_time
+		|wait_duration
+		|wait_beat
+		|wait_verse
+		+bullets
+			|bullet_create
+			|bullet_motion
+			|bullet_sprite
+			|bullet_spread
+			|bullet_life
+			|bullet_behavior
+			|bullet_stepcode
+	+drawing
+		|rect
+		|draw_sign_text
+		|draw_text_outline
+		|texture_reset_interpolation
+		|draw_sprite_hueshift
+	|engine_template_needle
+	|engine_template_classic
+	|add_difficulty
+	|update_caption_deathtime
+	|cement
+	|good_bounce
+	|is_ingame
+	|has_item
+	|instance_deactivate_all_safe
+	|update_activation
+	|instance_activate_around_player
+	|collect_items
+	|drop_items
+	|debug_code
++events
+	|event_world_create
+	|event_game_start
+	|event_room_start
+	|event_world_earlystep
+	|event_world_step
+	|event_world_endstep
+	|event_world_draw
+	|event_room_end
+	|event_game_end
++player
+	|player_jump
+	|player_shoot
+	|player_land
+	|check_crush
+	|kill_player
+	|move_player
+	|flip_player
++keypick
+	|key_clear
+	|key_add
+	|key_use
+	|key_draw
++bosses
+	|once_every
+	|Utah_boss
++avoidances
+	+YoYoYo tools
+		|scrMakeCircle
+		|scrMakeShapes
+	|rmAvoid_avoidance
++camera
+	|update_camera
+	|camera_default
+	|camera_follow
+	|camera_focus
+	|camera_zoom
+	|camera_set
+	|camera_set_raw
+	|camera_shake
+	|camera_apply
++skins
+	|skin_default
+	|skin_hard
+	|skin_normal
+	|skin_greenorange
++weapons
+	|weapon_default
+	|weapon_shootkid
++sound
+	|play_bg_music
+	|sound_play_slomo
+	|set_loop_point
+	|music_volume
++clowngame
+	+util
+		|sureface
+		|surface_set_target_safe
+		|rainbow
+	+boss
+		|gmboss_easy
+		|gmboss_normal
+		|gmboss_hard
+		|gmboss_draw
+	|intro_sequence
+	|check_unused_sprites_gm81
+	|room_names
+	|room_songs
+	|song_names
+	|shoot_bullet
+	|killPlayer
+	|slide_towards
+	|play_sound
+	|room_diff
+	|room_base
+	|carticles
+	|car_end_sequence
+	|tile_bake

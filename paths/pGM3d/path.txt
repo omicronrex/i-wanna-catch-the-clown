@@ -1,0 +1,6 @@
+connection=1
+closed=1
+precision=8
+background=rmInit
+snap_x=16
+snap_y=16

@@ -1,0 +1,47 @@
+|tile_IWBTG
+|tile_Colors
+|tile_Rainbow
+|bgGameMakerBlock
+|texBlock
+|background81
+|bgSmallBlock
+|bgMegaman
+|bgFortress
+|bgTree
+|bgTree2
+|bgTree3
+|bgCartParallax3
+|bgTestGrid
+|bgClear
+|bgRail
++catch the clown
+	|tileRen
+	|tileRen2
+	|tileRen3
+	|tileRen4
+	|tileRen5
+	|bgRenWood
+	|bgRenSand
+	|bgRenMetal
+	|bgRenSky
+	|bgRenGravel
+	|bgRenSpace
+	|bgRenDay
+	|bgRenEvening
+	|bgRenStars
+	|bgRenNight
+	|bgRenWater
++bosses
+	+gamemaker
+		|bgGMGradient
+	+car
+		|bgCar
+		|bgCrossing
+	|bgOuroboros
++history
+	|bgTexBallSpec
+	|bgHistory1
+	|bgHistory2
+	|bgHistory3
+	|bgHistory4
+|bgMist

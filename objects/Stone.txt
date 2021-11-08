@@ -1,0 +1,7 @@
+sprite=sprStone
+visible=1
+solid=1
+persistent=0
+depth=10
+parent=PushBlock
+mask=

@@ -1,0 +1,58 @@
+|rmInit
+|rmCapcom
+|rmTitle
+|rmMenu
+|rmOptions
++catch the clown
+	|rmIntro
+	|rTutorial
+	+easy mode
+		|rClown1easy
+		|rClown2easy
+		|rClown3easy
+		|rDiamond5easy
+		|rDiamond1easy
+		|rDiamond2easy
+		|rDiamond3easy
+		|rDiamond4easy
+		|rButterfly1easy
+		|rClown4easy
+		|rDiamond6easy
+		|rWater1easy
+		|rBoss1easy
+	+normal mode
+		|rClown1
+		|rClown2
+		|rClown3
+		|rDiamond5
+		|rDiamond1
+		|rDiamond2
+		|rDiamond3
+		|rDiamond4
+		|rButterfly1
+		|rClown4
+		|rDiamond6
+		|rWater1
+		|rBoss1
+	+hard mode
+		|rClown1hard
+		|rClown2hard
+		|rClown3hard
+		|rDiamond5hard
+		|rDiamond1hard
+		|rDiamond2hard
+		|rDiamond3hard
+		|rDiamond4hard
+		|rButterfly1hard
+		|rClown4hard
+		|rDiamond6hard
+		|rWater1hard
+		|rBoss1hard
+	|rmCar
+	|rBoss2
+	|rAfterlife
+	|rmClear
+	|rmHub
+	|rmHistory
+	|rHerman
+	|rmSecretEnd

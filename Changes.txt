@@ -1,0 +1,33 @@
+	CATCH THE CLOWN 1.1 Changes
+	===========================
+
+
+The following are the major changes in Catch the Clown
+version 1.1 compared to version 0.9.
+
+If this is your first time playing Catch the Clown, it is
+highly adviced against reading this document, as it could
+reveal surprises from later on in the game.
+
+
+New features
+------------
+- Added a new introduction before the first level.
+- Added a proper ending.
+- Added Hard and Easy difficulties, with modified layouts.
+            -Hard layouts are based on prototype levels and are much
+             more obtuse and difficult, to pose an extra challenge.
+            -Easy layouts were designed to allow younger or novice
+             players to experience the whole game.
+- Added collectible items and ending rewards for collecting all of them.
+- Added an intermission level in between Diamond Dust 2 and Diamond Dust 3.
+
+Corrected errors
+----------------
+- Fixed a bug where one of the traps in Clown Town 4 could activate early.
+
+Small changes
+-------------
+- Removed a few objects to reduce clutter from Normal difficulty layouts.
+- Improved the game's overall presentation and added documentation.
+- Added a multitude of secrets, jokes and easter eggs. Find all of them!

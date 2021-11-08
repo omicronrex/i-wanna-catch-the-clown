@@ -1,0 +1,23 @@
+switch (room_base(argument0)) {
+    case rTutorial:         return "Dreamscape"
+    case rClown1:           return "musCorrugation"
+    case rClown2:           return "musGENERIC"
+    case rClown3:           return "musRankin"
+    case rClown4:           return "18DESCENTCM500"
+    case rDiamond1:         return "musRaiders"
+    case rDiamond2:         return "musJasmine"
+    case rmCar:             return "popcorn"
+    case rDiamond3:         return "musSeasons"
+    case rDiamond4:         return "musBeatwave"
+    case rDiamond5:         return "musCatellite"
+    case rDiamond6:         return "Level16"
+    case rButterfly1:       return "musButterflies"
+    case rWater1:           return "musOCEAN"
+    case rBoss2:            return "musRenBoss2"
+    case rAfterlife:        return "jigoku"
+    case rmClear:           return "musClear"
+    case rmHub:             return "musEnd"
+    case rmHistory:         return "orbflwr"
+}
+
+return ""

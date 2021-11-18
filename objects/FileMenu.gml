@@ -21,6 +21,7 @@ applies_to=self
 if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard_check_pressed(vk_f5)) {
     sound_play("sndItem")
     savedata_read()
+    state=""
     exit
 }
 
@@ -121,6 +122,7 @@ draw_set_font(fntFileBig)
 draw_set_color(0)
 draw_text(400,64,"Welcome to Game Maker.")
 
+bow=0
 
 draw_set_color($ffffff)
 for (i=0;i<3;i+=1) {
@@ -133,6 +135,7 @@ for (i=0;i<3;i+=1) {
 
     if (savedata("saved")) {
         if (select==i) {
+            bow=(difficulty==0)
             if (difficulty=2) sprite_index=sprPlayerIdleH
             else sprite_index=sprPlayerIdle
         }
@@ -171,14 +174,16 @@ texture_set_interpolation(0)
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
 texture_reset_interpolation()
 draw_sprite(sprite_index,-1,dx,y+310)
+if (bow) draw_sprite(sprBow,0,dx,y+310)
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 
-if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-96,608-96) else draw_sprite(sprUnknown,0,400-96,608-96)
-if (has_item("GlobalItem2")) draw_sprite(sprGlobalItem2,0,400-64,608-96) else draw_sprite(sprUnknown,0,400-64,608-96)
-if (has_item("GlobalItem3")) draw_sprite(sprGlobalItem3,0,400-32,608-96) else draw_sprite(sprUnknown,0,400-32,608-96)
-if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400,608-96) else draw_sprite(sprUnknown,0,400,608-96)
-if (settings("herman")) draw_sprite(sprGlobalItemHerman,0,400+32,608-96) else draw_sprite(sprUnknown,0,400+32,608-96)
-if (settings("joker")) draw_sprite(sprGlobalItemJoker,0,400+64,608-96) else draw_sprite(sprUnknown,0,400+64,608-96)
+if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-112,608-96) else draw_sprite(sprUnknown,0,400-112,608-96)
+if (has_item("GlobalItem2")) draw_sprite(sprGlobalItem2,0,400-80,608-96) else draw_sprite(sprUnknown,0,400-80,608-96)
+if (has_item("GlobalItem3")) draw_sprite(sprGlobalItem3,0,400-48,608-96) else draw_sprite(sprUnknown,0,400-48,608-96)
+if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400-16,608-96) else draw_sprite(sprUnknown,0,400-16,608-96)
+if (settings("herman")) draw_sprite(sprGlobalItemHerman,0,400+16,608-96) else draw_sprite(sprUnknown,0,400+16,608-96)
+if (settings("joker")) draw_sprite(sprGlobalItemJoker,0,400+48,608-96) else draw_sprite(sprUnknown,0,400+48,608-96)
+if (settings("home")) draw_sprite(sprGlobalItemHouse,0,400+80,608-96) else draw_sprite(sprUnknown,0,400+80,608-96)
 
 //option info
 draw_set_font(fntFileSmall)

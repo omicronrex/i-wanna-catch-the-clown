@@ -134,7 +134,7 @@ if (global.key_pressed[key_restart]) {
     yes=1
     with (GM3DLives) if (instance_exists(Player)) yes=0
     with (JokerKaboom) if (visible) yes=0
-    if (yes && is_ingame() && !global.pause && room!=rmIntro) {
+    if (yes && is_ingame() && !global.pause && room!=rmIntro && room!=rmSecretEnd) {
         sound_kind_stop(0)
         savedata_load()
     }

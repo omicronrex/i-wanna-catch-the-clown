@@ -1,5 +1,5 @@
 if (!debug_code("godmode")) with (Player) {
-    if (room=rmHub || room=rmHistory || room=rmIntro) exit
+    if (room=rmHub || room=rmHistory || room=rmIntro || room=rmSecretEnd) exit
 
     if (instance_exists(GMShip)) {
         if (!GMShip.active || GMShip.flash) exit

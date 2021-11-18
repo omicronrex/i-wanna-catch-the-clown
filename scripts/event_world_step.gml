@@ -144,5 +144,6 @@ if (global.key_pressed[key_restart]) {
 debug_code("world step")
 
 //speedhack detection
-if (get_timer()-current_time>global.storetime+200) game_end()
-global.storetime=min(global.storetime,get_timer()-current_time)
+var t;t=get_timer()/1000
+if (t-current_time>global.storetime+200) game_end()
+global.storetime=min(global.storetime,t-current_time)

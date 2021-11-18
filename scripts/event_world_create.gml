@@ -43,7 +43,7 @@ globalvar bullet_table;
 bullet_table[0]=0
 global.bullet_map=ds_map_create()
 
-global.storetime=get_timer()-current_time
+global.storetime=get_timer()/1000-current_time
 
 globalvar difficulty;
 difficulty=0

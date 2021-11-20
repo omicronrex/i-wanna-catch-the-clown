@@ -102,7 +102,10 @@ if (keyboard_check_pressed(vk_escape)) {
 
 //go to title
 if (keyboard_check_pressed(vk_f2)) {
-    if (is_ingame()) {
+    yes=1
+    with (JokerKaboom) if (visible) yes=0
+    with (Herman) if (speak) yes=0
+    if (yes && is_ingame() && room!=rmSecretEnd) {
         instance_destroy_id(PauseMenu)
         savedata_write()
         instance_destroy_id(Player)
@@ -126,6 +129,7 @@ if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_ch
 if (global.key_pressed[key_die]) {
     yes=1
     with (JokerKaboom) if (visible) yes=0
+    with (Herman) if (speak) yes=0
     if (yes && room!=rmIntro) kill_player()
 }
 
@@ -134,6 +138,7 @@ if (global.key_pressed[key_restart]) {
     yes=1
     with (GM3DLives) if (instance_exists(Player)) yes=0
     with (JokerKaboom) if (visible) yes=0
+    with (Herman) if (speak) yes=0
     if (yes && is_ingame() && !global.pause && room!=rmIntro && room!=rmSecretEnd) {
         sound_kind_stop(0)
         savedata_load()

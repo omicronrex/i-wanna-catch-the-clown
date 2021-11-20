@@ -21,6 +21,7 @@
 	|KeyBlockParent
 	|ItemTrinket
 +User Interface
+	|VolCheck
 	|TitleMenu
 	|TitleParticle
 	|FileMenu

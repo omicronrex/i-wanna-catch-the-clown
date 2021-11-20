@@ -530,7 +530,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
 
         repeat (a) {
             x+=s
-            if (!place_free(x,y)) {x-=s break}
+            if (!place_free(x,y)) {x-=s hspeed=0 break}
         }
         hspeed=0
         walljumpboost=0

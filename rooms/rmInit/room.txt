@@ -6,8 +6,8 @@ snap_y=32
 isometric=0
 roomspeed=500
 roompersistent=0
-bg_color=8388608
-clear_screen=0
+bg_color=0
+clear_screen=1
 clear_view=0
 
 bg_visible0=0

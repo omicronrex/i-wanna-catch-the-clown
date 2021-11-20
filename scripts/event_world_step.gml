@@ -140,6 +140,29 @@ if (global.key_pressed[key_restart]) {
     }
 }
 
+//take a screenshot
+if (keyboard_check_pressed(vk_f9)) {
+    directory_create(global.shotfolder)
+    var fn,i;
+    fn=global.shotfolder+current_date_filename()+".png"
+    i=1
+    while (file_exists(fn)) {
+        i+=1
+        fn=global.shotfolder+current_date_filename()+" ("+string(i)+").png"
+    }
+    if (global.rw!=global.width || global.rh!=global.height) {
+        if (surface_exists(application_surface)) {
+            surface_save(application_surface,fn)
+        } else {
+            screen_save(fn)
+        }
+    } else {
+        screen_save(fn)
+    }
+    message=300
+    messagetext="Screenshot saved"
+}
+
 //debug keys
 debug_code("world step")
 

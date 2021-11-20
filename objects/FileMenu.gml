@@ -188,7 +188,7 @@ if (settings("home")) draw_sprite(sprGlobalItemHouse,0,400+80,608-96) else draw_
 //option info
 draw_set_font(fntFileSmall)
 draw_set_halign(0) draw_text( 34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back"   )
-draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] Accept" )
 draw_set_halign(1) draw_text(400,556,"["+key_get_name(global.keycode[key_menu ])+"] Options")
+draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] Accept" )
 draw_set_halign(0)
 draw_set_color($ffffff)

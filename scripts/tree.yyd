@@ -38,14 +38,20 @@
 		|key_get_name
 		|get_path_speed
 		|inside_view
+		|current_date_filename
 	+input
+		+joystick
+			|joy_deadzone
+			|joy_get_map
+			|joy_snap
+			|joy_compare
+			|joystick_default
 		|input_init
 		|input_default
 		|input_anykey
 		|input_update
 		|input_consume
 		|input_clear
-		|joystick_default
 		|lock_controls
 		|unlock_controls
 	+rendering

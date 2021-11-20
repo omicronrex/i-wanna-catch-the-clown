@@ -186,3 +186,8 @@ camera_set_raw
 camera_apply
 tile_bake
 savedata_newgame
+joy_deadzone
+joy_get_map
+joy_snap
+joy_compare
+current_date_filename

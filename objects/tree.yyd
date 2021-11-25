@@ -353,6 +353,7 @@
 		|AppearBlock
 		|Trapple
 		|DogSignUpdater
+		|Cat
 	+boss
 		+shmup
 			|GameMakerBackground

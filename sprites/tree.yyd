@@ -318,9 +318,16 @@
 		|sprDeerHit
 		|sprCarDebris
 		|sprJohnny
+		|sprSemaphore
 		|sprRedLight
 		|sprWeapon
+		|sprManLeft
 		|sprPole
+		|sprManDown
+		|sprHeli
+		|sprStreetSigns
+		|sprManDead
+		|sprScorch
 		|sprPlayerHead
 	|sprTourney
 	|sprTwister
@@ -407,12 +414,5 @@
 		|sprPlayerFallGOH
 		|sprPlayerJumpGOH
 		|sprPlayerRunningGOH
-|sprSemaphore
-|sprManLeft
-|sprManDown
-|sprManDead
-|sprStreetSigns
-|sprHeli
-|sprScorch
 |sprRainbowPlatform
 |sprUnknown

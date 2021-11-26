@@ -16,7 +16,7 @@ option[1]="Sound Volume"
 option[2]="Screen Mode"
 option[3]="VSync"
 option[4]="Fullscreen Filter"
-option[5]="Sprite Filter"
+option[5]="Bonk sound"
 option[6]="Gravestone"
 option[7]="Left+Right Mode"
 option[8]="Keyboard Setup"
@@ -26,7 +26,6 @@ option_max=10
 image_speed=0.2*dt
 ycursor=ydraw+(ysep*sel)+18
 
-angle=0
 dead=0
 
 alarm[0]=30*dt
@@ -106,7 +105,7 @@ if (global.key_pressed[key_shoot]) {
     }
     if (sel==5) {
         sound_play("sndDJump")
-        settings("interpolation",!settings("interpolation"))
+        settings("bonk",!settings("bonk"))
     }
     if (sel==6) {
         settings("gore",(settings("gore")+1) mod 2)
@@ -159,7 +158,7 @@ optext[1]=string(round(settings("sfxvol")*100))+"%"
 optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
 optext[3]=pick(!!World.monitorspeed,pick(settings("vsync")+1,"Failed","Off","On"),"Testing...")
 optext[4]=pick(settings("filter"),"Off","Bilinear","Area")
-optext[5]=pick(settings("interpolation"),"Off","On")
+optext[5]=pick(settings("bonk"),"Off","On")
 optext[6]=pick(settings("gore"),"Off","On","","")
 optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
 optext[8]=""
@@ -167,8 +166,6 @@ optext[9]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
 
 if (sel=4 && settings("fullscreen")) background_visible[1]=1
 else background_visible[1]=0
-if (sel=5) angle+=1
-else angle=0
 
 ycursor=inch(ycursor,ydraw+(ysep*sel)+18,16*dt)
 #define Other_5
@@ -193,7 +190,7 @@ draw_text(400,64,"- Options -")
 draw_set_halign(0) for (i=0;i<option_max;i+=1) draw_text(xdraw     ,ydraw+(ysep*i),option[i])
 draw_set_halign(2) for (i=0;i<option_max;i+=1) draw_text(xdraw+xsep,ydraw+(ysep*i),optext[i])
 
-if (!dead) draw_sprite_ext(sprPlayerIdle,floor(image_index),xdraw-18,ycursor,1,1,angle,$ffffff,1)
+if (!dead) draw_sprite(sprPlayerIdle,floor(image_index),xdraw-18,ycursor)
 
 //button info
 draw_set_font(fntFileSmall)

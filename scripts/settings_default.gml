@@ -6,7 +6,7 @@ settings("sfxvol",0.7)
 settings("l+r behavior",lr_last)
 
 settings("gore",1)
-settings("interpolation",false)
+settings("bonk",true)
 settings("filter",1)
 
 input_default()

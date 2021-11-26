@@ -94,6 +94,7 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
+draw_set_color(0)
 draw_text(400,64,"- Control Setup -")
 
 for (i=0;i<=key_sizeof;i+=1) {
@@ -112,3 +113,4 @@ draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back")
 draw_set_halign(2)
 draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] Accept")
 draw_set_halign(0)
+draw_set_color($ffffff)

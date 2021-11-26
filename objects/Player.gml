@@ -96,6 +96,7 @@ memplat=noone
 input_h=0 input_v=0
 lrtype=settings("l+r behavior")
 if (global.leftright_moonwalk) lrtype=lr_last
+bonk=settings("bonk")
 
 input_clear()
 input_consume()
@@ -548,7 +549,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
                 y-=s
                 if (s==vflip) {
                     player_land()
-                }
+                } else if (bonk) sound_play("sndBonk")
                 break
             }
         }

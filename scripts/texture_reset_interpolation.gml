@@ -1,1 +1,1 @@
-texture_set_interpolation(settings("interpolation"))
+texture_set_interpolation(0)

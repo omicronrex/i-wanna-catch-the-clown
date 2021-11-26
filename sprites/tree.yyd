@@ -375,6 +375,7 @@
 	|sprPaintings
 	|sprCart
 	|sprCongrats
+	|sprRainbowPlatform
 +sonic boll
 	|texRunes
 +bosses
@@ -416,5 +417,4 @@
 		|sprPlayerFallGOH
 		|sprPlayerJumpGOH
 		|sprPlayerRunningGOH
-|sprRainbowPlatform
 |sprUnknown

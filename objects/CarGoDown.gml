@@ -30,7 +30,7 @@ applies_to=self
 */
 if (y>650) instance_destroy()
 
-if (!horn && Racecar.x<400) {
+if (!horn && Racecar.x<400 && Racecar.y>y) {
     if (distance_to_object(Racecar)<100) {
         horn=1
         snd=sound_play_paused("carhorn")

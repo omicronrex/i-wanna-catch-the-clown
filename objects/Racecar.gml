@@ -69,6 +69,14 @@ action_id=603
 applies_to=self
 */
 canwin=1
+#define Alarm_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+room_speed=50
+global.game_speed=50
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -163,33 +171,24 @@ if (!win) {
                 } else sound_play("BEEP02")
             } else {
                 i=instance_create(x+dcos(angle+90)*20,y-dsin(angle+90)*20,Bullet)
-                i.direction=angle
+                i.direction=angle-3
                 i.owner=id
                 i.speed=16
                 sound_play("sndRenShot")
-                if (instance_exists(BigPolice)) i.direction+=180
+                if (instance_exists(BigPolice)) i.direction=angle+183
             }
         }
 
-        if (!(timer>=5000 && timer<=6100) && !canwin) {
-            if (!(timer mod 300)) {
+        if (!(timer>=3000 && timer<=4100) && !canwin) {
+            if (!(timer mod 300) && timer!=7800) {
                 instance_create(400+irandom_range(-180,180),-32,Gas)
             }
             if (!(timer mod 2500)) {
                 instance_create(400+irandom_range(-180,180),-32,Crate)
             }
 
-            if (timer==4000) {
-                instance_create(592,0,CarSigns)
-            }
-
-            if (timer==4100) {
-                instance_create(x,-32,Deer)
-                instance_create(150,-50,RedLight)
-            }
-
-            if (timer<8000 && !(timer>4600 && timer<5000)) {
-                if (!(timer mod 1000) && timer!=4000) {
+            if (timer<5000 && !(timer>2600 && timer<3000)) {
+                if (!(timer mod 1000) && timer!=2000) {
                     instance_create(0,0,Police)
                 }
 
@@ -198,45 +197,114 @@ if (!win) {
             }
         }
 
-        if (timer==4900) {
+        if (timer==2000) {
+            instance_create(592,0,CarSigns)
+        }
+
+        if (timer==2100) {
+            instance_create(x,-32,Deer)
+            instance_create(150,-50,RedLight)
+        }
+
+        if (timer==2900) {
             (instance_create(592,0,CarSigns)).image_index=1
         }
 
-        if (timer=5000) {
+        if (timer=3000) {
             mapspeedspeed=-0.03
             Semaphore.go=1
         }
-        if (timer=5200) {
+        if (timer=3200) {
             CJ.sprite_index=sprManLeft
             CJ.image_speed=0.5
             CJ.hspeed=-2
             CJ.walking=1
         }
-        if (timer=6000) {
+        //if (timer=3900) clipboard_set_text("dist: "+string(dist)+" pos: "+string_better(sound_get_pos(global.musinst)))
+        if (timer=3970) {
             Semaphore.frame=1
+        }
+        if (timer=4000) {
             mapspeedspeed=0.03
             s=sound_play_paused("RVStart01")
             sound_set_pos(s,0.95/sound_get_length("RVStart01"))
             sound_resume(s)
         }
-        if (timer=6100) {
+        if (timer=4600) {
             sound_play("police radio")
         }
-        if (timer=6550) {
+        if (timer=5250) {
             instance_create(400,650,PoliceHeli)
         }
-        if (timer=7500 || timer=8000) {
-            instance_create(0,0,Police)
+        if (timer=5500 || timer=5750 || timer=6000) {
+            (instance_create(0,0,Police)).y=-50
         }
-        if (timer=8500) {
+
+        if (timer=6800 || timer=7300) {
+            (instance_create(0,0,Police)).y=650
+        }
+
+        // roadblocks
+        if (timer=6600) {
+            instance_create(430,-50,Cone)
+            instance_create(490,-50,Cone)
+            instance_create(550,-50,Cone)
+            if (difficulty>0) instance_create(370,-50,Cone)
+            //instance_create(310,-50,Cone)
+            if (difficulty==2) instance_create(250,-50,Cone)
+        }
+        if (timer=6700) {
+            instance_create(430,-50,Roadblock)
+            instance_create(490,-50,Roadblock)
+            instance_create(550,-50,Roadblock)
+            if (difficulty>0) instance_create(370,-50,Roadblock)
+            //instance_create(310,-50,Roadblock)
+            if (difficulty==2) instance_create(250,-50,Roadblock)
+        }
+        if (timer=7100) {
+            if (difficulty==2) instance_create(430,-50,Cone)
+            //instance_create(490,-50,Cone)
+            if (difficulty>0) instance_create(550,-50,Cone)
+            instance_create(370,-50,Cone)
+            instance_create(310,-50,Cone)
+            instance_create(250,-50,Cone)
+        }
+        if (timer=7200) {
+            if (difficulty==2) instance_create(430,-50,Roadblock)
+            //instance_create(490,-50,Roadblock)
+            if (difficulty>0) instance_create(550,-50,Roadblock)
+            instance_create(370,-50,Roadblock)
+            instance_create(310,-50,Roadblock)
+            instance_create(250,-50,Roadblock)
+        }
+
+        if (timer=7600) {
+            instance_create(430,-50,Cone)
+            instance_create(490,-50,Cone)
+            instance_create(550,-50,Cone)
+            instance_create(370,-50,Cone)
+            instance_create(310,-50,Cone)
+            instance_create(250,-50,Cone)
+        }
+        if (timer=7800) {
+            instance_create(430,-50,Roadblock)
+            instance_create(490,-50,Roadblock)
+            instance_create(550,-50,Roadblock)
+            instance_create(370,-50,Roadblock)
+            instance_create(310,-50,Roadblock)
+            instance_create(250,-50,Roadblock)
+            with (Roadblock) special=1
+        }
+
+
+        if (timer=8200) {
             sound_play("police radio 2")
         }
-        if (timer=8900) {
+        if (timer=8700) {
             instance_create(400,900,BigPolice)
         }
 
-
-        if (canwin) {
+        if (canwin && timer>10050-450) {
             win=1
             storepos=sound_get_pos(global.musinst)
             timer=min(timer,10050-450)
@@ -357,6 +425,67 @@ if (vspeed>=0 && !dead && active && vsp=0) {
     vsp=-4
     damage+=1
 }
+#define Collision_Roadblock
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (other.special) {
+    if (!other.dead) {
+        with (other) {
+            dead=1
+            sprite_index=sprPolDed
+            carticles()
+        }
+        with (Roadblock) {
+            speed=6
+            direction=point_direction(400,800,x,y)
+            spin=choose(3,-3,6,-6)
+        }
+        o=instance_create(x,y-48,RenGMExplosion)
+        o.image_xscale=8
+        o.image_yscale=6
+        o.image_speed/=2
+        camera_shake(32)
+        sound_play("sndRenExplode")
+        room_speed=25
+        global.game_speed=25
+        alarm[2]=40
+
+        repeat (irandom(100)) {
+            o=instance_create(random_range(200,600),random_range(bbox_top,bbox_bottom)-48,CarDebris)
+            o.image_index=4
+            o.vspeed+=vspeed
+        }
+    }
+} else {
+    d=point_direction(other.x,other.y,x,y)
+    l=point_distance(other.x,other.y,x,y)
+
+    if (l<32) {
+        x=other.x+lengthdir_x(32,d)
+        y=other.y+lengthdir_y(32,d)
+    }
+
+    if (active) {
+        speed=0
+
+        if (hsp=0 && vsp=0) sound_play("sndBlockBreakYuuutu")
+
+        vsp=2 if (!other.dead) damage+=2
+
+        vsp+=other.vspeed/2
+        if (!other.dead) {
+            other.dead=1
+            with (other) carticles()
+            other.sprite_index=sprPolDed
+            other.vspeed=-2
+            other.hspeed=choose(1,-1)
+            other.spin=choose(3,-3,6,-6)
+        }
+    }
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -377,12 +506,12 @@ if (savedata("room")=room) {
     active=1
     saved=1
 
-    timer=5900
-    dist=6000.50
+    timer=3900
+    dist=8000.50
 
     sound_kind_volume(1,0)
     play_bg_music("popcorn",0)
-    sound_set_pos(global.musinst,0.57795509)
+    sound_set_pos(global.musinst,0.393)
     vol3=0
 }
 #define Other_5
@@ -450,6 +579,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//draw_text(10,10,timer)
+
 image_angle=angle-90
 draw_self()
 if (save>150 && save<250) draw_sprite_ext(sprPlayerHead,difficulty==2,x,y,1,1,image_angle,$ffffff,1)

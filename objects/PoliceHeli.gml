@@ -19,6 +19,9 @@ count=0
 go=0
 
 z=80
+
+Racecar.maxmapspeed=10
+Racecar.mapspeedspeed=0.1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -64,8 +67,6 @@ if (go) {
             sound_stop(snd)
             visible=0
             camera_shake(32)
-            Racecar.maxmapspeed=10
-            Racecar.mapspeedspeed=0.1
         }
     }
 } else {

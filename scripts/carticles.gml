@@ -11,7 +11,7 @@ rep=8
 
 if (object_index=CarGoDown || object_index=CarGoUp) i=image_index mod 4
 if (object_index=Racecar) i=2
-if (object_index=Police || object_index=StoppedPolice) i=4
+if (object_index=Police || object_index=StoppedPolice || object_index=Roadblock) i=4
 
 if (object_index=BigPolice) {
     i=4

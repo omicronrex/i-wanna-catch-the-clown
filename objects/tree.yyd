@@ -489,5 +489,7 @@
 	|PoliceBomb
 	|CarExplode
 	|Scorch
+	|Cone
+	|Roadblock
 |PlayerStart
 |Block

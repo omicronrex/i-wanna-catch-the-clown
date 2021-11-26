@@ -60,7 +60,7 @@ if (win=2) {
     if (y<0) {
         depth=-1000
         fade+=0.01
-        if (fade>=1) room_goto(room_diff(rDiamond3))
+        if (fade>=1.75) room_goto(room_diff(rDiamond3))
     }
 }
 

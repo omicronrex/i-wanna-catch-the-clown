@@ -86,6 +86,33 @@ if (!dead) {
     gravity=0.05
     sound_stop(snd)
 }
+#define Collision_Police
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (!dead) {
+    dead=1
+    carticles()
+    sprite_index=sprPolDed
+    vspeed=other.vspeed
+    gravity=0.05
+    sound_stop(snd)
+}
+#define Collision_Roadblock
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (!dead) {
+    dead=1
+    carticles()
+    sprite_index=sprPolDed
+    vspeed=Racecar.mapspeed
+    sound_stop(snd)
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -25,7 +25,7 @@ switch (argument0) {
 
     case "musClear":          return "Inner Peace // Dung Truong#Game Maker Resource Pack 3"
     case "musEnd":            return "The End // Daniel Rosenfeld#Minecraft"
-    case "orbflwr":           return "Orbital Flower // Eric Gieseke#DX-Ball 2"
+    case "imagine":           return "Imagine When // Eric Gieseke#Timeless"
 }
 
 //sometimes we just don't want the song object to show up for immersion.

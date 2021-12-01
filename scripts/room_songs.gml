@@ -17,7 +17,7 @@ switch (room_base(argument0)) {
     case rAfterlife:        return "jigoku"
     case rmClear:           return "musClear"
     case rmHub:             return "musEnd"
-    case rmHistory:         return "orbflwr"
+    case rmHistory:         return "imagine"
 }
 
 return ""

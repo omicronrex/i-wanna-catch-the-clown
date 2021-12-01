@@ -179,8 +179,8 @@
 ||     Minecraft                                                     | |
 ||                                                                   | |
 || History Hall                                                      | |
-||     Orbital Flower // Eric Gieseke                                | |
-||     DX-Ball 2                                                     |-|
+||     Imagine When // Eric Gieseke                                  | |
+||     Timeless                                                      |-|
 ||                                                                   |v|
 |======================================================================|
 || Done                              |  |  |  |_# My Computer        /,|

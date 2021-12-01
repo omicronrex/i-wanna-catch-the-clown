@@ -24,7 +24,7 @@ if (room=rmHub || room=rmHistory || room=rmClear || room=rmSecretEnd) {
     room_caption=strong(
         global.game_title,
         " - "+global.name_difficulties[difficulty],
-        " - Deaths: ",savedata("deaths"),
+        " - Resets: ",savedata("deaths"),
         " - Time: ",format_time(savedata("time")),
         pick(global.lastjoyname!="",""," "+global.lastjoyname),
         " - Items: ["+itemstring+"]",

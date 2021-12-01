@@ -90,6 +90,9 @@ if (keyboard_check_pressed(vk_escape)) {
         if (global.pause){
             instance_destroy_id(PauseMenu)
         } else {
+            if (is_ingame()) {
+                savedata("deaths",savedata("deaths")+1)
+            }
             savedata_write()
             instance_destroy_id(Player)
             room_goto(rmTitle)
@@ -107,6 +110,9 @@ if (keyboard_check_pressed(vk_f2)) {
     with (Herman) if (speak) yes=0
     if (yes && is_ingame() && room!=rmSecretEnd) {
         instance_destroy_id(PauseMenu)
+        if (is_ingame()) {
+            savedata("deaths",savedata("deaths")+1)
+        }
         savedata_write()
         instance_destroy_id(Player)
         room_goto(rmTitle)
@@ -141,6 +147,7 @@ if (global.key_pressed[key_restart]) {
     with (Herman) if (speak) yes=0
     if (yes && is_ingame() && !global.pause && room!=rmIntro && room!=rmSecretEnd) {
         sound_kind_stop(0)
+        savedata("deaths",savedata("deaths")+1)
         savedata_load()
     }
 }

@@ -140,7 +140,7 @@ for (i=0;i<3;i+=1) {
             else sprite_index=sprPlayerIdle
         }
         draw_set_halign(0)
-        draw_text(x+i*240+10,y+70,"Deaths:#  "+string(savedata("deaths"))+"#Time:#  "+format_time(savedata("time")))
+        draw_text(x+i*240+10,y+70,"Resets:#  "+string(savedata("deaths"))+"#Time:#  "+format_time(savedata("time")))
 
         draw_set_halign(1)
         if (state="continue" && select=i) {

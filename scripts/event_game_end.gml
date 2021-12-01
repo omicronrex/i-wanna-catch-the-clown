@@ -1,4 +1,9 @@
 //close game gracefully
+
+if (is_ingame()) {
+    savedata("deaths",savedata("deaths")+1)
+}
+
 with (World) {
     if (!gameclosing) {
         settings_write()

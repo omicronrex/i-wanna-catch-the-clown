@@ -72,7 +72,7 @@ global.savemap=ds_map_create()
 global.statgridh=1
 global.statgrid=ds_grid_create(3,1)
 ds_grid_set(global.statgrid,0,0,"Save:")
-ds_grid_set(global.statgrid,1,0,"Deaths:")
+ds_grid_set(global.statgrid,1,0,"Resets:")
 ds_grid_set(global.statgrid,2,0,"Time:")
 settings_read()
 savedata_read()

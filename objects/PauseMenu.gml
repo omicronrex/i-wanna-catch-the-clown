@@ -78,5 +78,5 @@ draw_set_halign(0)
 
 draw_set_font(fntFileSmall)
 draw_set_valign(2)
-    draw_text(20,view_hview-16,"Music Volume: "+string(round(settings("musvol")*100))+"%#Deaths: "+string(savedata("deaths"))+"#Time: "+format_time(savedata("time")))
+    draw_text(20,view_hview-16,"Music Volume: "+string(round(settings("musvol")*100))+"%#Resets: "+string(savedata("deaths"))+"#Time: "+format_time(savedata("time")))
 draw_set_valign(0)

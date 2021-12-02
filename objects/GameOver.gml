@@ -9,6 +9,7 @@ image_xscale=1/camera_zoom()
 image_yscale=image_xscale
 
 if (room=rmCar) image_index=1
+if (room=rHerman) image_blend=$80ff
 
 alarm[0]=40/dt
 
@@ -38,7 +39,9 @@ if (scale>0) {
     draw_set_halign(1)
     draw_set_valign(1)
     draw_set_font(fntFileSmall)
-    draw_text_outline(0,0,"Press ["+key_get_name(global.keycode[key_restart])+"] To Try Again",rainbow((current_time/16) mod 256))
+    if (room=rHerman) col=$80ff
+    else col=rainbow((current_time/16) mod 256)
+    draw_text_outline(0,0,"Press ["+key_get_name(global.keycode[key_restart])+"] To Try Again",col)
     draw_set_halign(0)
     draw_set_valign(0)
     d3d_transform_set_identity()

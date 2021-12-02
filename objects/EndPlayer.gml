@@ -13,6 +13,8 @@ alarm[1]=75
 
 play_bg_music("zel3-ending",0)
 
+settings("home",1)
+
 alpha=-5
 
 ay=-200
@@ -51,7 +53,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-settings("home",1)
 event_game_end()
 #define Draw_0
 /*"/*'/**//* YYD ACTION

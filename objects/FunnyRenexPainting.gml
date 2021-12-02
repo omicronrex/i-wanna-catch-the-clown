@@ -76,7 +76,7 @@ surface_disengage()
 texture_reset_interpolation()
 
 if (view_xview>=floor(x/800)) with (instance_place(400,192,TextDraw))
-    text="See ya!"
+    text="See you next game!"
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1

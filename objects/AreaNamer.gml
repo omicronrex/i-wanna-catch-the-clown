@@ -24,7 +24,7 @@ applies_to=self
 */
 with (SongNamer) {
     alarm[0]=200
-    x=800+w
+    x=800+w+10
 }
 
 if (room=rTutorial) alpha-=0.0125

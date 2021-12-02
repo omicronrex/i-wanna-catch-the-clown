@@ -18,5 +18,8 @@ savedata("hash","new file")
 
 savedata("diff",1)
 
+global.player_skin=skin_default
+global.player_weapon=weapon_default
+
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1

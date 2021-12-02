@@ -1,6 +1,6 @@
 //close game gracefully
 
-if (is_ingame()) {
+if (is_ingame() && !instance_exists(TimerFreeze)) {
     savedata("deaths",savedata("deaths")+1)
 }
 

@@ -12,6 +12,7 @@ hspeed=-3
 active=0
 flash=0
 lifec=0
+btimer=0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -69,17 +70,16 @@ if (vspeed>0 && y>608-48) {
 if (global.key[key_shoot] && active) {
     timer-=1
     if (timer<0) {
-        timer=4
+        timer=3
+        btimer=(btimer+3) mod 9
         play_sound("laser5")
-        s=abs(cos((image_index/image_number)*pi))
-        p=instance_create(x-12*s,y-4,GMShipBullet)
-        p.direction=90+7*s
-        p=instance_create(x+12*s,y-4,GMShipBullet)
-        p.direction=90-7*s
+        p=instance_create(x-24,y-4,GMShipBullet)
+        p.direction=90+btimer
+        p=instance_create(x+24,y-4,GMShipBullet)
+        p.direction=90-btimer
 
         if (!instance_exists(GMShipBulletStronger))
             instance_create(x,y-4,GMShipBulletStronger)
-        else instance_create(x,y-4,GMShipBullet)
     }
 } else timer=0
 #define Other_5

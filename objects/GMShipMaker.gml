@@ -51,8 +51,9 @@ if (!active) {
     Player.visible=0
     play_sound("sndItem")
     sprite_index=sprShipmake
+    y-=8
     image_index=0
-    image_speed=0.5
+    image_speed=0.25
     play_bg_music("musRenBoss2",1)
 }
 #define Other_0

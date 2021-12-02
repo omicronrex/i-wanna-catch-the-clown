@@ -65,6 +65,7 @@ d3d_primitive_end()
 d3d_set_lighting(0)
 
 text='EASY GAME DEVELOPEMENT';
+if (GameMaker3D.phase>1) text='EVIL GAME DEVELOPEMENT';
 
 draw_set_font(fArial13)
 draw_set_color(c_white)

@@ -56,7 +56,7 @@ d3d_model_clear(m2)
 
 d3d_model_primitive_begin(m2,pr_trianglelist)
 
-with (Block) if (object_index!=Block && object_index!=DisappearBlock) y=-999
+with (Block) if (object_index!=Block && object_index!=DisappearBlock && object_index!=HermanBlock) y=-999
 
 with (Block) {
     t=!position_meeting(x+16,y-16,Block)

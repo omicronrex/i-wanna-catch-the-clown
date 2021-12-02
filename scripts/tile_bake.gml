@@ -2,7 +2,7 @@
 
 if (object_index=HermanBlock) {
     tile_add(RenTiler.bg,argument0,argument1,argument2,argument3,argument4,argument5,argument6)
-} else {
+} else if (room!=global.lastroom) {
     var m,u,v,xx,yy,w,h,l,t,d;
 
     m=global.tilemodel

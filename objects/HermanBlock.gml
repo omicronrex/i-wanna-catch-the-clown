@@ -1,11 +1,3 @@
-#define Create_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-//nah actually thats mean let them have fun
-//if (savedata("herman")) instance_change(Block,1)
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1

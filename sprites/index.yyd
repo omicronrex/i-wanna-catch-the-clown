@@ -398,7 +398,7 @@ sprHermanBullet2
 sprHermanSpeak
 sprZRFrame
 sprZRFont
-sprHermanBrow
+
 sprPlayerIdleGOH
 sprPlayerFallGOH
 sprPlayerJumpGOH
@@ -445,3 +445,4 @@ sprUnknown
 sprGlobalItemHouse
 sprCone
 sprGlobalItemCat
+sprHermanGlasses

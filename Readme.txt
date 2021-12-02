@@ -52,8 +52,8 @@
 || ----------------                                                  | |
 || I would like to thank everybody who commented on                  | |
 || previous versions of Catch the Clown. In particular               | |
-|| the people who served as beta-testers and those                   | |
-|| who provided gimmicks and other ideas.                            | |
+|| the people who served as beta-testers and Metis                   | |
+|| who provided the Herman sprites.                                  | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |

@@ -18,11 +18,13 @@ line=1
 mouth=0
 cur=0
 ohmy=0
+ohmying=0
 whatsthat=0
 talk=0
+speakfade=1
 
-dx=152
-dy=137
+dx=165
+dy=146
 
 snd=sound_add_included("bgm_herman.mid",1,1)
 snd2=sound_add_included("bgm_hermanoffice.mid",1,1)
@@ -55,7 +57,26 @@ applies_to=self
 speak=1
 timer=0
 ohmy=10
+HermanGlasses.vspeed=-8
 sound_loop(snd2)
+#define Alarm_3
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+speakfade=max(0,speakfade-0.25)
+alarm[3]=25
+#define Alarm_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (ohmying=1) {
+    ohmying=2
+    alarm[4]=50
+} else ohmying=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -200,7 +221,8 @@ GOOD ONE."; break;
         if (timer>50 || line=17 || line=18 || line=19) {
             timer=0
             line+=1
-            if (line==1 || line==9 || line=23) ohmy=10
+            if (line==1 || line==9 || line=23) {ohmy=10 ohmying=1 alarm[4]=15 HermanGlasses.vspeed=-8}
+            if (line==2) alarm[3]=25
             if (line==11 || line==22) whatsthat=40
             cur=0
             if (line=24) {
@@ -233,10 +255,26 @@ applies_to=self
 f=max(1,f-0.25)
 
 if (f>1) {
-    for (i=0;i<274;i+=2) {
-        draw_sprite_part_ext(sprite_index,0,0,i,304,2,x-dx*f+sin(current_time/100+i/20)*(f-1)*100*((i mod 4)-1),y+i-dy,f,1,$ffffff,1)
+    for (i=0;i<312;i+=2) {
+        d3d_set_fog(1,$282800,0,0)
+        draw_sprite_part_ext(sprite_index,0,0,i,316,2,x-dx*f+sin(current_time/100+i/20)*(f-1)*100*((i mod 4)-1),y+i-dy,f,1,$ffffff,1)
+        draw_sprite_part_ext(sprite_index,1,0,i,316,2,x-dx*f+sin(current_time/100+i/20)*(f-1)*100*((i mod 4)-1),y+i-dy,f,1,$ffffff,1)
+        d3d_set_fog(0,0,0,0)
     }
-} else draw_sprite(sprite_index,0,x,y-ohmy)
+} else {
+    draw_sprite(sprite_index,1,x,y)
+    if (speakfade>0) {
+        d3d_set_fog(1,$282800,0,0)
+        draw_sprite_ext(sprite_index,1,x,y,1,1,0,$ffffff,speakfade)
+        d3d_set_fog(0,0,0,0)
+    }
+    draw_sprite(sprite_index,0,x,y-ohmy)
+    if (speakfade>0) {
+        d3d_set_fog(1,$282800,0,0)
+        draw_sprite_ext(sprite_index,0,x,y-ohmy,1,1,0,$ffffff,speakfade)
+        d3d_set_fog(0,0,0,0)
+    }
+}
 
 if (speak) {
     draw_sprite(sprZRFrame,0,400-216-4,y+200-4)
@@ -247,6 +285,10 @@ if (speak) {
     draw_set_font(font)
     draw_text_ext(400-216+12,y+200+12,text_show,16,416);
 
-    draw_sprite(sprHermanSpeak,!whatsthat*mouth+3*!!whatsthat,x,y)
-    draw_sprite(sprHermanBrow,!!whatsthat,x,y)
+    draw_sprite(sprHermanSpeak,!ohmying*(!whatsthat*mouth+3*!!whatsthat)+ohmying,x,y-ohmy)
+    if (speakfade>0) {
+        d3d_set_fog(1,$282800,0,0)
+        draw_sprite_ext(sprHermanSpeak,0,x,y-ohmy,1,1,0,$ffffff,speakfade)
+        d3d_set_fog(0,0,0,0)
+    }
 }

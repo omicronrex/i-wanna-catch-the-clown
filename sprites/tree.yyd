@@ -406,9 +406,9 @@
 		|sprZRFrame
 		|sprHerman
 		|sprHermanSpeak
-		|sprHermanBrow
 		|sprHermanBullet
 		|sprHermanBullet2
+		|sprHermanGlasses
 		|sprPlayerIdleGO
 		|sprPlayerFallGO
 		|sprPlayerJumpGO

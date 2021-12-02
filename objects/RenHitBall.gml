@@ -33,21 +33,7 @@ image_xscale=1.5
 image_yscale=1.5
 if (place_meeting(x,y,Bullet)) {
     play_sound("sndRenBall")
-    if (tutorial) settings("hit the ball",1)
     instance_destroy()
 }
 image_xscale=1
 image_yscale=1
-#define Draw_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-draw_self()
-if (tutorial) {
-    draw_set_font(fArial13)
-    draw_set_halign(1)
-    draw_text(x,y-32,"Shoot!")
-    draw_set_halign(0)
-}

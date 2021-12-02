@@ -286,7 +286,7 @@
 	|sprGlobalItemHerman
 	|sprGlobalItemJoker
 	|sprGlobalItemHouse
-	|sprGlobalItemCat
+	|sprGlobalItemClown
 	|sprGameClear
 +i wanna be vibing
 	|sprThrow
@@ -331,6 +331,7 @@
 		|sprScorch
 		|sprCone
 		|sprPlayerHead
+	|sprUnknown
 	|sprTourney
 	|sprTwister
 	|sprRenBall
@@ -417,4 +418,10 @@
 		|sprPlayerFallGOH
 		|sprPlayerJumpGOH
 		|sprPlayerRunningGOH
-|sprUnknown
+	+clownpiece
+		|sprClownPieceSpell
+		|sprClownPiece
+		|sprMoon
+		|sprGlowBall
+		|sprGuns
+		|sprCherryColor

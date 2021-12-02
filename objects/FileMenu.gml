@@ -184,7 +184,7 @@ if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400+32,608-112) else d
 if (settings("herman")) draw_sprite(sprGlobalItemHerman,0,400-64,608-80) else draw_sprite(sprUnknown,0,400-64,608-80)
 if (settings("joker")) draw_sprite(sprGlobalItemJoker,0,400-32,608-80) else draw_sprite(sprUnknown,0,400-32,608-80)
 if (settings("home")) draw_sprite(sprGlobalItemHouse,0,400,608-80) else draw_sprite(sprUnknown,0,400,608-80)
-if (settings("cat")) draw_sprite(sprGlobalItemCat,0,400+32,608-80) else draw_sprite(sprUnknown,0,400+32,608-80)
+if (settings("clown")) draw_sprite(sprGlobalItemClown,0,400+32,608-80) else draw_sprite(sprUnknown,0,400+32,608-80)
 
 //option info
 draw_set_font(fntFileSmall)

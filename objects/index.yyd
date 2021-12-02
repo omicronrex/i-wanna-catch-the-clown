@@ -467,8 +467,26 @@ WarpToHubPoint
 
 
 VolCheck
-Cat
+
 Cone
 Roadblock
 HermanGlasses
 
+ClownBg
+TouhouGun
+Clownpiece
+ClownpieceAppearTracer
+ClownpieceAppearEffect
+ClownLaserball
+ClownLaser
+ClownMoon
+ClownPopIn
+ClownPopOut
+ClownPopParticlesIn
+ClownPopParticlesOut
+ClownpieceStar
+ClownpieceStar2
+Lolisplosion
+TouhouBullet
+Clownspellcard
+ClownTimeout

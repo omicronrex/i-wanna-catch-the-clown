@@ -353,7 +353,6 @@
 		|AppearBlock
 		|Trapple
 		|DogSignUpdater
-		|Cat
 	+boss
 		+shmup
 			|GameMakerBackground
@@ -386,6 +385,25 @@
 			|Herman
 			|HermanBullet
 			|HermanGlasses
+		+clownpiece
+			|ClownBg
+			|TouhouGun
+			|Clownpiece
+			|ClownpieceAppearTracer
+			|ClownpieceAppearEffect
+			|ClownLaserball
+			|ClownLaser
+			|ClownMoon
+			|ClownPopIn
+			|ClownPopOut
+			|ClownPopParticlesIn
+			|ClownPopParticlesOut
+			|ClownpieceStar
+			|ClownpieceStar2
+			|Lolisplosion
+			|TouhouBullet
+			|Clownspellcard
+			|ClownTimeout
 		|GameMaker
 		|gm_leg
 		|gm_wheel

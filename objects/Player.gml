@@ -58,6 +58,7 @@ vflip=1
 facing=1
 
 h=0
+shootj=0
 
 angle=0
 sprite_angle=0
@@ -324,7 +325,9 @@ if (!frozen) {
 
     if (!cutscene) {
         afkk=(afkk+1) mod 4
-        if (key_pressed[key_shoot] || (key[key_shoot] && debug_code("autofire") && !afkk)) {
+        if (room=rRenClown) {
+            if (key[key_shoot]) weapon_2hu()
+        } else if (key_pressed[key_shoot] || (key[key_shoot] && debug_code("autofire") && !afkk)) {
             player_shoot()
         }
         if (key_released_early[key_jump]) {

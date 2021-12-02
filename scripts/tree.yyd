@@ -143,6 +143,7 @@
 +weapons
 	|weapon_default
 	|weapon_shootkid
+	|weapon_2hu
 +sound
 	|play_bg_music
 	|sound_play_slomo

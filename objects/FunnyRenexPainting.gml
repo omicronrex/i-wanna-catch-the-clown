@@ -56,7 +56,7 @@ d3d_transform_add_translation(75,75,0)
 
 draw_set_blend_mode(bm_add)
 d3d_set_culling(1)
-draw_set_color($c0c0c0)
+draw_set_color($ffffff)
 d3d_draw_ellipsoid(-70,-70,-70,70,70,70,texshine,1,127/128,32)
 draw_set_color($ff0000)
 d3d_draw_ellipsoid(-70,-70,-70,70,70,70,texshine,1,-127/128,32)
@@ -74,6 +74,9 @@ draw_set_blend_mode(0)
 d3d_transform_set_identity()
 surface_disengage()
 texture_reset_interpolation()
+
+if (view_xview>=floor(x/800)) with (instance_place(400,192,TextDraw))
+    text="See ya!"
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -85,7 +88,8 @@ if (other.vspeed=0){
     other.direction+=choose(135,-135)
     if (!hurt) {
         hurt=1
-        with (instance_nearest(x,y,TextDraw)) text="nice try!##however, i can't be#hurt in my element."
+        with (instance_nearest(x,y,TextDraw))
+            text="No don't do that.#Why would you do that."
     }
 }
 #define Other_5

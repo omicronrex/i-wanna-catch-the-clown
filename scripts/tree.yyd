@@ -139,9 +139,11 @@
 	|skin_default
 	|skin_hard
 	|skin_normal
+	|skin_nogun
 	|skin_greenorange
 +weapons
 	|weapon_default
+	|weapon_none
 	|weapon_shootkid
 	|weapon_2hu
 +sound

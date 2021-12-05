@@ -4,6 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (global.player_weapon=weapon_none) sprite_index=sprPlayerRunningNo
+
 image_xscale=-1
 image_speed=mmf_animspeed(70,80)
 speed=-1/8

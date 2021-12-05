@@ -3,7 +3,7 @@ if (active) {
 
     if (timer<100) {
         cutscene=1
-        Player.sprite_index=sprPlayerDead
+        Player.sprite_index=sprPlayerDeadLmaoNo
     }
     if (timer==100) {
         with (Player) {player_jump() vspeed=-4}
@@ -39,8 +39,11 @@ if (active) {
         f=(timer-300)/150
         camera_set(cosine(camx,800+400,f),cosine(camy,304,f),cosine(2,1,f),0)
     }
-    if (timer==500) {
+    if (timer==499) {
         unlock_controls()
+        active=0
+    }
+    if (timer=500) {
         active=0
         maxd=point_distance(Player.x,Player.y,IntroArtifact.x,IntroArtifact.y)-170
     }
@@ -58,13 +61,13 @@ if (active) {
     }
     if (timer=600) {
         instance_destroy_id(IntroArtifact)
-        if (difficulty==2) Player.skin=skin_hard
-        else Player.skin=skin_normal
+        if (difficulty==2) global.player_skin=skin_hard
+        else global.player_skin=skin_normal
+        global.player_weapon=weapon_default
     }
     if (timer=700) {
         bg=background_create_from_surface(application_surface,0,0,800,608,0,0)
         play_bg_music("Dreamscape",1)
-        //sound_play("Sound 1")
         xc=(Player.x+8-view_xview)*(800/view_wview)
         yc=(Player.y-2-view_yview)*(608/view_hview)
     }

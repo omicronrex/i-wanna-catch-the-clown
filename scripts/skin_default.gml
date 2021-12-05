@@ -62,7 +62,7 @@ if (argument0=="draw") {
         draw_sprite_ext(oldspr,floor(oldfr),floor(drawx),floor(drawy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),image_xscale,vflip,drawangle,image_blend,image_alpha)
     }
 
-    if (sprite_index=sprPlayerDead) {bowx+=8 bowy+=16}
+    if (sprite_index=sprPlayerDeadLmao) {bowx+=8 bowy+=16}
     if (bow) {
         draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     }

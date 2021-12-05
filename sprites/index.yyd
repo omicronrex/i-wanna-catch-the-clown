@@ -408,7 +408,7 @@ sprPlayerIdleN
 sprPlayerJumpN
 sprPlayerRunningN
 sprPlayerSlidingN
-sprPlayerDead
+sprPlayerDeadLmao
 sprTwister
 sprPaintings
 sprRacing
@@ -455,3 +455,12 @@ sprGlowBall
 sprGuns
 sprCherryColor
 sprMagicsquare
+sprEater
+sprPlayerFallNo
+sprPlayerIdleNo
+sprPlayerJumpNo
+sprPlayerRunningNo
+sprGreenGlow
+sprLeGun
+sprPlayerDeadLmaoNo
+sprKumoLayer

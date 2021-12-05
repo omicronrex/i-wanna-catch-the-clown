@@ -320,6 +320,8 @@
 	+intro
 		|Skybox
 		|IntroCtrl
+		|TheGunEater
+		|Le_Gun
 		|IntroTrigger
 		|IntroArtifact
 		|Twister
@@ -511,5 +513,7 @@
 	|FunnyRenexPainting
 	|CreditsMountain
 	|CreditsTree
+	|DecoKumoLayer
+	|decoKumoLayer2
 |PlayerStart
 |Block

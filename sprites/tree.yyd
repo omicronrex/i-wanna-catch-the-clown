@@ -293,6 +293,7 @@
 	|sprBackgroundFit
 	|texRunes
 	|sprTourney
+	|sprKumoLayer
 +catch the clown
 	+Joker Ka Boom by Jimking on DeviantArt
 		|spr_joker_kaboom
@@ -302,13 +303,19 @@
 		|sprPlayerJumpN
 		|sprPlayerRunningN
 		|sprPlayerSlidingN
-		|sprPlayerDead
+		|sprPlayerDeadLmao
 	+player hard
 		|sprPlayerIdleH
 		|sprPlayerFallH
 		|sprPlayerJumpH
 		|sprPlayerRunningH
 		|sprPlayerSlidingH
+	+player no gun
+		|sprPlayerFallNo
+		|sprPlayerIdleNo
+		|sprPlayerJumpNo
+		|sprPlayerRunningNo
+		|sprPlayerDeadLmaoNo
 	+car
 		|sprNiceCar
 		|sprRacing
@@ -337,6 +344,9 @@
 	|sprMusicNote
 	+intro
 		|sprTitle
+		|sprEater
+		|sprGreenGlow
+		|sprLeGun
 		|sprTwister
 		|sprCart
 	|sprRenBall

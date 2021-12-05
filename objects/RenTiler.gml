@@ -14,7 +14,7 @@ if (rm=rDiamond4) bg=tileRen2
 if (rm=rDiamond3) bg=tileRen3
 if (rm=rButterfly1) bg=tileRen4
 if (rm=rDiamond6) bg=tileRen5
-if (rm=rWater1 || rm=rRenClown) bg=tileRen2
+if (rm=rWater1) bg=tileRen2
 if (rm==rTutorial || rm=rmHub || rm=rmHistory) bg=texBlock
 
 tex=background_get_texture(bg)
@@ -29,7 +29,7 @@ if (room!=global.lastroom) {
 
 with (Block) if (object_index!=Block && object_index!=HermanBlock) y=-999
 
-if (rm==rDiamond1 || rm==rDiamond2 || rm==rDiamond3 || rm=rDiamond4 || rm=rButterfly1 || rm=rDiamond6 || rm=rWater1 || rm=rRenClown) {
+if (rm==rDiamond1 || rm==rDiamond2 || rm==rDiamond3 || rm=rDiamond4 || rm=rButterfly1 || rm=rDiamond6 || rm=rWater1) {
     with (RenSpikeDown) top=place_meeting(x,y+16,Block)
     with (Block) {
         top=place_meeting(x,y-1,Block)

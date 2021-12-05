@@ -26,9 +26,9 @@ d3d_set_fog(1,$21000f,fog,fog+150)
 d3d_primitive_begin_texture(pr_trianglestrip,tex)
 
 d3d_vertex_texture_color(0,0,0,0,v,col,1)
-d3d_vertex_texture_color(1024,0,0,2,v,col,1)
-d3d_vertex_texture_color(0,1024,0,0,v+2,col,1)
-d3d_vertex_texture_color(1024,1024,0,2,v+2,col,1)
+d3d_vertex_texture_color(1024,0,0,3,v,col,1)
+d3d_vertex_texture_color(0,1024,0,0,v+3,col,1)
+d3d_vertex_texture_color(1024,1024,0,3,v+3,col,1)
 
 d3d_primitive_end()
 

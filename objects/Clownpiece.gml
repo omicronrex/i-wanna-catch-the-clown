@@ -21,6 +21,8 @@ laserinst=0
 sprite_index=-1
 f=0
 
+lock_controls()
+
 sound_kind_stop(1)
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -29,8 +31,8 @@ action_id=603
 applies_to=self
 */
 timer+=1
-
 if (phase==0) {
+    if (timer=50) unlock_controls()
     if (timer=100) {
         sound_play("sndTouhouAppear")
         play_bg_music("musPiss",1)
@@ -55,6 +57,7 @@ if (phase==0) {
     if (timer=200) {
         sound_play("sndTouhouAppear")
         instance_create(x,y,ClownPopIn)
+        instance_create(x,y,Sigil)
     }
 
     if (timer>200 && timer<220) {
@@ -82,6 +85,7 @@ if (phase==0) {
         instance_create(x,y,ClownPopParticlesOut)
     }
 
+    //first attack
     if (timer>260) {
         //torch slash
         sprayangle+=spraygo
@@ -159,6 +163,7 @@ if (phase==1) {
             i.speed=20
             i.direction=j+angle
         }
+        if (timer mod 2)sound_play_single("se_kira00")
     }
 }
 

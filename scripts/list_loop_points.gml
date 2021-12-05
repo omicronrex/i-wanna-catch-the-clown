@@ -17,3 +17,8 @@ sound_volume("Level16",0.8)
 sound_volume("musPiss",0.6)
 
 sound_volume("laser5",0.7)
+
+sound_volume("se_etbreak",0.5)
+sound_volume("se_kira00",0.3)
+sound_volume("se_timeout",0.5)
+sound_volume("se_timeout2",0.5)

@@ -31,5 +31,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_circle_color(floor(x),floor(y),110*image_xscale+5,0,0,0)
+draw_set_circle_precision(64)
+draw_circle_color(floor(x),floor(y),110*image_xscale+5,$ff,$80,0)
+draw_set_circle_precision(16)
+texture_set_interpolation(1)
 draw_sprite_ext(sprite_index,image_index,floor(x)+lengthdir_x(0.5,image_angle)+lengthdir_x(0.5,image_angle-90),floor(y)+lengthdir_y(0.5,image_angle)+lengthdir_y(0.5,image_angle-90),image_xscale,image_yscale,image_angle,$ffffff,1)
+texture_set_interpolation(0)

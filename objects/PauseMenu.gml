@@ -16,6 +16,7 @@ memspd=room_speed
 room_speed=10
 
 sound_pause_all()
+effect_clear()
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

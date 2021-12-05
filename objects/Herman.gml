@@ -83,7 +83,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-Player.skin=skin_greenorange
+global.player_skin=skin_greenorange
 
 if (active && instance_exists(Player)) {
     timer+=1/room_speed
@@ -246,6 +246,9 @@ sound_delete(snd)
 sound_delete(snd2)
 sound_delete(snd3)
 font_delete(font)
+
+if (difficulty=2) global.player_skin=skin_hard
+else global.player_skin=skin_normal
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

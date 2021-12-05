@@ -288,9 +288,11 @@
 	|sprGlobalItemHouse
 	|sprGlobalItemClown
 	|sprGameClear
-+i wanna be vibing
++imported assets
 	|sprThrow
 	|sprBackgroundFit
+	|texRunes
+	|sprTourney
 +catch the clown
 	+Joker Ka Boom by Jimking on DeviantArt
 		|spr_joker_kaboom
@@ -332,8 +334,11 @@
 		|sprCone
 		|sprPlayerHead
 	|sprUnknown
-	|sprTourney
-	|sprTwister
+	|sprMusicNote
+	+intro
+		|sprTitle
+		|sprTwister
+		|sprCart
 	|sprRenBall
 	|sprRenClown
 	|sprClownBall
@@ -358,8 +363,6 @@
 	|sprPacman
 	|sprHeart
 	|sprDeer
-	|sprTitle
-	|sprMusicNote
 	|sprButterfly1
 	|sprButterfly2
 	|sprWasp
@@ -374,11 +377,8 @@
 	|sprGrave
 	|sprShovel
 	|sprPaintings
-	|sprCart
 	|sprCongrats
 	|sprRainbowPlatform
-+sonic boll
-	|texRunes
 +bosses
 	+gamemaker
 		|sprBossGM5

@@ -421,6 +421,39 @@
 		|GMBall
 		|GMRegdemo
 		|ShovelBoss
+	+car
+		+ending
+			|CarMountain
+			|RaceEndPost
+			|RaceEndPostBloom
+			|CarFade
+		|RaceControl
+		|CarStart
+		|CarEnd
+		|Racecar
+		|Gas
+		|Crate
+		|Deer
+		|TNT
+		|TireMark
+		|CarGoUp
+		|Police
+		|BigPolice
+		|CarGoDown
+		|CarDebris
+		|CarBlood
+		|RedLight
+		|CarSigns
+		|Semaphore
+		|CJ
+		|ManBullet
+		|StoppedPolice
+		|PoliceHeli
+		|PoliceBomb
+		|CarExplode
+		|Scorch
+		|Cone
+		|Roadblock
 	|AreaNamer
 	|FadeIn
 	|RenRegdemoText
@@ -478,38 +511,5 @@
 	|FunnyRenexPainting
 	|CreditsMountain
 	|CreditsTree
-+car
-	+ending
-		|CarMountain
-		|RaceEndPost
-		|RaceEndPostBloom
-		|CarFade
-	|RaceControl
-	|CarStart
-	|CarEnd
-	|Racecar
-	|Gas
-	|Crate
-	|Deer
-	|TNT
-	|TireMark
-	|CarGoUp
-	|Police
-	|BigPolice
-	|CarGoDown
-	|CarDebris
-	|CarBlood
-	|RedLight
-	|CarSigns
-	|Semaphore
-	|CJ
-	|ManBullet
-	|StoppedPolice
-	|PoliceHeli
-	|PoliceBomb
-	|CarExplode
-	|Scorch
-	|Cone
-	|Roadblock
 |PlayerStart
 |Block

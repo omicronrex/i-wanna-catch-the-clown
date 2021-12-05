@@ -7,4 +7,4 @@ applies_to=self
 col1=0
 col2=$ff8000
 
-draw_rectangle_color(-0.5,-0.5,room_width+0.5,room_height+0.5,col1,col1,col2,col2,0)
+draw_rectangle_color(-32.5,-0.5,room_width+32.5,room_height+0.5,col1,col1,col2,col2,0)

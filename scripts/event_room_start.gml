@@ -16,11 +16,6 @@ if (is_ingame()) {
     }
     view_angle=savedata("viewangle")
 
-    if (room!=rmIntro) {
-        if (difficulty==2) Player.skin=skin_hard
-        else Player.skin=skin_normal
-    }
-
     if (global.gameover_music_pause) sound_kind_resume(1)
     event_world_endstep()
 

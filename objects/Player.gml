@@ -549,7 +549,14 @@ if (!place_free(x+hspeed,y+vspeed)) {
                 y-=s
                 if (s==vflip) {
                     player_land()
-                } else if (bonk) sound_play("sndBonk")
+                } else if (bonk) {
+                    if (djump=1) sound_play("sndBonk")
+                    else {
+                        snd=sound_play_paused("sndBonk")
+                        sound_pitch(snd,twelfthroot*twelfthroot)
+                        sound_resume(snd)
+                    }
+                }
                 break
             }
         }

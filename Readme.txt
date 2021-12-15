@@ -13,14 +13,14 @@
 ||     =======================                                       | |
 ||     An adventure game by renex                                    | |
 ||                                                                   | |
-||     version 1.2 - dec 2, 2021                                     | | 
+||     version 1.2 - dec 2021                                        | | 
 ||                                                                   | |
 || The goal of this simple action game is to catch the moving clown  | |
 || by clicking with your mouse on him. Whenever you succeed your     | |
 || score it raised. But watch out, the clown will also move faster.  | |
 || How high a score can you get?                                     | |
 ||                                                                   | |
-|| Game tested by Natsu, Metis, Floogle, Draconical and Darius.      | |
+|| Game tested by Natsu, Metis, Floogle, Draconical, and Darius.     | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |
@@ -28,7 +28,7 @@
 || -------------------                                               | |
 || A modern PC (Pentium 3 or higher) running Windows XP,             | |
 || NT5 or 2000 is required. After installation the                   | |
-|| program uses about 68 MB disk space. The program                  | |
+|| program uses about 74 MB disk space. The program                  | |
 || prefers 4 million colors (true color, 32-bit).                    | |
 || It requires at least 800x608 screen resolution.                   | |
 || DirectX 8 or higher is required (not included).                   | |

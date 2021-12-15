@@ -389,6 +389,7 @@
 	|sprPaintings
 	|sprCongrats
 	|sprRainbowPlatform
+	|sprDeadCursor
 +bosses
 	+gamemaker
 		|sprBossGM5

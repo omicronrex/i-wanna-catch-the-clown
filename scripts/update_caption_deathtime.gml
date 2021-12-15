@@ -4,7 +4,6 @@ if (room=rmHub || room=rmHistory || room=rmClear || room=rmSecretEnd) {
     room_caption=global.game_title
 } else if (room=rAfterlife) {
     if (instance_exists(ClownPortal)) room_caption="Score: "+ClownPortal.points
-    else room_caption="Catch the Clown Score: "+string(RenClownHeart.clicks)
 } else if (global.show_deathtime) {
     itemstring=""
     if (settings("fullscreen")) {

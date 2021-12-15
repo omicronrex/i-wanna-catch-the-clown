@@ -49,11 +49,13 @@ action_id=603
 applies_to=self
 */
 if (speed<6) {
+    instance_destroy_id(DeadCursor)
     sound_play("sndRenClown3")
     if (speed=0) direction=choose(45,90,135)
     else direction=choose(45,135,225,315)
     speed+=1
     clicks+=1
+    room_caption="Catch the Clown Score: "+string(clicks)
     effect_create_above(ef_firework,x+16,y+16,1,$808080)
     effect_create_below(ef_smoke,x+16,y+16,1,$808080)
 } else {

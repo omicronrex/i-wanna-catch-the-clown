@@ -55,7 +55,7 @@ if (fading) {
     }
 }
 
-if (keyboard_check_pressed(vk_f1) && (room==rmTitle || room==rmMenu || room==rmOptions)) show_info()
+if (keyboard_check_pressed(vk_f1) && (room==rmTitle || room==rmMenu || room==rmOptions || room==rAfterlife)) show_info()
 
 if (is_ingame()) {
     //advance game time

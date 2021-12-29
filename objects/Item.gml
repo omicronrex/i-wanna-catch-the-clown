@@ -18,12 +18,12 @@ applies_to=self
 if (global.autosave_items) {
     savedata_write()
     savedata(itemid,1)
-    sound_play("sndItem")
+    sound_play("found_item")
     instance_destroy()
     instance_activate_object(ItemBlock)
     with (ItemBlock) event_user(0)
 } else if (!collected) {
-    sound_play("sndItem")
+    sound_play("found_item")
     image_blend=$404040
     image_alpha=0.5
     collected=1

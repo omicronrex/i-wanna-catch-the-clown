@@ -5,15 +5,15 @@ action_id=603
 applies_to=self
 */
 event_inherited()
-alarm[0]=4
+alarm[0]=1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-alarm[0]=4
-sound_play("sndPac")
+alarm[0]=20
+sound_play("Scorpion")
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

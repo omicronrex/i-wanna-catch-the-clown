@@ -390,6 +390,8 @@
 	|sprCongrats
 	|sprRainbowPlatform
 	|sprDeadCursor
+	|sprGMBlock
+	|sprGMBlockDark
 +bosses
 	+gamemaker
 		|sprBossGM5
@@ -397,7 +399,6 @@
 		|sprBossGM6
 		|sprBossGMGame
 		|sprGMHappy
-		|sprGMBlock
 		|sprBigExplode
 		|sprGMStar
 		|sprShipmake

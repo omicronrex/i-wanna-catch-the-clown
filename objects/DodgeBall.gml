@@ -23,11 +23,16 @@ image_blend=choose(
     $ff00ff,
     $8000ff
 )
+
+kek=!irandom(2048)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index,1,xd-0.5*dcos(rot)-0.5*dcos(rot-90),yd-0.5*dsin(rot)-0.5*dsin(rot-90),1,1,rot,image_blend,1)
-draw_sprite_ext(sprite_index,2,xd-0.5*dcos(rot)-0.5*dcos(rot-90),yd-0.5*dsin(rot)-0.5*dsin(rot-90),1,1,rot,$ffffff,1)
+if (kek) draw_sprite_ext(sprite_index,3,xd-0.5*dcos(rot)-0.5*dcos(rot-90),yd-0.5*dsin(rot)-0.5*dsin(rot-90),1,1,rot,$ffffff,1)
+else {
+    draw_sprite_ext(sprite_index,1,xd-0.5*dcos(rot)-0.5*dcos(rot-90),yd-0.5*dsin(rot)-0.5*dsin(rot-90),1,1,rot,image_blend,1)
+    draw_sprite_ext(sprite_index,2,xd-0.5*dcos(rot)-0.5*dcos(rot-90),yd-0.5*dsin(rot)-0.5*dsin(rot-90),1,1,rot,$ffffff,1)
+}

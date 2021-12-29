@@ -155,7 +155,7 @@ if (!win) {
         else vol=max(0,vol-0.1)
         sound_volume(snd,vol)
 
-        if (vol>0) {
+        if (vol>0 && y<608-64) {
             instance_create(x+lengthdir_x(12,angle+90),y+lengthdir_y(12,angle+90),TireMark)
             instance_create(x+lengthdir_x(12,angle-90),y+lengthdir_y(12,angle-90),TireMark)
         }

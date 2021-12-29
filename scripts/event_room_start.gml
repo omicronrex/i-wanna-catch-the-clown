@@ -8,9 +8,6 @@ vsync_a_bit()
 if (is_ingame()) {
     update_caption_deathtime()
 
-    if (!instance_exists(Player)) with (PlayerStart) {
-        instance_create(x+17,y+23,savedata("obj"))
-    }
     if (!savedata("saved") && room!=rmIntro) {
         savedata_save(true,"new file@"+room_get_name(room))
     }

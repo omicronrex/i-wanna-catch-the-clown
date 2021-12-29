@@ -311,6 +311,7 @@
 	|Rervnberb
 	|TextDraw
 	|Profiler
+	|SecretArea
 +catch the clown
 	+title
 		|TitleClown
@@ -346,7 +347,6 @@
 		|Painting
 	+trap room
 		|Dog
-		|DodgeBall
 		|Tree
 		|Bug
 		|CherryTrap
@@ -465,6 +465,7 @@
 	|RenSpikeUp
 	|RenSpikeRight
 	|RenSpikeLeft
+	|DodgeBall
 	|RenHitBall
 	|RenHitBallH
 	|RenHitBallV

@@ -9,7 +9,7 @@ sel=0
 xdraw=124
 ydraw=132
 xsep=550
-ysep=40
+ysep=32
 
 option[0]="Music Volume"
 option[1]="Sound Volume"

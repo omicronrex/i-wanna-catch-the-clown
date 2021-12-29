@@ -1,6 +1,4 @@
 switch (argument0) {
-    case "egyptian_skeletons":return "Egyptian Skeletons // Jacob Habgood#The Game Maker's Apprentice"
-
     case "Dreamscape":        return "Dreamscape // 009 Sound System"
     case "musCorrugation":    return "Corrugation Rise // Kevin Riepl#Unreal Tournament 2004"
     case "musGENERIC":        return "Generic // Johann Langlie#Atomic Bomberman"

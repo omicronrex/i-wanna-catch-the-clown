@@ -1,1 +1,1 @@
-input_update()
+if (room!=rmCapcom) input_update()

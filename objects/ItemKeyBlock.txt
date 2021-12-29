@@ -2,6 +2,6 @@ sprite=sprEngineBlock
 visible=1
 solid=1
 persistent=0
-depth=1050
+depth=1001
 parent=Block
 mask=

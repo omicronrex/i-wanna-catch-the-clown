@@ -54,7 +54,7 @@ if (go2) {
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
-            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,k),1)
+            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,sqrt(k)),1)
             d3d_reset_projection()
             draw_enable_alphablend(1)
             with (Player) event_perform(ev_draw,0)
@@ -108,7 +108,7 @@ if (go && instance_exists(Player)) {
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
-            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,k),1)
+            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,sqrt(k)),1)
             d3d_reset_projection()
             draw_enable_alphablend(1)
 

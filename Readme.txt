@@ -52,8 +52,8 @@
 || ----------------                                                  | |
 || I would like to thank everybody who commented on                  | |
 || previous versions of Catch the Clown. In particular               | |
-|| the people who served as beta-testers and Metis                   | |
-|| who provided the Herman sprites.                                  | |
+|| Natsu, Metis, Floogle, Draconical and Darius who served as        | |
+|| beta-testers, and Metis who provided the Herman sprites.          | |
 ||                                                                   | |
 || Uses portions of the GAMECAVE Effects Engine X3 by Rhys Andrews.  | |
 ||                                                                   | |

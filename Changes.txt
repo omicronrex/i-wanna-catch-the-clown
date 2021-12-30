@@ -30,5 +30,5 @@ Corrected errors
 Small changes
 -------------
 - Removed a few objects to reduce clutter from Normal difficulty layouts.
-- Improved the game's overall presentation and added documentation.
+- Improved the game's overall presentation and added code documentation.
 - Added a multitude of secrets, jokes and easter eggs. Find all of them!

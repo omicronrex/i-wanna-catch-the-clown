@@ -9,7 +9,8 @@ go2=0
 roomTo=room_next(room)
 
 fademode=0
-if (room_names(roomTo)!="") fademode=1
+roomname=room_names(roomTo)
+if (roomname!="") fademode=!savedata("seen"+roomname)
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -45,17 +46,17 @@ if (go2) {
         f=k*k
 
         s=surface_engage(s,800,608)
+            draw_enable_alphablend(0)
             draw_surface_ext(application_surface,0,0,f,f,0,$ffffff,1)
-            draw_make_opaque()
         surface_reset_target()
 
         final=surface_engage(final,800,608)
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
-            draw_surface_ext(s,0,0,1/f,1/f,0,$ffffff,k)
+            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,k),1)
             d3d_reset_projection()
-
+            draw_enable_alphablend(1)
             with (Player) event_perform(ev_draw,0)
         surface_reset_target()
 
@@ -99,16 +100,17 @@ if (go && instance_exists(Player)) {
         f=k*k
 
         s=surface_engage(s,800,608)
+            draw_enable_alphablend(0)
             draw_surface_ext(application_surface,0,0,f,f,0,$ffffff,1)
-            draw_make_opaque()
         surface_reset_target()
 
         final=surface_engage(final,800,608)
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
-            draw_surface_ext(s,0,0,1/f,1/f,0,$ffffff,k)
+            draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,k),1)
             d3d_reset_projection()
+            draw_enable_alphablend(1)
 
             Player.drawx=(Player.drawx*19+x+1)/20
             Player.drawy=(Player.drawy*19+y+8)/20

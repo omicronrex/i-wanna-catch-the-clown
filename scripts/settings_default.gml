@@ -7,6 +7,6 @@ settings("l+r behavior",lr_last)
 
 settings("gore",1)
 settings("bonk",true)
-settings("filter",1)
+settings("filter",2)
 
 input_default()

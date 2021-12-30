@@ -4,6 +4,7 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
     draw_make_opaque()
     d3d_set_depth(0)
     application_surface=surface_engage(application_surface,global.width,global.height)
+    surface_reset_target()
 
     if ((global.rw!=global.width || global.rh!=global.height) && settings("filter")==2) {
         //area filter
@@ -24,6 +25,8 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
         this place is where you can add any post-processing effects using the application surface.
         remember to set the engine option to always use an application surface, when using this.
     */
+    with (Ripple) event_user(0)
+    with (Ripple2) event_user(0)
 
     texture_reset_interpolation()
 }

@@ -64,6 +64,7 @@ if (active) {
         if (difficulty==2) global.player_skin=skin_hard
         else global.player_skin=skin_normal
         global.player_weapon=weapon_default
+        instance_create(Player.x+8,Player.y-2,Ripple)
     }
     if (timer=700) {
         bg=background_create_from_surface(application_surface,0,0,800,608,0,0)

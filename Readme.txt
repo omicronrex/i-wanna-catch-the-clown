@@ -55,6 +55,8 @@
 || the people who served as beta-testers and Metis                   | |
 || who provided the Herman sprites.                                  | |
 ||                                                                   | |
+|| Uses portions of the GAMECAVE Effects Engine X3 by Rhys Andrews.  | |
+||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |
 || CONTACTING THE AUTHOR                                             | |

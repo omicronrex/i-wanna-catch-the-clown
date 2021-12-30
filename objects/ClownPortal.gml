@@ -15,6 +15,9 @@ length=0
 instance_create(x+16,y+16,PortalFader)
 
 ef=sound_kind_effect(1,se_gargle)
+
+ripple=instance_create(x+16,y+16,Ripple2)
+ripple.offset=0
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -23,6 +26,10 @@ applies_to=self
 */
 scale=(scale+0.01)*1.01
 angle+=1
+
+ripple.offset=-5-scale/3
+ripple.minradius=0
+ripple.maxradius=scale+100
 
 counter+=1
 if (counter=10) {counter=1 length+=1}

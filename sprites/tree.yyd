@@ -343,6 +343,7 @@
 	|sprUnknown
 	|sprMusicNote
 	+intro
+		|sprLogos
 		|sprTitle
 		|sprEater
 		|sprGreenGlow

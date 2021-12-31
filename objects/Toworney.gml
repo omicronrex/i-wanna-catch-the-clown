@@ -23,8 +23,8 @@ if (blade>1000) alpha=max(0,alpha-0.02)
 else alpha=min(1,alpha+0.01)
 
 if (blade>1700) {
-    instance_create(0,0,FadeIn)
-    room_goto(rmTitle)
+    instance_create(x,y,Powered)
+    instance_destroy()
 }
 
 s=surface_engage(s,300,150)

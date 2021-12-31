@@ -28,7 +28,6 @@ if (!global.pause) {
 d3d_set_projection_ortho(0,0,global.width,global.height,0)
 
 with (SongNamer) event_user(1)
-with (FadeIn) event_user(0)
 
 //minimize button
 if (minalpha>0) {
@@ -80,6 +79,8 @@ if (message2) {
     draw_set_halign(0)
     draw_set_alpha(1)
 }
+
+with (FadeIn) event_user(0)
 
 if (is_ingame() && settings("fullscreen") && room!=rmIntro && room!=rmHub && room!=rmHistory && room!=rmClear && room!=rmSecretEnd) {
     draw_set_font(fntFileSmall)

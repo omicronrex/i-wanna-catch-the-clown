@@ -393,6 +393,7 @@
 	|sprDeadCursor
 	|sprGMBlock
 	|sprGMBlockDark
+	|sprMarkOvermars
 +bosses
 	+gamemaker
 		|sprBossGM5

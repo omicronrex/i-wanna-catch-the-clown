@@ -86,11 +86,6 @@ applies_to=self
 if (other.vspeed=0){
     sound_play("beep4")
     other.direction+=choose(135,-135)
-    if (!hurt) {
-        hurt=1
-        with (instance_nearest(x,y,TextDraw))
-            text="No don't do that.#Why would you do that."
-    }
 }
 #define Other_5
 /*"/*'/**//* YYD ACTION

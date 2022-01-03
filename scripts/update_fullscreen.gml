@@ -20,7 +20,7 @@ window_set_fullscreen(full)
 if (application_surface!=noone) surface_free(application_surface) application_surface=noone
 if (dequanto_surface!=noone) surface_free(dequanto_surface) dequanto_surface=noone
 
-window_resize_buffer(global.rw,global.rh)
+dx8_resize_buffer(global.rw,global.rh)
 
 if (is_ingame()) update_caption_deathtime()
 

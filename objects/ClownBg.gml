@@ -34,6 +34,6 @@ d3d_primitive_end()
 
 d3d_set_fog(0,0,0,0)
 texture_set_interpolation(0)
-d3d_reset_projection()
+dx8_reset_projection()
 
 with (Clownpiece) event_user(1)

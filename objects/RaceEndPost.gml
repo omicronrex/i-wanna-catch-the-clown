@@ -52,7 +52,7 @@ if (post) if (surface_exists(surf)) {
 draw_rectangle_color(0,0,800,bars,0,0,0,0,0)
 draw_rectangle_color(0,608-bars,800,608,0,0,0,0,0)
 
-d3d_reset_projection()
+dx8_reset_projection()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -72,8 +72,8 @@ x3=(x3+1) mod 256
 k=(700-view_xview)/40
 
 if (post) {
-    surf=surface_engage(surf,800,604)
-        d3d_reset_projection()
+    surf=dx8_surface_engage(surf,800,604)
+        dx8_reset_projection()
         draw_clear(0)
 
         draw_set_circle_precision(64)
@@ -110,6 +110,6 @@ if (second) {
     texture_set_interpolation(0)
 }
 
-d3d_reset_projection()
+dx8_reset_projection()
 
 if (second) draw_sprite_ext(sprNiceCar,0,Racecar.x-430+840+300*k/10,Racecar.y,-1,1,270,$c0c0c0,1)

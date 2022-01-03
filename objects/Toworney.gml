@@ -27,7 +27,7 @@ if (blade>1700) {
     instance_destroy()
 }
 
-s=surface_engage(s,300,150)
+s=dx8_surface_engage(s,300,150)
 draw_clear_alpha(0,0)
 
 draw_set_blend_mode(bm_add)
@@ -40,7 +40,7 @@ draw_set_blend_mode_ext(10,1)
     rect(0,0,300,150,$ffffff,1)
 draw_set_blend_mode(0)
 
-surface_disengage()
+dx8_surface_disengage()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

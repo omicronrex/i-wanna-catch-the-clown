@@ -45,24 +45,24 @@ if (go2) {
         k+=0.01
         f=k*k
 
-        s=surface_engage(s,800,608)
-            draw_enable_alphablend(0)
+        s=dx8_surface_engage(s,800,608)
+            dx8_set_alphablend(0)
             draw_surface_ext(application_surface,0,0,f,f,0,$ffffff,1)
         surface_reset_target()
 
-        final=surface_engage(final,800,608)
+        final=dx8_surface_engage(final,800,608)
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
             draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,sqrt(k)),1)
-            d3d_reset_projection()
-            draw_enable_alphablend(1)
+            dx8_reset_projection()
+            dx8_set_alphablend(1)
             with (Player) event_perform(ev_draw,0)
         surface_reset_target()
 
         if ((global.rw!=global.width || global.rh!=global.height) && settings("filter")==2) {
             //area filter
-            dequanto_surface=surface_engage(dequanto_surface,global.width*2,global.width*2)
+            dequanto_surface=dx8_surface_engage(dequanto_surface,global.width*2,global.width*2)
             texture_set_interpolation(1)
             draw_surface_stretched(final,0,0,global.width*2,global.width*2)
             surface_reset_target()
@@ -99,18 +99,18 @@ if (go && instance_exists(Player)) {
         k-=0.01
         f=k*k
 
-        s=surface_engage(s,800,608)
-            draw_enable_alphablend(0)
+        s=dx8_surface_engage(s,800,608)
+            dx8_set_alphablend(0)
             draw_surface_ext(application_surface,0,0,f,f,0,$ffffff,1)
         surface_reset_target()
 
-        final=surface_engage(final,800,608)
+        final=dx8_surface_engage(final,800,608)
             draw_clear(0)
             d3d_set_projection_ortho(0,0,800,608,0)
             texture_set_interpolation(0)
             draw_surface_ext(s,0,0,1/f,1/f,0,merge_color(0,$ffffff,sqrt(k)),1)
-            d3d_reset_projection()
-            draw_enable_alphablend(1)
+            dx8_reset_projection()
+            dx8_set_alphablend(1)
 
             Player.drawx=(Player.drawx*19+x+1)/20
             Player.drawy=(Player.drawy*19+y+8)/20
@@ -120,7 +120,7 @@ if (go && instance_exists(Player)) {
 
         if ((global.rw!=global.width || global.rh!=global.height) && settings("filter")==2) {
             //area filter
-            dequanto_surface=surface_engage(dequanto_surface,global.width*2,global.width*2)
+            dequanto_surface=dx8_surface_engage(dequanto_surface,global.width*2,global.width*2)
             texture_set_interpolation(1)
             draw_surface_stretched(final,0,0,global.width*2,global.width*2)
             surface_reset_target()

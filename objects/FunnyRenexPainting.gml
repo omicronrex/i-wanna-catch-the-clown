@@ -43,7 +43,7 @@ applies_to=self
 d=90-point_direction(0,0,point_distance(x,y,Player.x,Player.y),400)
 a=direction_to_object(Player)
 
-surf=surface_engage(surf,300,300)
+surf=dx8_surface_engage(surf,300,300)
 d3d_set_projection_ortho(0,0,150,150,0)
 draw_clear_alpha(0,0)
 
@@ -72,7 +72,7 @@ d3d_transform_add_translation(75,75,0)
 draw_background(bg,-hw,-hw)
 draw_set_blend_mode(0)
 d3d_transform_set_identity()
-surface_disengage()
+dx8_surface_disengage()
 texture_reset_interpolation()
 
 if (view_xview>=floor(x/800)) with (instance_place(400,192,TextDraw))

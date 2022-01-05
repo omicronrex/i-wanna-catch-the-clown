@@ -69,7 +69,7 @@ if (global.key_pressed[key_shoot]) {
         } else {
             input_clear()
             i=instance_create(x,y,OptionsMenu)
-            i.sel=9
+            i.sel=8
             i.ycursor=i.ydraw+(i.ysep*i.sel)+18
             instance_destroy()
         }

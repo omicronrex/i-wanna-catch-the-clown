@@ -14,14 +14,13 @@ ysep=32
 option[0]="Music Volume"
 option[1]="Sound Volume"
 option[2]="Screen Mode"
-option[3]="VSync"
-option[4]="Fullscreen Filter"
-option[5]="Bonk sound"
-option[6]="Gravestone"
-option[7]="Left+Right Mode"
-option[8]="Keyboard Setup"
-option[9]="Joystick Setup"
-option_max=10
+option[3]="Fullscreen Filter"
+option[4]="Bonk sound"
+option[5]="Gravestone"
+option[6]="Left+Right Mode"
+option[7]="Keyboard Setup"
+option[8]="Joystick Setup"
+option_max=9
 
 image_speed=0.2*dt
 ycursor=ydraw+(ysep*sel)+18
@@ -84,30 +83,15 @@ if (global.key_pressed[key_shoot]) {
     }
     if (sel==3) {
         sound_play("sndDJump")
-        if (settings("vsync")==-1) {
-            if (show_question("Are you sure you want to turn vSync on?##An automated test detected slowdowns."))
-                settings("vsync",1)
-        } else {
-            if (settings("vsync",!settings("vsync"))) {
-                World.monitorspeed=300
-                World.fpssum=0
-            } else {
-                World.monitorspeed=0
-            }
-        }
-        set_synchronization(settings("vsync"))
-    }
-    if (sel==4) {
-        sound_play("sndDJump")
         settings("filter",(settings("filter")+1) mod 3)
         vsync_a_bit()
         update_fullscreen()
     }
-    if (sel==5) {
+    if (sel==4) {
         sound_play("sndDJump")
         settings("bonk",!settings("bonk"))
     }
-    if (sel==6) {
+    if (sel==5) {
         settings("gore",(settings("gore")+1) mod 2)
         dead=1
         instance_destroy_id(Grave)
@@ -117,17 +101,17 @@ if (global.key_pressed[key_shoot]) {
         i.depth=-11
         if (settings("gore")) instance_create(xdraw-18,ycursor,Grave)
     }
-    if (sel==7) {
+    if (sel==6) {
         sound_play("sndDJump")
         settings("l+r behavior",modwrap(settings("l+r behavior")+1,0,5))
     }
-    if (sel==8) {
+    if (sel==7) {
         sound_play("sndDJump")
         input_clear()
         instance_create(x,y,KeyboardMenu)
         instance_destroy()
     }
-    if (sel==9 && joystick_count()) {
+    if (sel==8 && joystick_count()) {
         sound_play("sndDJump")
         input_clear()
         instance_create(x,y,JoystickMenu)
@@ -156,15 +140,14 @@ if (global.key_pressed[key_shoot]) {
 optext[0]=string(round(settings("musvol")*100))+"%"
 optext[1]=string(round(settings("sfxvol")*100))+"%"
 optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
-optext[3]=pick(!!World.monitorspeed,pick(settings("vsync")+1,"Failed","Off","On"),"Testing...")
-optext[4]=pick(settings("filter"),"Off","Bilinear","Area x2")
-optext[5]=pick(settings("bonk"),"Off","On")
-optext[6]=pick(settings("gore"),"Off","On","","")
-optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
-optext[8]=""
-optext[9]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
+optext[3]=pick(settings("filter"),"Off","Bilinear","Area x2")
+optext[4]=pick(settings("bonk"),"Off","On")
+optext[5]=pick(settings("gore"),"Off","On","","")
+optext[6]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
+optext[7]=""
+optext[8]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
 
-if (sel=4 && settings("fullscreen")) background_visible[1]=1
+if (sel=3 && settings("fullscreen")) background_visible[1]=1
 else background_visible[1]=0
 
 ycursor=inch(ycursor,ydraw+(ysep*sel)+18,16*dt)

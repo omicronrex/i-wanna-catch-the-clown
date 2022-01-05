@@ -125,7 +125,7 @@ if (global.debug_param=="world draw") {
         str="X: "+string(drawX)+" (align "+string(drawAlign)+")#"
            +"Y: "+string(drawY)+"#"
            +"Room: "+room_get_name(room)+" ("+string(room)+")#"
-           +"FPS: "+string(fps)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
+           +"FPS: "+string(fps_fast)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
            +string_repeat("God mode",global.debug_god)+"#"
            +string_repeat("Infinite jump",global.debug_jump)
         draw_text_outline(40,40,str,$ffff)

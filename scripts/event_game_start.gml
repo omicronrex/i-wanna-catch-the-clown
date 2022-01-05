@@ -82,7 +82,7 @@ debug_code("game start")
 //graphics setup
 envelope_init()
 doVsync=!(global.dz mod 60 == 0)
-set_synchronization(settings("vsync"))
+//set_synchronization(settings("vsync"))
 update_fullscreen()
 instance_create(0,0,Ortho)
 for (i=room_first;i!=-1;i=room_next(i)) {

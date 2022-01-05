@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-set_synchronization(0)
+//set_synchronization(0)
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

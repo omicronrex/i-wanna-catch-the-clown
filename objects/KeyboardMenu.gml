@@ -52,7 +52,7 @@ if (!setting) {
     } else if (global.key_pressed[key_shoot]) {
         input_clear()
         i=instance_create(x,y,OptionsMenu)
-        i.sel=8
+        i.sel=7
         i.ycursor=i.ydraw+(i.ysep*i.sel)+18
         instance_destroy()
     } else if (global.key_pressed[key_jump]) {

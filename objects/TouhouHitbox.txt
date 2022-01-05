@@ -1,7 +1,7 @@
-sprite=sprClownLaser
+sprite=sprSlowMode
 visible=1
 solid=0
 persistent=0
-depth=-100
+depth=-11
 parent=
 mask=

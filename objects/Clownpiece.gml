@@ -49,7 +49,7 @@ applies_to=self
 if (hp>10) play_sound("sndTouhouSlap")
 else play_sound("sndTouhouSlap2")
 
-hp=max(0,hp-0.5)
+hp=max(0,hp-0.75)
 
 if (hp=0) {
     phase+=1
@@ -64,11 +64,11 @@ applies_to=self
 */
 ///draw background
 
-if (spellcardbg=1) {
+if (spellcardbg) {
     texture_set_interpolation(1)
     draw_background_stretched_ext(bgClownSpellcard,32,32,800-32,608-32,$ffffff,spellcardbga)
     draw_set_blend_mode(bm_subtract)
-    draw_sprite_ext(sprClownVortex,0,x,y,4,4,-timer/5,merge_color(0,$ffffff,spellcardbga),0)
+    draw_sprite_ext(sprClownVortex,0,x,y,3.7,3.7,-timer/5,merge_color(0,$ffffff,spellcardbga),0)
     draw_set_blend_mode(0)
     texture_set_interpolation(0)
 }

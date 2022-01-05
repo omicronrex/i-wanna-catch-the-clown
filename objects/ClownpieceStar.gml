@@ -43,5 +43,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index,1,x,y,1.5,1.5,image_angle,$ffffff,image_alpha*0.5)
+draw_sprite_ext(sprite_index,1,x,y,1.5,1.5,image_angle,$ffffff,image_alpha*0.3)
 draw_self()

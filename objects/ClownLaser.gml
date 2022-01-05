@@ -5,8 +5,10 @@ action_id=603
 applies_to=self
 */
 w=4
+image_yscale=w/12
 h=0
 timer=0
+image_speed=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -25,9 +27,11 @@ if (timer>80) {
     if (w<0) instance_destroy()
 }
 
-x=xstart-w/2
-image_xscale=w
-if (timer>40) image_yscale=h
+if (w>4) if (place_meeting(x,y,TouhouHitbox)) kill_player()
+
+image_yscale=w/12
+image_xscale=h
+image_index=red
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -35,6 +39,7 @@ action_id=603
 applies_to=self
 */
 draw_set_blend_mode(bm_add)
-draw_rectangle_color(x,y,x+w/2,y+h,$ff0000,$ffffff,$ffffff,$ff0000,0)
-draw_rectangle_color(x+w/2,y,x+w,y+h,$ffffff,$ff0000,$ff0000,$ffffff,0)
+texture_set_interpolation(1)
+draw_self()
+texture_set_interpolation(0)
 draw_set_blend_mode(0)

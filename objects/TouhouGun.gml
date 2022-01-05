@@ -10,6 +10,10 @@ if (instance_exists(Player)) {
 
     Player.djump=1
 }
+if (instance_exists(Grave)) {
+    x=mean(x,Grave.x)
+    y=mean(y,Grave.y)
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

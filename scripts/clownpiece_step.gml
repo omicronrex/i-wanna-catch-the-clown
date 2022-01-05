@@ -1,3 +1,4 @@
+//if (keyboard_check(vk_space)) phase=4
 if (pop) {
     if (pop=1) {
         sound_play("sndTouhouAppear")
@@ -106,17 +107,17 @@ if (phase==1) {
     y=(y*19+260)/20
 
     if (timer=1) {
-        //activate spellcard
+        //erase old bullets
+        with (ClownpieceStar) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+        with (ClownLaserball) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+        with (ClownLaser) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) y+=8} instance_destroy()}
+
+        //activate spellcard 1: moon star
         sound_play("sndTouhouSpell")
         instance_create(x,y,ClownPopIn)
         instance_create(0,0,Clownspellcard)
         instance_create(0,0,ClownTimeout)
         spellcardbg=1
-
-        //erase bullets
-        with (ClownpieceStar) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
-        with (ClownLaserball) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
-        with (ClownLaser) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) y+=8} instance_destroy()}
     }
 
     if (timer<10) repeat (3) {
@@ -139,9 +140,9 @@ if (phase==1) {
         len=(len*19+120)/20
         sx=x+lengthdir_x(len,angle2)
         sy=y+lengthdir_y(len,angle2)
-        for (j=0;j<360;j+=360/8) {
+        for (j=0;j<360;j+=360/7) {
             i=instance_create(sx,sy,ClownpieceStar2)
-            i.speed=20
+            i.speed=16
             i.direction=j+angle
         }
         if (timer mod 2) sound_play_single("se_kira00")
@@ -155,6 +156,7 @@ if (phase==1) {
         }
     }
 }
+
 if (phase==2) {
     if (timer=1) {
         //deactivate spellcard
@@ -165,7 +167,7 @@ if (phase==2) {
         friction=0.075
 
         //erase bullets
-        with (ClownpieceStar) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+        with (ClownpieceStar2) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
         with (ClownpieceStar3) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
         with (ClownMoon) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) y+=8} instance_destroy()}
     }
@@ -174,14 +176,158 @@ if (phase==2) {
         pop=1
     }
 
-    if ((timer-260) mod 150==75) {
-        //dance
-        speed=4
+    //second attack
+    if (timer>260) {
+        //torch slash
+        if (timer mod 2) {
+            sprayangle+=spraygo
+            if (sprayangle>=360) {spraygo=-16 sprayangle=360-random(10)}
+            if (sprayangle<=180) {spraygo=16 sprayangle=180+random(10)}
+            i=instance_create(x,y,ClownpieceStar)
+            i.speed=6
+            i.direction=sprayangle
+        }
+        if (inst) sound_stop(inst)
+        inst=sound_play("sndTouhouSlash")
+        if ((timer-260) mod 150==75) {
+            //dance
+            speed=4
+            friction=0.075
+            direction=random(360)
+            if (abs(x-xstart)>200) hspeed=abs(hspeed)*sign(xstart-x)
+            if (abs(y-ystart)>20) vspeed=abs(vspeed)*sign(ystart-y)
+            vspeed/=2
+        }
+
+        if ((timer-260) mod 150<19 && !(timer mod 3)) {
+            //laser barrage 2
+            f=(40-(timer-260) mod 150)/40
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=-5*f*f*f
+            i.vspeed=-2*f
+            i.mode=-1
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=5*f*f*f
+            i.vspeed=-2*f
+            i.mode=1
+
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=-5*f*f
+            i.vspeed=-2+6*f*f*f
+            i.mode=-2
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=5*f*f
+            i.vspeed=-2+6*f*f*f
+            i.mode=2
+        }
+    }
+}
+
+if (phase==3) {
+    //move to center of screen
+    x=(x*19+400)/20
+    y=(y*19+260)/20
+
+    if (timer=1) {
+        //erase bullets
+        with (ClownpieceStar) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+        with (ClownLaserball) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+        with (ClownLaser) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) y+=8} instance_destroy()}
+
+        //activate spellcard 2: laser staircase
+        sound_play("sndTouhouSpell")
+        instance_create(x,y,ClownPopIn)
+        instance_create(0,0,Clownspellcard)
+        instance_create(0,0,ClownTimeout)
+        spellcardbg=1
+    }
+
+    if (timer<10) repeat (3) {
+        f=min(1,f+0.1)
+        l=random_range(300,500)
+        d=random(360)
+        instance_create(x+lengthdir_x(l,d),y+lengthdir_y(l,d),ClownPopParticlesIn)
+    }
+
+    if (timer>150 && !(timer mod 10)) {
+        //falling stars
+        i=sound_play_paused("se_tan00")
+        sound_volume(i,0.2)
+        sound_resume(i)
+        repeat (2) {
+            i=instance_create(random_range(30,800-32),random_range(32,128),ClownpieceStar3)
+            i.vspeed=2
+        }
+    }
+    //todo: laser ladder
+}
+
+if (phase==4) {
+    if (timer=1) {
+        //deactivate spellcard
+        spellcardbg=0
+
+        //move to start
+        vspeed=-4
         friction=0.075
-        direction=random(360)
-        if (abs(x-xstart)>200) hspeed=abs(hspeed)*sign(xstart-x)
-        if (abs(y-ystart)>20) vspeed=abs(vspeed)*sign(ystart-y)
-        vspeed/=2
+
+        //erase bullets
+        with (ClownpieceStar3) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
+    }
+
+    if (timer=100) {
+        pop=1
+    }
+
+    //third attack
+    if (timer>260) {
+        //small torch slash
+        if (timer mod 2) {
+            sprayangle+=spraygo
+            if (sprayangle>=360) {spraygo=-16 sprayangle=360-random(10)}
+            if (sprayangle<=180) {spraygo=16 sprayangle=180+random(10)}
+            i=instance_create(x,y,ClownpieceStar3)
+            i.speed=6
+            i.direction=sprayangle
+            i.scale=0.5
+        }
+        if (inst) sound_stop(inst)
+        inst=sound_play("sndTouhouSlash")
+        if ((timer-260) mod 150==75) {
+            //dance
+            speed=4
+            friction=0.075
+            direction=random(360)
+            if (abs(x-xstart)>200) hspeed=abs(hspeed)*sign(xstart-x)
+            if (abs(y-ystart)>20) vspeed=abs(vspeed)*sign(ystart-y)
+            vspeed/=2
+        }
+
+        if ((timer-260) mod 150<50 && !(timer mod 8)) {
+            //laser barrage 3!
+            f=(120-(timer-260) mod 150)/120
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=-5*f*f*f
+            i.vspeed=-2*f
+            i.mode=-1
+            i.red=1
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=5*f*f*f
+            i.vspeed=-2*f
+            i.mode=1
+            i.red=1
+
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=-5*f*f
+            i.vspeed=-2+6*f*f*f
+            i.mode=-2
+            i.red=1
+            i=instance_create(x,y,ClownLaserball)
+            i.hspeed=5*f*f
+            i.vspeed=-2+6*f*f*f
+            i.mode=2
+            i.red=1
+        }
     }
 }
 
@@ -194,5 +340,5 @@ if (phase==7) {
     }
 }
 
-if (spellcardbg) spellcardbga=min(1,spellcardbga+0.02)
-else spellcardbga=max(0,spellcardbga-0.02)
+if (spellcardbg) spellcardbga=min(1,spellcardbga+0.01)
+else spellcardbga=0

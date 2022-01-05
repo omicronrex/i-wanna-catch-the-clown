@@ -393,6 +393,8 @@
 		+clownpiece
 			|ClownBg
 			|TouhouGun
+			|TouhouHitbox
+			|TouhouKiller
 			|Clownpiece
 			|Sigil
 			|ClownpieceAppearTracer

@@ -37,7 +37,12 @@
 	+car
 		|bgCar
 		|bgCrossing
-	|bgOuroboros
+	+Clownpiece
+		|bgMoonSurface
+		|bgClownRoom
+		|bgClownSpellcard
+	+Herman
+		|bgOuroboros
 +history
 	|bgTexBallSpec
 	|bgHistory1
@@ -45,5 +50,3 @@
 	|bgHistory3
 	|bgHistory4
 |bgMist
-|bgMoonSurface
-|bgClownRoom

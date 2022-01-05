@@ -16,12 +16,15 @@ action_id=603
 applies_to=self
 */
 alarm[0]=room_speed
-time-=1
+time-=instance_exists(Player)
 
 if (time=0) {
     Clownpiece.phase+=1
     Clownpiece.timer=0
     instance_destroy()
+    i=sound_play_paused("se_tan00")
+    sound_volume(i,0.5)
+    sound_resume(i)
 } else if (time<5) sound_play("se_timeout2")
 else if (time<10) sound_play("se_timeout")
 #define Draw_0

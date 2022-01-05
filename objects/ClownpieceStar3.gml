@@ -4,31 +4,34 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-vspeed=-20
-image_alpha=0.5
+image_speed=0
+image_index=1
 image_xscale=3
 image_yscale=3
-#define Destroy_0
+image_alpha=0
+#define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-effect_create_below(ef_flare,x,y,1,$8080)
-#define Collision_Block
+image_xscale=max(1,image_xscale-0.25)
+image_yscale=image_xscale
+image_alpha=1-(image_xscale-1)/2
+
+image_angle-=5
+#define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
 instance_destroy()
-#define Collision_Clownpiece
+#define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (other.vulnerable) {
-    with (other) event_user(0)
-    instance_destroy()
-}
+draw_sprite_ext(sprite_index,1,x,y,1.5,1.5,image_angle,$ffffff,image_alpha*0.5)
+draw_self()

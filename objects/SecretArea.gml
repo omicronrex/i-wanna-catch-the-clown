@@ -9,6 +9,6 @@ area="secretarea_"+string(x)+"_"+string(y)
 if (!savedata(area)) {
     savedata(area,1)
     sound_play("Bonus")
-    World.message=100
-    World.messagetext="You found a secret area"
+    World.message=200
+    World.messagetext="You found a secret area!#(Secret areas are not required)"
 }

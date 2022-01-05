@@ -22,9 +22,6 @@ depth=-1
 if (!room_exists(global.hub_room)) instance_destroy()
 
 instance_create(x,y,WarpToHubPoint)
-current=instance_nearest(x,y,WarpToHubPoint)
-
-event_step()
 
 repeat (10) {
     i=instance_create(random_range(8,24),random_range(8,24),WarpPart1)
@@ -103,6 +100,21 @@ if (!going) {
     if (global.key_pressed[key_up]) {
         instance_destroy_id(Player)
         room_goto(global.hub_room)
+    }
+}
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+with (Player) {
+    with (instance_nearest(x,y,WarpToHubPoint)) {
+        with (WarpToHub) {
+            current=other.id
+            x=current.x
+            y=current.y
+        }
     }
 }
 #define Draw_0

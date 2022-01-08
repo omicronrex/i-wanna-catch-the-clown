@@ -6,6 +6,7 @@ settings("sfxvol",0.7)
 settings("l+r behavior",lr_last)
 
 settings("gore",1)
+settings("fullscreen",1)
 settings("bonk",true)
 settings("filter",2)
 

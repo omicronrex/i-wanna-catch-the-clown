@@ -13,14 +13,15 @@
 ||     =======================                                       | |
 ||     An adventure game by renex                                    | |
 ||                                                                   | |
-||     version 1.2 - dec 2021                                        | | 
+||     version 1.3 - jan 2002                                        | | 
 ||                                                                   | |
 || The goal of this simple action game is to catch the moving clown  | |
 || by clicking with your mouse on him. Whenever you succeed your     | |
 || score it raised. But watch out, the clown will also move faster.  | |
 || How high a score can you get?                                     | |
 ||                                                                   | |
-|| Game tested by Natsu, Metis, Floogle, Draconical, and Darius.     | |
+|| Tested by Natsu, Metis, Floogle,                                  | |
+|| Draconical, Darius and Roaming97.                                 | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |
@@ -30,7 +31,7 @@
 || NT5 or 2000 is required. After installation the                   | |
 || program uses about 74 MB disk space. The program                  | |
 || prefers 4 million colors (true color, 32-bit).                    | |
-|| It requires at least 800x608 screen resolution.                   | |
+|| It requires at least 1024x768 screen resolution.                  | |
 || DirectX 8 or higher is required (not included).                   | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
@@ -43,7 +44,6 @@
 || Catch the Clown.exe    the Game                                   | |
 || Readme.txt             this file                                  | |
 || Changes.txt            changes with the previous versions         | |
-|| Data                   folder containing freeware assets          | |
 || Save                   folder containing your saved games         | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
@@ -52,8 +52,9 @@
 || ----------------                                                  | |
 || I would like to thank everybody who commented on                  | |
 || previous versions of Catch the Clown. In particular               | |
-|| Natsu, Metis, Floogle, Draconical and Darius who served as        | |
-|| beta-testers, and Metis who provided the Herman sprites.          | |
+|| Natsu, Metis, Floogle, Draconical, Darius and Roaming97           | |
+|| who served as beta-testers, and Metis who provided the            | |
+|| Herman sprites.                                                   | |
 ||                                                                   | |
 || Uses portions of the GAMECAVE Effects Engine X3 by Rhys Andrews.  | |
 ||                                                                   | |

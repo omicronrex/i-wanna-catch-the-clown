@@ -278,7 +278,7 @@ if (!win) {
             instance_create(250,-50,Roadblock)
         }
 
-        if (timer=7600) {
+        if (timer=7600 || timer=7700) {
             instance_create(430,-50,Cone)
             instance_create(490,-50,Cone)
             instance_create(550,-50,Cone)

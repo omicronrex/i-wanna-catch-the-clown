@@ -37,17 +37,18 @@ surface_set_target(procsurf2)
 draw_clear_alpha(0,1)
 d3d_set_projection_ortho(0,0,resw,resh,0)
 d3d_set_fog(1,fogcol,0,0)
-with (Block) draw_sprite(sprEngineBlock,0,x,y)
+with (Block) if (object_index!=AppearBlock || visible) draw_sprite(sprEngineBlock,0,x,y)
 with (Player) event_perform(ev_draw,0)
 with (DodgeBall) event_perform(ev_draw,0)
 with (PlayerKiller) draw_self()
-with (Item) draw_self()
 with (Bullet) draw_self()
 with (RenWin) draw_self()
 with (AutoSign) draw_self()
 with (RenAtomBomb) draw_self()
 with (RenSave) draw_self()
 with (Grave) draw_self()
+with (Tree) draw_self()
+with (RenWallTransform) draw_self()
 d3d_set_fog(0,0,0,0)
 
 //supersample to 50%
@@ -75,6 +76,13 @@ repeat (blur_factor) {
     draw_surface_part_ext(blur_surface1,0,0,blur_width+10,blur_height+10,0,0,2,2,$ffffff,1)
 }
 texture_set_interpolation(0)
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_perform(ev_step,ev_step_end)
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1

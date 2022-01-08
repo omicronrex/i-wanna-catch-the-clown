@@ -18,6 +18,8 @@ dead=0
 snd=sound_loop_paused("sirens")
 sound_pitch(snd,0.7)
 sound_resume(snd)
+
+Racecar.shoot=1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

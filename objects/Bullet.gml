@@ -22,9 +22,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (ren && !silent) play_sound("sndRenBoink")
-
-if (room=rmCar) instance_create(x,y,GMBulletExplosion)
+if (ren && !silent) {
+    play_sound("sndRenBoink")
+    if (room=rmCar) instance_create(x,y,GMBulletExplosion)
+}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

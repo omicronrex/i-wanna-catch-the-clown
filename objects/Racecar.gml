@@ -9,6 +9,7 @@ vspeed=-4
 alarm[0]=40
 x=430
 y=650
+shoot=0
 
 image_speed=0
 
@@ -139,11 +140,19 @@ if (!win) {
         oa=angle
         ov=vspeed
 
-        if (!(vspeed==0 && mapspeed=0)) angle=median(50,inch(angle,90-(30+10*(Player.input_v>0))*Player.input_h*sign(mapspeed-vspeed),max(2,abs(mapspeed/2-vspeed/4))),130)
+        if (instance_exists(Player)) {
+            input_h=Player.input_h
+            input_v=Player.input_v
+        } else {
+            input_h=0
+            input_v=0
+        }
+
+        if (!(vspeed==0 && mapspeed=0)) angle=median(50,inch(angle,90-(30+10*(input_v>0))*input_h*sign(mapspeed-vspeed),max(2,abs(mapspeed/2-vspeed/4))),130)
 
         f=max(0,4-point_distance(0,0,hsp,vsp))/4
-        hspeed=(dcos(angle)*(mapspeed-Player.input_v*4))*f
-        if (gravity=0) vspeed=(inch(vspeed,dsin(angle)*(Player.input_v*4),0.5))*f
+        hspeed=(dcos(angle)*(mapspeed-input_v*4))*f
+        if (gravity=0) vspeed=(inch(vspeed,dsin(angle)*(input_v*4),0.5))*f
 
         x+=hsp
         y+=vsp
@@ -162,7 +171,7 @@ if (!win) {
 
         if (abs(400-x)>180) {x+=choose(-1,1)*mapspeed/6 y+=choose(-1,1)*mapspeed/6 if (mapspeed/6) vspeed=mapspeed/6}
 
-        if (Player.key_pressed[key_shoot] && instance_number(Bullet)<4) {
+        if (instance_exists(Player)) if (Player.key_pressed[key_shoot] && instance_number(Bullet)<4) {
             if (Player.key[key_jump]) {
                 if (tnt) {
                     tnt-=1
@@ -176,6 +185,7 @@ if (!win) {
                 i.speed=16
                 sound_play("sndRenShot")
                 if (instance_exists(BigPolice)) i.direction=angle+183
+                shoot=0
             }
         }
 
@@ -521,6 +531,7 @@ action_id=603
 applies_to=self
 */
 frozen=0
+instance_destroy_id(Player)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -588,6 +599,12 @@ image_angle=0
 
 dx=xstart
 dy=ystart
+
+if (shoot) {
+    draw_set_halign(1)
+    draw_text(x,y-48,"Shoot!")
+    draw_set_halign(0)
+}
 
 if (fadehud<1) {
     draw_set_font(fArial12)

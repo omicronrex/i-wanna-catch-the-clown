@@ -140,7 +140,7 @@ if (global.key_pressed[key_shoot]) {
 optext[0]=string(round(settings("musvol")*100))+"%"
 optext[1]=string(round(settings("sfxvol")*100))+"%"
 optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
-optext[3]=pick(settings("filter"),"Off","Bilinear","Area x2")
+optext[3]=pick(settings("filter"),"Off","Bilinear","Trilinear")
 optext[4]=pick(settings("bonk"),"Off","On")
 optext[5]=pick(settings("gore"),"Off","On","","")
 optext[6]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")

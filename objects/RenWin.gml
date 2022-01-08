@@ -33,6 +33,7 @@ if (go2) {
 
     envelope_prepare()
     screen_redraw()
+    dx8_make_opaque()
 
     with (Player) {
         visible=1

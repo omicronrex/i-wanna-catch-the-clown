@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_speed=0
+image_speed=0.1
 go=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -13,12 +13,12 @@ action_id=603
 applies_to=self
 */
 if (!go && instance_exists(Player)) {
-    if (Player.x>96 && Player.y<320) instance_change(RenClown,1)
-    if (Player.y<104 && Player.y>0 && Player.x<96) {
+    if (Player.bbox_top<96 && Player.bbox_left<96) {
         go=1
-        play_sound("sndRenClown")
+        image_speed=0.5
+        with (PacDot) visible=1
         path_start(pRen1,4,0,1)
-        image_index=1
+        sprite_index=sprPacman
     }
 }
 #define Step_2
@@ -30,24 +30,30 @@ applies_to=self
 if (go && !instance_exists(Player)) {
     path_end() hspeed=x-xprevious vspeed=y-yprevious
 }
+if (go) {
+    image_angle=direction
+    if (image_angle>90 && image_angle<270) image_yscale=-1
+    else image_yscale=1
+}
 #define Collision_RenApple
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-i=instance_create(x+16,y+16,RenGMExplosion)
-i.image_xscale=20
-i.image_yscale=20
+i=instance_create(x+16,y-32,RenGMExplosion)
+i.image_xscale=22
+i.image_yscale=22
 i.image_speed=0.2
 i.depth=-1
 i.hurt=1
 play_sound("sndRenExplode")
 instance_destroy()
-#define Other_8
+#define Collision_PacDot
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-image_index=0
+play_sound("sndPac")
+instance_destroy_id(other)

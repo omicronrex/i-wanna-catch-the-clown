@@ -371,6 +371,7 @@
 	|sprRenSave
 	|sprRenBullet
 	|sprBonus
+	|sprPacmanStand
 	|sprPacman
 	|sprHeart
 	|sprDeer
@@ -394,6 +395,7 @@
 	|sprGMBlock
 	|sprGMBlockDark
 	|sprMarkOvermars
+	|sprPacDot
 +bosses
 	+gamemaker
 		|sprBossGM5

@@ -137,7 +137,7 @@ if (surface_exists(application_surface)) {
 
     texture_set_interpolation(1)
     draw_set_blend_mode(bm_add)
-    d3d_model_draw(model2,0,0,0,surface_get_texture(s))
+    d3d_model_draw(model2,-0.5,-0.5,0,surface_get_texture(s))
     draw_set_blend_mode(0)
     texture_set_interpolation(0)
 }

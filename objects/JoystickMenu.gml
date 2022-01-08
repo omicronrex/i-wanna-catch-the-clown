@@ -152,7 +152,7 @@ if (!setting) {
     }
 }
 
-ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
+ycursor=inch(ycursor,ydraw+sel*ysep+52+6,16*dt)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -193,8 +193,8 @@ draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back")
+draw_text(34,553,"["+key_get_name(global.keycode[key_shoot])+"] Back")
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] Accept")
+draw_text(766,553,"["+key_get_name(global.keycode[key_jump])+"] Accept")
 draw_set_halign(0)
 draw_set_color($ffffff)

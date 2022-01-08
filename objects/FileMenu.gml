@@ -188,8 +188,8 @@ if (settings("clown")) draw_sprite(sprGlobalItemClown,0,400+32,608-80) else draw
 
 //option info
 draw_set_font(fntFileSmall)
-draw_set_halign(0) draw_text( 34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back"   )
-draw_set_halign(1) draw_text(400,556,"["+key_get_name(global.keycode[key_menu ])+"] Options")
-draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] Accept" )
+draw_set_halign(0) draw_text( 34,553,"["+key_get_name(global.keycode[key_shoot])+"] Back"   )
+draw_set_halign(1) draw_text(400,553,"["+key_get_name(global.keycode[key_menu ])+"] Options")
+draw_set_halign(2) draw_text(766,553,"["+key_get_name(global.keycode[key_jump ])+"] Accept" )
 draw_set_halign(0)
 draw_set_color($ffffff)

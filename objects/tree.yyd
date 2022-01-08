@@ -509,6 +509,7 @@
 	|GlassTilerSpawner
 	|GlassTiler
 	|MirrorBlocks
+	|WhiteRoomShadow
 	|backgroundFit
 	|SongNamer
 	|HubWarp

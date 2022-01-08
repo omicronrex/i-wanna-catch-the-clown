@@ -27,6 +27,8 @@ memvy=0
 getshot=0
 perch=0
 canhit=0
+
+bag=ds_list_create()
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -114,8 +116,20 @@ if (state="begin") {
 if (state="phase1") {
     path_speed=4+(8+4*(difficulty==2))*(100-hp)/100
     if (!(timer mod 50)) {
-        item=choose(GMSkull1,GMSkull1,GMSkull2,GMBall,GMBall,GMClown,GMClown,GMClown,GMBonus)
-        instance_create(x,y,item)
+        if (ds_list_empty(bag)) {
+            ds_list_add(bag,GMSkull1)
+            ds_list_add(bag,GMSkull1)
+            ds_list_add(bag,GMSkull2)
+            ds_list_add(bag,GMBall)
+            ds_list_add(bag,GMBall)
+            ds_list_add(bag,GMClown)
+            ds_list_add(bag,GMClown)
+            ds_list_add(bag,GMClown)
+            ds_list_add(bag,GMBonus)
+            ds_list_shuffle(bag)
+        }
+        instance_create(x,y,ds_list_find_value(bag,0))
+        ds_list_delete(bag,0)
     }
     if (hp<=75 && !perch) {
         perch=1
@@ -337,6 +351,13 @@ if (!other.nond) {
 
     with (other) event_user(0)
 }
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+ds_list_destroy(bag)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

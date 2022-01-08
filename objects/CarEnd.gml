@@ -11,6 +11,9 @@ snd=-1
 open=0
 
 if (instance_exists(Player)) if (!Player.visible) {
+    Player.x=PlayerStart.x
+    Player.y=PlayerStart.y
+    lock_controls()
     alarm[5]=100
     alarm[0]=180
     alarm[1]=250

@@ -531,7 +531,6 @@ action_id=603
 applies_to=self
 */
 frozen=0
-instance_destroy_id(Player)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

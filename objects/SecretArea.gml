@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-area="secretarea_"+string(x)+"_"+string(y)
+area="secretarea_"+string(x)+"_"+string(y)+"_"+string(room_get_name(room))
 
 if (!savedata(area)) {
     savedata(area,1)

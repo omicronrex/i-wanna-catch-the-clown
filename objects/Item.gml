@@ -9,6 +9,29 @@ itemid="item"+object_get_name(object_index)
 counter=0
 collected=0
 gottem=0
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (gottem) {
+    y=(y*9+ystart-24)/10
+    counter=min(0,counter-1)
+    if (counter<-50) instance_destroy()
+    exit
+}
+
+switch (counter mod 60) {
+    case  0: {y-=1}break
+    case 10: {y-=2}break
+    case 20: {y-=1}break
+    case 30: {y+=1}break
+    case 40: {y+=2}break
+    case 50: {y+=1}break
+}
+
+counter=(counter+1) mod 600
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -42,26 +65,12 @@ action_id=603
 applies_to=self
 */
 if (gottem) {
-    y=(y*9+ystart-24)/10
     draw_set_halign(1)
     draw_set_font(fntFileBig)
-    draw_text(x+16,y,"Get!")
+    draw_text_outline(x+16,y,"Get!",$ffffff)
     draw_set_halign(0)
-    counter=min(0,counter-1)
-    if (counter<-50) instance_destroy()
     exit
 }
-
-switch (counter mod 60) {
-    case  0: {y-=1}break
-    case 10: {y-=2}break
-    case 20: {y-=1}break
-    case 30: {y+=1}break
-    case 40: {y+=2}break
-    case 50: {y+=1}break
-}
-
-counter=(counter+1) mod 600
 
 if (counter>300 && counter<350 && counter mod 4 <2 && !collected) {
     d3d_set_fog(1,$ffffff,0,0)

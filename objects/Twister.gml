@@ -83,7 +83,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-for (j=0;j<y+height;j+=1) {
+for (j=max(0,view_yview);j<y+height;j+=1) {
     i=j-y
     k=i mod 32
     img=0

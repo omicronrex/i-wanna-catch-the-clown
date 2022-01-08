@@ -18,5 +18,5 @@ if (image_yscale==2) {
     i=sound_play_paused(sound)
     sound_pitch(i,0.7)
     sound_resume(i)
-} else sound_play("dogbark")
+} else sound_play(sound)
 hspeed=8*sign(image_xscale)

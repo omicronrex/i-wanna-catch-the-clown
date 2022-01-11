@@ -12,6 +12,24 @@ if (!debug_code("godmode")) with (Player) {
 
     with (Herman) if (speak) exit
 
+    with (TouhouDead) exit
+    with (TouhouHitbox) if (visible) exit
+
+    with (Clownpiece) {
+        if (plrc) {
+            plrc-=1
+            instance_create(Player.x,Player.y,TouhouDead)
+            sound_play("se_pldead00")
+            TouhouGun.vspeed=-16
+            TouhouGun.gravity=0.3
+            lock_controls()
+            Player.visible=0
+            Player.x=Player.xstart
+            Player.y=Player.ystart
+            exit
+        }
+    }
+
     drop_items()
 
     if (global.gameover_music_play) {
@@ -27,10 +45,15 @@ if (!debug_code("godmode")) with (Player) {
     }
 
     instance_create(view_xcenter,view_ycenter,GameOver)
-    play_sound("sndRenBonk")
-    i=instance_create(x,y,RenGMExplosion)
-    i.image_xscale=2 i.image_yscale=2
-    i.depth=-11
+    if (room=rRenClown) {
+        instance_create(Player.x,Player.y,TouhouDead)
+        sound_play("se_pldead00")
+    } else {
+        play_sound("sndRenBonk")
+        i=instance_create(x,y,RenGMExplosion)
+        i.image_xscale=2 i.image_yscale=2
+        i.depth=-11
+    }
 
     if (settings("gore")) instance_create(Player.x,Player.y,Grave)
 

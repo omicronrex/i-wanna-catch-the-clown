@@ -4,9 +4,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (instance_exists(Player)) {
+if (instance_exists(Player)) if (!cutscene) {
     x=mean(x,Player.x)
     y=mean(y,Player.y)
+    gravity=0
+    speed=0
 
     Player.djump=1
 }

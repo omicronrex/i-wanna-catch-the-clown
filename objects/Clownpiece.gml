@@ -77,7 +77,7 @@ if (timer=1 && phase>0 && time) {
 if (instance_exists(Player) && sprite_index!=-1) {
     if (point_distance(0,608,Player.x,Player.y)<100) plra=max(0.2,plra-0.05)
     else plra=min(1,plra+0.05)
-}
+} else plra=max(0,plra-0.05)
 
 if (mode="rest" && timer>100) vulnerable=1
 if (mode="timeout") vulnerable=0

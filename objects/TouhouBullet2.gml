@@ -6,7 +6,7 @@ applies_to=self
 */
 vspeed=-10
 image_alpha=0.75
-alarm[0]=150
+alarm[0]=100
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

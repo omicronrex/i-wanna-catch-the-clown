@@ -19,7 +19,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-effect_create_above(ef_flare,x,y,1,$ff0000)
+effect_create_above(ef_flare,x,y,1,$ff)
 effect_create_above(ef_flare,x,y,0,$ffffff)
 
 instance_destroy()

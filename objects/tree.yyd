@@ -393,6 +393,8 @@
 		+clownpiece
 			|ClownBg
 			|TouhouGun
+			|TouhouBullet
+			|TouhouBullet2
 			|TouhouHitbox
 			|TouhouKiller
 			|Clownpiece
@@ -401,18 +403,24 @@
 			|ClownpieceAppearEffect
 			|ClownLaserball
 			|ClownLaser
+			|ClownLaserDown
+			|ClownLaserLeft
 			|ClownMoon
+			|ClownMoon2
 			|ClownPopIn
 			|ClownPopOut
 			|ClownPopParticlesIn
 			|ClownPopParticlesOut
 			|ClownpieceStar
+			|ClownpieceStarMarker
 			|ClownpieceStar2
 			|ClownpieceStar3
+			|ClownpieceStar4
+			|ClownpieceGrazeBullet
 			|Lolisplosion
-			|TouhouBullet
 			|Clownspellcard
 			|ClownTimeout
+			|ClownpieceHud
 		|GameMaker
 		|gm_leg
 		|gm_wheel

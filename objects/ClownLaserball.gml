@@ -17,14 +17,13 @@ applies_to=self
 timer+=1
 if (timer=40) {
     speed=0
-    if (mode=1) angle=point_direction(Clownpiece.x+80,Clownpiece.y-270,x,y)
-    if (mode=-1) angle=point_direction(Clownpiece.x-80,Clownpiece.y-270,x,y)
+    if (mode=1) angle=point_direction(Clownpiece.x+80,Clownpiece.y-170,x,y)
+    if (mode=-1) angle=point_direction(Clownpiece.x-80,Clownpiece.y-170,x,y)
     if (mode=2) angle=point_direction(Clownpiece.x+50,Clownpiece.y-600,x,y)
     if (mode=-2) angle=point_direction(Clownpiece.x-50,Clownpiece.y-600,x,y)
     if (red && instance_exists(Player)) angle=point_direction(x,y,Player.x,Player.y)
 
-    if (Clownpiece.laserinst) sound_stop(Clownpiece.laserinst)
-    Clownpiece.laserinst=play_sound("sndTouhouLazer")
+    sound_play_single("sndTouhouLazer")
     i=instance_create(x,y,ClownLaser)
     i.image_angle=angle
     i.red=red

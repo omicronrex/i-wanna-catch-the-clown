@@ -52,3 +52,4 @@ applies_to=self
 */
 sound_loop(snd)
 visible=1
+settings("joker",1)

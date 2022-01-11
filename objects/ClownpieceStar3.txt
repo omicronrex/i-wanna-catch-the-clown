@@ -2,6 +2,6 @@ sprite=sprCherryAzure
 visible=1
 solid=0
 persistent=0
-depth=-102
+depth=-104
 parent=TouhouKiller
 mask=

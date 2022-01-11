@@ -113,9 +113,12 @@ if (go && instance_exists(Player)) {
             dx8_reset_projection()
             dx8_set_alphablend(1)
 
+            Player.bowx=Player.drawx
+            Player.bowy=Player.drawy
             Player.drawx=(Player.drawx*19+x+1)/20
             Player.drawy=(Player.drawy*19+y+8)/20
-            if (fademode) Player.image_blend=merge_color($ffffff,0,1-k)
+
+            if (fademode) Player.image_blend=merge_color(0,$ffffff,sqrt(k))
             with (Player) event_perform(ev_draw,0)
         surface_reset_target()
 

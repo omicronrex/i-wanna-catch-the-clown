@@ -6,6 +6,7 @@ applies_to=self
 */
 f1=0
 f2=0
+f3=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -24,6 +25,7 @@ action_id=603
 applies_to=self
 */
 draw_set_blend_mode_ext(10,1)
+draw_set_circle_precision(64)
 draw_circle(x,y,f1,0)
 
 draw_circle(x+48,y,f2,0)
@@ -33,3 +35,4 @@ draw_circle(x,y-48,f2,0)
 
 draw_circle(x,y,f3,0)
 draw_set_blend_mode(0)
+draw_set_circle_precision(16)

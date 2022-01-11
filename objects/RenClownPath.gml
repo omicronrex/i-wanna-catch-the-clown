@@ -17,7 +17,7 @@ if (!go && instance_exists(Player)) {
         go=1
         image_speed=0.5
         with (PacDot) visible=1
-        path_start(pRen1,4,0,1)
+        path_start(pRen1,4-(difficulty==0),0,1)
         sprite_index=sprPacman
     }
 }
@@ -28,7 +28,11 @@ action_id=603
 applies_to=self
 */
 if (go && !instance_exists(Player)) {
-    path_end() hspeed=x-xprevious vspeed=y-yprevious
+    path_end()
+    speed=0
+    sprite_index=sprPacmanStand
+    image_speed=0.1
+    image_angle=0
 }
 if (go) {
     image_angle=direction
@@ -42,8 +46,8 @@ action_id=603
 applies_to=self
 */
 i=instance_create(x+16,y-32,RenGMExplosion)
-i.image_xscale=22
-i.image_yscale=22
+i.image_xscale=16+3*difficulty
+i.image_yscale=16+3*difficulty
 i.image_speed=0.2
 i.depth=-1
 i.hurt=1

@@ -1,1 +1,0 @@
-msg="Shoot#Save Point"

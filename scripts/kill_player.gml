@@ -37,5 +37,5 @@ if (!debug_code("godmode")) with (Player) {
     instance_destroy_id(Player)
     with (Trap) if (path_index!=-1) {path_end() hspeed=x-xprevious vspeed=y-yprevious}
 
-    with (JokerKaboom) if (visible) {settings("joker",1) event_game_end()}
+    with (JokerKaboom) if (visible) {event_game_end()}
 }

@@ -84,7 +84,9 @@ with (FadeIn) event_user(0)
 
 if (is_ingame() && settings("fullscreen") && room!=rmIntro && room!=rmHub && room!=rmHistory && room!=rmClear && room!=rmSecretEnd) {
     draw_set_font(fntFileSmall)
-    draw_text_outline(6,2,room_caption,$ffff)
+    if (room=rHerman) col=$80ff
+    else col=$ffff
+    draw_text_outline(6,2,room_caption,col)
 }
 
 if (room=rmTitle && settings("fullscreen") && score>0) {

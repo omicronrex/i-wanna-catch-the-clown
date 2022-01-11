@@ -474,3 +474,6 @@ sprClownLaser
 sprSlowMode
 sprPacmanStand
 sprPacDot
+sprMiniCentered
+sprHomingCard
+sprTouhouLives

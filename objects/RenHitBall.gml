@@ -32,7 +32,8 @@ applies_to=self
 image_xscale=1.5
 image_yscale=1.5
 if (place_meeting(x,y,Bullet)) {
-    play_sound("sndRenBall")
+    if (instance_number(RenHitBall)==1) play_sound("sndRenApplause")
+    else play_sound("sndRenBall")
     instance_destroy()
 }
 image_xscale=1

@@ -54,6 +54,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+settings("herman",1)
 speak=1
 timer=0
 ohmy=10
@@ -227,7 +228,6 @@ GOOD ONE."; break;
             cur=0
             if (line=24) {
                 sound_play(snd4)
-                settings("herman",1)
                 event_game_end()
             }
         }

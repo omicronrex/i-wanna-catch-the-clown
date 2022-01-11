@@ -28,5 +28,7 @@ action_id=603
 applies_to=self
 */
 texture_set_interpolation(1)
-draw_sprite_ext(sprMagicsquare,0,x,y,sqscale,sqscale2,sqrot,$ffffff,sqscale)
+draw_set_blend_mode(bm_add)
+draw_sprite_ext(sprMagicsquare,0,x,y,sqscale,sqscale2,sqrot,$ffffff,sqscale*0.8)
+draw_set_blend_mode(0)
 texture_set_interpolation(0)

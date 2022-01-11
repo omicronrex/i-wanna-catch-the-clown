@@ -15,18 +15,31 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+vspeed=-0.5
 alarm[0]=room_speed
-time-=instance_exists(Player)
+if (instance_exists(Player)) {
+    time-=1
 
-if (time=0) {
-    Clownpiece.phase+=1
-    Clownpiece.timer=0
-    instance_destroy()
-    i=sound_play_paused("se_tan00")
-    sound_volume(i,0.5)
-    sound_resume(i)
-} else if (time<5) sound_play("se_timeout2")
-else if (time<10) sound_play("se_timeout")
+    if (time=0) {
+        Clownpiece.phase+=1
+        Clownpiece.timer=0
+        Clownpiece.spellcardbg=0
+        Clownpiece.vulnerable=0
+        if (Clownpiece.mode="limited") Clownpiece.hp=25
+        instance_destroy()
+        i=sound_play_paused("se_tan00")
+        sound_volume(i,0.5)
+        sound_resume(i)
+    } else if (time<5) sound_play("se_timeout2")
+    else if (time<10) sound_play("se_timeout")
+}
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+y=max(48,y)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -51,3 +64,11 @@ draw_set_color($ffffff)
 draw_text(x,y,string(time))
 draw_set_halign(0)
 draw_set_valign(0)
+#define KeyPress_32
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+time=1
+alarm[0]=1

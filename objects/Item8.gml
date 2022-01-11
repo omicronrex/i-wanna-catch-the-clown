@@ -5,4 +5,7 @@ action_id=603
 applies_to=self
 */
 event_inherited()
-with (AutoSign) msg="Potassium"
+with (AutoSign) {
+    msg="Items Are Collected When#Saved Or Left Area."
+    active=0
+}

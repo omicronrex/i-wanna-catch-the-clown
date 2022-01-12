@@ -9,6 +9,7 @@ if (timer=1) {
     with (ClownLaser) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) x+=lengthdir_x(8,image_angle) y+=lengthdir_y(8,image_angle)} instance_destroy()}
 
     //activate spellcard 4: laser ladder 2
+    sprite_index=sprClownPieceCasting
     sound_play("sndTouhouSpell")
     instance_create(x,y,ClownPopIn)
     instance_create(0,0,Clownspellcard)
@@ -22,7 +23,9 @@ if (timer<10) repeat (3) {
     d=random(360)
     instance_create(x+lengthdir_x(l,d),y+lengthdir_y(l,d),ClownPopParticlesIn)
 }
-if (timer=100) vulnerable=1
+if (timer=100) {
+    vulnerable=1
+}
 
 k=(timer-200) mod 360
 

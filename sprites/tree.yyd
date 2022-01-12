@@ -437,6 +437,7 @@
 	+clownpiece
 		|sprClownPieceSpell
 		|sprClownPiece
+		|sprClownPieceCasting
 		|sprMoon
 		|sprGlowBall
 		|sprGuns

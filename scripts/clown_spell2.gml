@@ -9,6 +9,7 @@ if (timer=1) {
     with (ClownLaser) {repeat (75) {effect_create_above(ef_spark,x,y,0,$ff00ff) x+=lengthdir_x(8,image_angle) y+=lengthdir_y(8,image_angle)} instance_destroy()}
 
     //activate spellcard 2: laser staircase
+    sprite_index=sprClownPieceCasting
     sound_play("sndTouhouSpell")
     instance_create(x,y,ClownPopIn)
     instance_create(0,0,Clownspellcard)

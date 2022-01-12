@@ -3,6 +3,7 @@ x=(x*19+400)/20
 y=(y*19+304)/20
 
 if (timer=1) {
+    sprite_index=sprClownPieceCasting
     //activate spellcard 5: 3 moons
     sound_play("sndTouhouSpell")
     instance_create(x,y,ClownPopIn)

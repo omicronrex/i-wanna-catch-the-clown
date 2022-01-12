@@ -30,10 +30,15 @@ sprite_index=-1
 image_speed=0.25
 f=0
 
+spelltex1=background_get_texture(bgSpellCard1)
+spelltex2=background_get_texture(bgSpellCard2)
+
 lock_controls()
 
 sound_kind_stop(1)
 global.music=""
+
+global.se_etbreak=-1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -87,8 +92,21 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (spellcardbg) spellcardbga=min(1,spellcardbga+0.01)
-else spellcardbga=0
+if (spellcardbg) {
+    spellcardbga=min(1,spellcardbga+0.01)
+    spellrad=inch(spellrad,ClownTimeout.time*9+64,9/50)
+    spellspeed-=1.5
+    spellradius1+=spellspeed
+    if (spellspeed<0) spellradius1=max(spellrad,spellradius1)
+    spellradius2=min(spellrad,spellradius2+8)
+    spellrot+=3
+} else {
+    spellcardbga=0
+    spellradius1=0
+    spellradius2=0
+    spellspeed=40
+    spellrot=0
+}
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -123,29 +141,6 @@ if (hp==0 || (mode="limited" && hp<=25)) {
     }
     spellcardbg=0
 }
-#define Other_11
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///draw background
-
-if (spellcardbg) {
-    texture_set_interpolation(1)
-    draw_background_stretched_ext(bgClownSpellcard,32,32,800-32,608-32,$ffffff,spellcardbga)
-    draw_set_blend_mode(bm_subtract)
-    draw_sprite_ext(sprClownVortex,0,400,304,3.7,3.7,-timer/5,merge_color(0,$ffffff,spellcardbga),0)
-    draw_set_blend_mode(0)
-    texture_set_interpolation(0)
-}
-
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(x,y,rad*1.5,$ffffff,0,0)
-draw_circle_color(x,y,rad*1.5,$ffffff,0,0)
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,rad*1.2,$3000,0,0)
-draw_set_blend_mode(0)
 #define Other_12
 /*"/*'/**//* YYD ACTION
 lib_id=1

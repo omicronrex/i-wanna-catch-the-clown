@@ -22,7 +22,7 @@ applies_to=self
 */
 image_angle+=45
 
-if (instance_exists(Clownpiece)) motion_add(direction_to_object(Clownpiece),0.75)
+if (instance_exists(Clownpiece)) if (Clownpiece.vulnerable) motion_add(direction_to_object(Clownpiece),0.75)
 
 speed=min(13,speed)
 #define Collision_Clownpiece

@@ -6,6 +6,7 @@ applies_to=self
 */
 time=30
 alarm[0]=room_speed*2
+alarm[1]=1
 
 x=400
 y=64
@@ -20,7 +21,7 @@ alarm[0]=room_speed
 if (instance_exists(Player)) {
     time-=1
 
-    if (time=0) {
+    if (time=-1) {
         Clownpiece.phase+=1
         Clownpiece.timer=0
         Clownpiece.spellcardbg=0
@@ -33,6 +34,13 @@ if (instance_exists(Player)) {
     } else if (time<5) sound_play("se_timeout2")
     else if (time<10) sound_play("se_timeout")
 }
+#define Alarm_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+Clownpiece.spellrad=time*9+64
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -64,11 +72,3 @@ draw_set_color($ffffff)
 draw_text(x,y,string(time))
 draw_set_halign(0)
 draw_set_valign(0)
-#define KeyPress_32
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-time=1
-alarm[0]=1

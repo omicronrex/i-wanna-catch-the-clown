@@ -1,5 +1,6 @@
 time=0
 if (timer=1) {
+    sprite_index=sprClownPiece
     with (ClownpieceStar4) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
     instance_destroy_id(ClownMoon2)
     sound_play("sndBossDeath")

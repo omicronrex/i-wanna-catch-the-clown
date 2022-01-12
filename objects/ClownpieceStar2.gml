@@ -23,7 +23,8 @@ effect_create_above(ef_flare,x,y,1,$ff)
 effect_create_above(ef_flare,x,y,0,$ffffff)
 
 instance_destroy()
-sound_play_single("se_etbreak")
+if (global.se_etbreak) sound_stop(global.se_etbreak)
+global.se_etbreak=sound_play("se_etbreak")
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

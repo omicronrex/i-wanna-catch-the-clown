@@ -14,6 +14,7 @@
 |bgTestGrid
 |bgClear
 |bgRail
+|bgAlphaGradient
 +catch the clown
 	|tileRen
 	|tileRen2
@@ -41,6 +42,10 @@
 		|bgMoonSurface
 		|bgClownRoom
 		|bgClownSpellcard
+		|bgSpellCard1
+		|bgSpellCard2
+		|bgSpellCardAttack
+		|bgClownStars
 	+Herman
 		|bgOuroboros
 +history

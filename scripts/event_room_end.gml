@@ -19,3 +19,5 @@ memcaml=-1
 memcamt=-1
 
 global.room_started=false
+
+camera_shake(0)

@@ -65,3 +65,4 @@ applies_to=self
 draw_sprite(sprCongrats,0,400,ay)
 
 draw_self()
+if (!difficulty) draw_sprite_ext(sprBow,0,x,y,-1,1,0,$ffffff,1)

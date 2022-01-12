@@ -236,7 +236,7 @@ if (phase==10) {
         draw_set_alpha(plra)
         draw_text_outline(40,608-80,"Player",$ffff)
         draw_set_alpha(1)
-        for (i=0;i<plrc;i+=1) draw_sprite_ext(sprTouhouLives,difficulty==2,40+16*i,608-52,1,1,0,$ffffff,plra)
+        for (i=0;i<plrc;i+=1) draw_sprite_ext(sprTouhouLives,difficulty,40+16*i,608-52,1,1,0,$ffffff,plra)
     }
     if (name!="") {
         draw_set_halign(2)

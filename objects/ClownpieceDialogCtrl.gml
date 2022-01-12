@@ -50,8 +50,6 @@ if (line==8) {
     }
 
     text=msg[line]
-
-    alarm[0]=200
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -59,7 +57,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (visible && global.key_pressed[key_jump]) {
+if (visible && (global.key_pressed[key_jump] || global.key_pressed[key_shoot])) {
     alarm[0]=1
 }
 

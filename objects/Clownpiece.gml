@@ -10,7 +10,7 @@ pop=0
 vulnerable=0
 
 gameover=0
-deathbg=0
+deathbg=-1
 
 plrc=2
 plra=0
@@ -84,7 +84,7 @@ if (timer=1 && phase>0 && time) {
     (instance_create(0,0,ClownTimeout)).time=time
 }
 
-if (instance_exists(Player) && sprite_index!=-1) {
+if (instance_exists(Player) && sprite_index!=-1 && plrc>0) {
     if (point_distance(0,608,Player.x,Player.y)<100) plra=max(0.2,plra-0.05)
     else plra=min(1,plra+0.05)
 } else plra=max(0,plra-0.05)
@@ -97,6 +97,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (gameover) exit
+
 if (spellcardbg) {
     spellcardbga=min(1,spellcardbga+0.01)
     spellrad=inch(spellrad,ClownTimeout.time*9+64,9/50)
@@ -118,7 +120,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-background_delete(deathbg)
+if (deathbg!=-1) background_delete(deathbg)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -161,6 +163,8 @@ applies_to=self
 */
 ///game over shit
 
+effect_clear()
+
 instance_destroy_id(ClownBg)
 instance_destroy_id(ClownTimeout)
 instance_destroy_id(TouhouKiller)
@@ -168,6 +172,8 @@ instance_destroy_id(ClownMoon)
 instance_destroy_id(ClownMoon2)
 instance_destroy_id(Clownspellcard)
 instance_destroy_id(Sigil)
+instance_destroy_id(ClownLaser)
+instance_destroy_id(Grave)
 
 s=dx8_surface_engage(-1,800/4,608/4)
 texture_set_interpolation(1)
@@ -179,6 +185,7 @@ dx8_surface_discard(s)
 
 gameover=1
 
+sound_stop_all()
 play_bg_music("musPissed",1)
 #define Other_12
 /*"/*'/**//* YYD ACTION

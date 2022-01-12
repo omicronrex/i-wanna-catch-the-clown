@@ -442,6 +442,7 @@
 		|sprGlowBall
 		|sprGuns
 		|sprCherryColor
+		|sprCherryMask
 		|sprMagicsquare
 		|sprClownVortex
 		|sprClownLaser
@@ -449,3 +450,8 @@
 		|sprMiniCentered
 		|sprHomingCard
 		|sprTouhouLives
+		|sprJigokuNoYousei
+		|sprClownDialog
+		|sprKidDialog
+		|sprDialogBubble
+		|sprInfinity

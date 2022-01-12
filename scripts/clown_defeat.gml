@@ -18,5 +18,5 @@ if (timer=50) {
         instance_create(x,y,ClownPopParticlesOut)
     }
     instance_destroy()
-    //create dialog object
+    ClownpieceDialogCtrl.alarm[0]=100
 }

@@ -4,4 +4,4 @@ solid=0
 persistent=0
 depth=-101
 parent=TouhouKiller
-mask=
+mask=sprCherryMask

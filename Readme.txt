@@ -29,7 +29,7 @@
 || -------------------                                               | |
 || A modern PC (Pentium 3 or higher) running Windows XP,             | |
 || NT5 or 2000 is required. After installation the                   | |
-|| program uses about 75 MB disk space. The program                  | |
+|| program uses about 70 MB disk space. The program                  | |
 || prefers 4 million colors (true color, 32-bit).                    | |
 || It requires at least 1024x768 screen resolution.                  | |
 || DirectX 8 or higher is required (not included).                   | |

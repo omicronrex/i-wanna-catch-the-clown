@@ -19,7 +19,7 @@ if (timer>160) {
         i=instance_create(x,y,ClownpieceStar3)
         i.speed=6
         i.direction=sprayangle
-        i.scale=0.5
+        i.scalego=0.5
     }
     if (inst) sound_stop(inst)
     inst=sound_play("sndTouhouSlash")

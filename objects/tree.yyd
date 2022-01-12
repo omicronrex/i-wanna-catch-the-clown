@@ -422,6 +422,9 @@
 			|ClownTimeout
 			|ClownpieceHud
 			|TouhouDead
+			|ClownpieceDialogCtrl
+			|ClownDialog
+			|KidDialog
 		|GameMaker
 		|gm_leg
 		|gm_wheel

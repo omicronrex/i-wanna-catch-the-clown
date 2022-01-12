@@ -26,3 +26,11 @@ if (instance_exists(Player)) {
 } else instance_destroy()
 
 if (place_meeting(x,y,TouhouKiller)) kill_player()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_self()
+draw_sprite_ext(sprInfinity,0,x,y,1,1,0,$ffffff,image_alpha)

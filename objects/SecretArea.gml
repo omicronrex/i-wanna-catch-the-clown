@@ -11,4 +11,5 @@ if (!savedata(area)) {
     sound_play("Bonus")
     World.message=250
     World.messagetext="You found a secret area!#(Secret areas are not required#for tourney 100% completion)"
+    instance_destroy()
 }

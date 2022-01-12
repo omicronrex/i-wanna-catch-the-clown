@@ -9,6 +9,9 @@ phase=0
 pop=0
 vulnerable=0
 
+gameover=0
+deathsurf=-1
+
 plrc=2
 plra=0
 
@@ -45,6 +48,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (gameover) exit
+
 if (pop) {
     if (pop=1) {
         sound_play("sndTouhouAppear")
@@ -107,6 +112,13 @@ if (spellcardbg) {
     spellspeed=40
     spellrot=0
 }
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+dx8_surface_discard(deathsurf)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -124,7 +136,7 @@ if (mode="rest") {
     if (hp>40) play_sound("sndTouhouSlap")
     else play_sound("sndTouhouSlap2")
 } else {
-    hp=max(0,hp-0.25)
+    hp=max(0,hp-0.3)
     if (hp>12) play_sound("sndTouhouSlap")
     else play_sound("sndTouhouSlap2")
 }
@@ -141,6 +153,30 @@ if (hp==0 || (mode="limited" && hp<=25)) {
     }
     spellcardbg=0
 }
+#define Other_11
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///game over shit
+
+instance_destroy_id(ClownBg)
+instance_destroy_id(ClownTimeout)
+instance_destroy_id(TouhouKiller)
+instance_destroy_id(ClownMoon)
+instance_destroy_id(ClownMoon2)
+instance_destroy_id(Clownspellcard)
+
+deathsurf=dx8_surface_engage(-1,800/4,608/4)
+texture_set_interpolation(1)
+draw_surface_stretched_ext(application_surface,0,0,800/4,608/4,$ff63a4,1)
+texture_set_interpolation(0)
+surface_reset_target()
+
+gameover=1
+
+play_bg_music("musPissed",1)
 #define Other_12
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -148,6 +184,8 @@ action_id=603
 applies_to=self
 */
 ///draw hud and overlays
+if (gameover) exit
+
 if (phase==10) {
     exit
 } else {
@@ -201,6 +239,9 @@ if (phase==10) {
 if (timer<100 && phase=0) {
     rect(0,0,800,608,0,1-(timer-50)/50)
 }
+if (timer>50 && timer<150 && phase==0) {
+    draw_sprite_ext(sprJigokuNoYousei,0,400,304,1,1,0,$ffffff,(1-(timer-50)/100))
+}
 
 //sprite
 if (timer>200 || phase) draw_self()
@@ -210,6 +251,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (gameover) {
+    if (surface_exists(deathsurf)) {
+        texture_set_interpolation(1)
+        draw_surface_stretched(deathsurf,0,0,800,608)
+        texture_set_interpolation(0)
+    }
+    exit
+}
+
 if (phase==10) {
     draw_self()
     rad=max(0,rad-10)

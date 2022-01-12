@@ -25,6 +25,17 @@ image_angle+=8
 
 x=Clownpiece.x+lengthdir_x(rad,angle)
 y=Clownpiece.y+lengthdir_y(rad,angle)
+
+with (Player) if (point_distance(x,y,other.x,other.y)<82) kill_player()
+
+with (ClownpieceStar2) if (point_distance(x,y,other.x,other.y)<82) {
+    effect_create_above(ef_flare,x,y,1,$ff)
+    effect_create_above(ef_flare,x,y,0,$ffffff)
+
+    instance_destroy()
+    if (global.se_etbreak) sound_stop(global.se_etbreak)
+    global.se_etbreak=sound_play("se_etbreak")
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -6,25 +6,14 @@ applies_to=self
 */
 image_speed=0
 image_index=1
+angle=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-image_angle-=20
-#define Collision_ClownMoon
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-effect_create_above(ef_flare,x,y,1,$ff)
-effect_create_above(ef_flare,x,y,0,$ffffff)
-
-instance_destroy()
-if (global.se_etbreak) sound_stop(global.se_etbreak)
-global.se_etbreak=sound_play("se_etbreak")
+angle-=20
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -32,3 +21,10 @@ action_id=603
 applies_to=self
 */
 instance_destroy()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_sprite_ext(sprite_index,1,x,y,1,1,angle,$ffffff,1)

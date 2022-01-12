@@ -38,7 +38,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-time+=2*dt
+time+=(2+2*mode)*dt
 
 draw=true
 if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
@@ -108,6 +108,15 @@ if (draw && instance_exists(Clownpiece)) {
 
 dx8_surface_disengage()
 texture_set_interpolation(0)
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+dx8_surface_discard(s)
+dx8_surface_discard(s3)
+dx8_surface_discard(s4)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

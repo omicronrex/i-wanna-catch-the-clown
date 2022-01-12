@@ -16,6 +16,11 @@ if (timer=1) {
     spellcardbg=1
 }
 
+if (timer=100) {
+    //pan bg up to show earth
+    ClownBg.mode=1
+}
+
 if (timer<10) repeat (3) {
     f=min(1,f+0.1)
     l=random_range(300,500)

@@ -1,10 +1,8 @@
 if (timer=1) {
-    //pan up to show earth
-    ClownBg.mode=1
     //erase bullets
     sprite_index=sprClownPiece
     with (ClownpieceStar3) {effect_create_above(ef_spark,x,y,1,$ff00ff) instance_destroy()}
-    with (ClownLaserDown) {repeat (250) {if (x>0 && x<800) effect_create_above(ef_spark,x,y,0,$ff00ff) x+=8} instance_destroy()}
+    with (ClownLaserDown) {repeat (250) {if (x>0 && x<800) effect_create_above(ef_spark,x,y,0,$ff00ff) x-=8} instance_destroy()}
 }
 
 if (timer=100) {

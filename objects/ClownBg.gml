@@ -47,7 +47,7 @@ if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
     texture_set_interpolation(1)
     s3=dx8_surface_engage(s3,800,608)
     draw_clear(0)
-    d3d_set_projection_ext(512,1024,384,512,512,100*mode,mode*-0.2,0,1,20,-4/3,8,1024)
+    d3d_set_projection_ext(512,1024,384,512,512,90*mode,mode*-0.2,0,1,20,-4/3,8,1024)
 
     col=$ccaabb
     vslide-=0.001
@@ -76,31 +76,33 @@ if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
     }
 }
 
-{//distort V
-    s=dx8_surface_engage(s,w,h)
-    for (u=0;u<w;u+=2)
-        draw_surface_part(s3,u,0,2,h,u,sin((time+u*vamp)*vfac)*voff)
-}
+if (draw && instance_exists(Clownpiece)) {
+    {//distort V
+        s=dx8_surface_engage(s,w,h)
+        for (u=0;u<w;u+=2)
+            draw_surface_part(s3,u,0,2,h,u,sin((time+u*vamp)*vfac)*voff)
+    }
 
-s4=dx8_surface_engage(s4,800,608)
+    s4=dx8_surface_engage(s4,800,608)
 
-{//distort H
-    for (v=0;v<h;v+=1)
-        draw_surface_part(s,0,v,w,1,sin((time+v*hamp)*hfac)*hoff,v)
-}
+    {//distort H
+        for (v=0;v<h;v+=1)
+            draw_surface_part(s,0,v,w,1,sin((time+v*hamp)*hfac)*hoff,v)
+    }
 
-{//erase alpha
-    draw_set_blend_mode(bm_subtract)
-    draw_rectangle_color(0,0,800,608,$bb00bb,$bb00bb,$bb00bb,$bb00bb,0)
-}
+    {//erase alpha
+        draw_set_blend_mode(bm_subtract)
+        draw_rectangle_color(0,0,800,608,$bb00bb,$bb00bb,$bb00bb,$bb00bb,0)
+    }
 
-{//create opaque circle near clownpiece
-    if (instance_exists(Clownpiece)) {
-        draw_set_blend_mode(bm_add)
-        dx=(Clownpiece.x)
-        dy=(Clownpiece.y)
-        repeat (3) d3d_draw_cone(dx-300,dy-300,0,dx+300,dy+300,0,atex,1,1,0,8)
-        draw_set_blend_mode(0)
+    {//create opaque circle near clownpiece
+        if (instance_exists(Clownpiece)) {
+            draw_set_blend_mode(bm_add)
+            dx=(Clownpiece.x)
+            dy=(Clownpiece.y)
+            repeat (3) d3d_draw_cone(dx-300,dy-300,0,dx+300,dy+300,0,atex,1,1,0,8)
+            draw_set_blend_mode(0)
+        }
     }
 }
 
@@ -112,8 +114,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (draw) {
-    draw_surface(s3,0,0)
+draw_surface(s3,0,0)
+
+if (draw && instance_exists(Clownpiece)) {
     draw_surface(s4,0,0)
 }
 

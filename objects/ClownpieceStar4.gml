@@ -8,7 +8,7 @@ image_speed=0
 image_index=1
 image_xscale=5
 image_yscale=5
-image_alpha=0
+image_alpha=0.5
 
 scale=1
 #define Step_0
@@ -24,13 +24,8 @@ image_alpha=1-(image_xscale-1)/2
 image_angle-=5
 
 speed=max(2,speed-8)
-#define Collision_ClownMoon2
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (image_xscale=1) {
+
+if (image_xscale=1) if (place_meeting(x,y,ClownMoon2)) {
     effect_create_above(ef_flare,x,y,1,$ff0080)
     effect_create_above(ef_flare,x,y,0,$ffffff)
 

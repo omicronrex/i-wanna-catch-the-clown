@@ -21,7 +21,7 @@
 || How high a score can you get?                                     | |
 ||                                                                   | |
 || Tested by Natsu, Metis, Floogle,                                  | |
-|| Draconical, Darius and Roaming97.                                 | |
+|| Draconical, Daglom and roaming97.                                 | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |

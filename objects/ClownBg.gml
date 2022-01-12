@@ -38,7 +38,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-time+=(2+2*mode)*dt
+time+=2*dt
 
 draw=true
 if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
@@ -50,7 +50,7 @@ if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
     d3d_set_projection_ext(512,1024,384,512,512,90*mode,mode*-0.2,0,1,20,-4/3,8,1024)
 
     col=$ccaabb
-    vslide-=0.001
+    vslide-=0.001*(1+mode*2)
     fog=min(650,fog+0.5)
 
     texture_set_interpolation(1)

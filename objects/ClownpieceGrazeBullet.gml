@@ -14,7 +14,7 @@ image_angle=direction
 
 scale=1
 fac=0.98
-ms=1
+ms=0.5
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

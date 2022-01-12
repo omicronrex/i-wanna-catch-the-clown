@@ -28,7 +28,7 @@ if ((timer mod 100)==50) {
     for (i=0;i<360;i+=4) {
         j=instance_create_moving(x,y,ClownpieceGrazeBullet,2,i+k)
         j.fac=0.95
-        j.ms=0.5
+        j.ms=0.25
     }
 }
 

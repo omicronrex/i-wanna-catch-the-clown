@@ -10,15 +10,13 @@ scale=5
 image_alpha=0.5
 
 angle=0
-
-scale=1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-scale=max(scale,image_xscale-0.25)
+scale=max(1,scale-0.25)
 image_alpha=1-(image_xscale-1)/2
 
 angle-=5

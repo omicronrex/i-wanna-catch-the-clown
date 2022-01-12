@@ -7,7 +7,7 @@ applies_to=self
 spr[0]=1 msg[0]=    "Hah, hah, hah..."
 spr[1]=0 msg[1]="Die monster! You don't#belong in this world!"
 spr[2]=1 msg[2]=    "Not quite. This land#was given to us fairies."
-spr[3]=1 msg[3]=    "You're the one who doesn't#belong here, little lad!"
+spr[3]=1 msg[3]=    "You're the one who doesn't#belong here, young "+pick(difficulty,"lad!","lad!","tengu!")
 spr[4]=0 msg[4]="WHAT"
 spr[5]=1 msg[5]=    "...but, I'm not sure what to do.#I've got no fight left in me."
 spr[6]=0 msg[6]="Mm. I've sort of lost track#of my actual goal, here."

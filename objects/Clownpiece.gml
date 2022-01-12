@@ -239,8 +239,8 @@ if (phase==10) {
 if (timer<100 && phase=0) {
     rect(0,0,800,608,0,1-(timer-50)/50)
 }
-if (timer>50 && timer<150 && phase==0) {
-    draw_sprite_ext(sprJigokuNoYousei,0,400,304,1,1,0,$ffffff,(1-(timer-50)/100))
+if (timer>50 && timer<200 && phase==0) {
+    draw_sprite_ext(sprJigokuNoYousei,0,400,304,1,1,0,$ffffff,(1-(timer-50)/150))
 }
 
 //sprite

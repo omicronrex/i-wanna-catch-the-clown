@@ -10,7 +10,7 @@ pop=0
 vulnerable=0
 
 gameover=0
-deathsurf=-1
+deathbg=0
 
 plrc=2
 plra=0
@@ -118,7 +118,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-dx8_surface_discard(deathsurf)
+background_delete(deathbg)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -167,12 +167,15 @@ instance_destroy_id(TouhouKiller)
 instance_destroy_id(ClownMoon)
 instance_destroy_id(ClownMoon2)
 instance_destroy_id(Clownspellcard)
+instance_destroy_id(Sigil)
 
-deathsurf=dx8_surface_engage(-1,800/4,608/4)
+s=dx8_surface_engage(-1,800/4,608/4)
 texture_set_interpolation(1)
-draw_surface_stretched_ext(application_surface,0,0,800/4,608/4,$ff63a4,1)
+draw_surface_stretched_ext(application_surface,0,0,800/4,608/4,$ee66aa,1)
 texture_set_interpolation(0)
 surface_reset_target()
+deathbg=background_create_from_surface(s,0,0,800/4,608/4,0,0)
+dx8_surface_discard(s)
 
 gameover=1
 
@@ -252,11 +255,9 @@ action_id=603
 applies_to=self
 */
 if (gameover) {
-    if (surface_exists(deathsurf)) {
-        texture_set_interpolation(1)
-        draw_surface_stretched(deathsurf,0,0,800,608)
-        texture_set_interpolation(0)
-    }
+    texture_set_interpolation(1)
+    draw_background_stretched(deathbg,0,0,800,608)
+    texture_set_interpolation(0)
     exit
 }
 

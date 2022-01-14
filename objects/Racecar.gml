@@ -132,7 +132,7 @@ if (!win) {
 
     if (active && !save) {
         sound_kind_volume(1,min(1,0.5+mapspeed/12)*settings("musvol")*vol3)
-        if (!canwin) petrol-=0.5*min(6,mapspeed/6)
+        if (!canwin) petrol-=(0.5*min(6,mapspeed/6))*(0.5+difficulty*0.25)
         timer+=!Semaphore.polis
         if (instance_exists(BigPolice)) timer=min(timer,10050)
         dist=max(0,dist-mapspeed/6)

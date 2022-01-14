@@ -9,6 +9,7 @@ itemid="item"+object_get_name(object_index)
 counter=0
 collected=0
 gottem=0
+sound="found_item"
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -41,12 +42,12 @@ applies_to=self
 if (global.autosave_items) {
     savedata_write()
     savedata(itemid,1)
-    sound_play("found_item")
+    sound_play(sound)
     instance_destroy()
     instance_activate_object(ItemBlock)
     with (ItemBlock) event_user(0)
 } else if (!collected) {
-    sound_play("found_item")
+    sound_play(sound)
     image_blend=$404040
     image_alpha=0.5
     collected=1

@@ -1,6 +1,11 @@
 #define Create_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=604
+invert=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */
@@ -8,7 +13,15 @@ image_speed=0
 timer=0
 active=0
 y+=32
+
+//liftblock prop
+phase=1
 #define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -16,13 +29,14 @@ applies_to=self
 */
 if (!instance_exists(Player)) exit
 
-if (Player.x>x-24 && !active) {
+if (place_meeting(x-16,y+24,Player) && active=-1) {
     if (global.player_weapon=weapon_default) {
         active=1
+        timer=32
+        instance_destroy_id(IntroBlock)
+        instance_destroy_id(IntroSlope)
         lock_controls()
-        vspeed=-1
-        sound_play("block")
-    } else Player.x=min(Player.x,1100)
+    }
 }
 
 if (active) {
@@ -33,9 +47,6 @@ if (active) {
         if (timer>320 && timer<380) {k=random(24) effect_create_above(ef_smoke,x+k,y+32-k,0,$808080)}
     }
 
-    if (timer=32) {
-        vspeed=0
-    }
     if (timer=100) {
         global.player_skin=skin_nogun
         global.player_weapon=weapon_none
@@ -75,21 +86,18 @@ if (active) {
     if (timer=2100) {
         Twister.mode=4
     }
+
+    if (hspeed<0) {
+        with (instance_place(x-4,y,Player)) {
+            x=min(x,other.x-6-other.hspeed)
+            move_contact_solid(270,4)
+        }
+    }
 }
 
 if (image_index>2 && image_speed>0) {
     image_index=2
     image_speed=0
-}
-#define Collision_Player
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-other.x=x-6
-with (other) {
-    move_contact_solid(270,4)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

@@ -76,7 +76,7 @@ if (abs(image_xscale)==1) {
     draw_set_color(0)
     draw_set_font(fntCalibri14)
     draw_text(x+110*scalego,y,text)
-    draw_set_halign(1)
-    draw_set_valign(1)
+    draw_set_halign(0)
+    draw_set_valign(0)
     draw_set_color($ffffff)
 }

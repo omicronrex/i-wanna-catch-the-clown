@@ -1,10 +1,10 @@
 
-	CATCH THE CLOWN 1.2 Changes
+	CATCH THE CLOWN 1.3 Changes
 	===========================
 
 
 The following are the major changes in Catch the Clown
-version 1.2 compared to version 0.9.
+version 1.3 compared to version 0.9.
 
 If this is your first time playing Catch the Clown, it is
 highly adviced against reading this document, as it could
@@ -26,9 +26,13 @@ New features
 Corrected errors
 ----------------
 - Fixed a bug where one of the traps in Clown Town 4 could activate early.
+- Fixed a few visual errors.
 
 Small changes
 -------------
+- Car uses less petrol on lower difficulties.
+- It's impossible to exit the afterlife room by pressing Escape, to prevent
+  accidentally leaving the room.
 - Removed a few objects to reduce clutter from Normal difficulty layouts.
 - Improved the game's overall presentation and added code documentation.
 - Added a multitude of secrets, jokes and easter eggs. Find all of them!

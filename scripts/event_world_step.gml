@@ -87,9 +87,9 @@ if (keyboard_check_pressed(vk_escape)) {
     if (global.esc_always_quits) {
         event_game_end()
     } else if (is_ingame()) {
-        if (global.pause){
+        if (global.pause) {
             instance_destroy_id(PauseMenu)
-        } else {
+        } else if (room!=rAfterlife) {
             if (is_ingame() && !instance_exists(TimerFreeze)) {
                 savedata("deaths",savedata("deaths")+1)
             }

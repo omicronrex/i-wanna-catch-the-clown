@@ -35,6 +35,8 @@ applies_to=self
 ///initialize variables
 //you usually don't need to touch any of these
 
+snowman=0
+
 djump=1
 ladder=false
 onPlatform=false
@@ -861,6 +863,15 @@ action_id=603
 applies_to=self
 */
 ///skin draw
-script_execute(global.player_skin,"draw")
 
+if (snowman) {
+    snowman+=1
+    col=make_color_hsv(((snowman div 16)*60) mod 255,200,255-((snowman mod 16)*10))
+    d3d_set_fog(1,col,0,0)
+}
+script_execute(global.player_skin,"draw")
+if (snowman) {
+    d3d_set_fog(0,0,0,0)
+    if (snowman>=200) snowman=0
+}
 debug_code("player draw")

@@ -30,7 +30,13 @@ if (mode=1) {
                 rotlist[i]=0
                 camera_shake(4,30)
                 sound_play("earthquaketest (2)")
-                if (i<14) sound_play("block") else {sound_play("Explosion") camera_shake(16,150) TheGunEater.image_index=3}
+                if (i<14) sound_play("block")
+                else {
+                    sound_play("Explosion")
+                    camera_shake(16,150)
+                    TheGunEater.image_index=3
+                    instance_create(x-200,0,Lightning)
+                }
                 effect_create_above(ef_spark,x+80,y+i*32+16,2,$ff00)
             }
             break
@@ -61,12 +67,13 @@ if (mode=4) {
         tile_layer_shift(-10,0,-1)
         if (height=256) {
             sound_play("Explosion")
-            camera_shake(16,150)
+            camera_shake(16,100)
             unlock_controls()
             IntroCtrl.active=1
             TheGunEater.image_index=1
             mode=5
             smooth=height
+            instance_create(x+320,0,Lightning)
         }
     }
 }
@@ -108,7 +115,7 @@ for (j=max(0,view_yview);j<y+height;j+=1) {
         displace=80*sin(5+timer*1.851+i/452)*sin(19+timer*1.13+i/579)*f
     }
 
-    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90),y+i,dcos(rot),1,merge_color($606060,$ffffff,dcos(rot)),1)
-    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90)+160*dcos(rot),y+i,dsin(rot),1,merge_color($606060,$ffffff,dsin(rot)),1)
+    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90),y+i,dcos(rot),1,merge_color($404040,$ffffff,dcos(rot)),1)
+    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90)+160*dcos(rot),y+i,dsin(rot),1,merge_color($404040,$ffffff,dsin(rot)),1)
 }
 if (smooth<height) draw_sprite_ext(sprGreenGlow,0,x,y+smooth,5,1,0,$ffffff,1)

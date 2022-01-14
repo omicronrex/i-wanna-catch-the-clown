@@ -33,7 +33,9 @@ if (go && !instance_exists(Player)) {
     sprite_index=sprPacmanStand
     image_speed=0.1
     image_angle=0
+    go=0
 }
+
 if (go) {
     image_angle=direction
     if (image_angle>90 && image_angle<270) image_yscale=-1

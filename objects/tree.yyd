@@ -324,6 +324,7 @@
 		|Skybox
 		|IntroCtrl
 		|TheGunEater
+		|TheKidSitter
 		|Le_Gun
 		|IntroTrigger
 		|IntroArtifact
@@ -331,6 +332,10 @@
 		|FogFinisher
 		|StandCart
 		|EndPlayer
+		|IntroBlock
+		|Lightning
+		|LightningFade
+		|IntroSlope
 	+ending
 		|RenClownHeart
 		|ClownShard

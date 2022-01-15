@@ -197,7 +197,7 @@ if (!win) {
                 instance_create(400+irandom_range(-180,180),-32,Crate)
             }
 
-            if (timer<5000 && !(timer>2600 && timer<3000)) {
+            if (timer<5000 && !(timer>2500 && timer<3000)) {
                 if (!(timer mod 1000) && timer!=2000) {
                     instance_create(0,0,Police)
                 }

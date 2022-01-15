@@ -28,7 +28,7 @@ if (speed=0 && !active && instance_exists(Player) && !ShovelBoss.go) if (Player.
     }
 
 if (!active && speed=0 && instance_exists(Player)) {
-    if (place_meeting(x,Player.y,Player)) {
+    if (place_meeting(x,min(y,Player.y),Player)) {
         active=1
         play_sound("sndRenClown")
         hspeed=0

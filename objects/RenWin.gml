@@ -39,7 +39,6 @@ if (go2) {
         visible=1
     }
 
-
     repeat (99) {
         sleep(20)
 
@@ -82,6 +81,7 @@ if (go2) {
     surface_free(s)
     surface_free(final)
     instance_destroy()
+    World.pause_delay=5
 }
 
 if (go && instance_exists(Player)) {

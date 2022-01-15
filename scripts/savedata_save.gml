@@ -19,6 +19,12 @@ if (difficulty!=3 || argument0) with (Player) {
     else hash=""
 
     if (hash!=string(savedata("hash"))) {
+
+        if (string_pos("autosave",hash)) {
+            World.message2=100
+            World.message2text="Game Saved!"
+        }
+
         if (savedata("hash")!="new file") {
             //update statistics if this is a different save
             global.statgridh+=1

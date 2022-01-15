@@ -34,8 +34,8 @@ action_id=603
 applies_to=self
 */
 if (active) {
-    xp+=global.input_h*6
-    yp+=global.input_v*6
+    xp+=global.input_h*(6-3*global.key[key_jump])
+    yp+=global.input_v*(6-3*global.key[key_jump])
     xp=median(32,xp,800-32)
     yp=median(32,yp,608-32)
 

@@ -126,8 +126,8 @@ global.cubemod=d3d_model_create()
 d3d_model_block(global.cubemod,-16,-16,-16,16,16,16,1,1)
 
 //let's go away
-//if (settings("volcheck")) {
+if (settings("volcheck")) {
     room_goto_next()
-//} else {
-//    instance_create(0,0,VolCheck)
-//}
+} else {
+    instance_create(0,0,VolCheck)
+}

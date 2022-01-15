@@ -10,7 +10,7 @@ alarm[0]=50
 
 alarm[2]=250
 
-hp=10
+hp=8
 flash=0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION

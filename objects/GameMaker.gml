@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 active=0
+flash=0
 
 state="wait"
 
@@ -210,7 +211,6 @@ if (state="returns") {
 if (state="open up") {
     if (!legged) {
         legged=1
-        canhit=1
         leg1=instance_create(x,y,gm_leg)
         leg2=instance_create(x,y,gm_leg)
         leg3=instance_create(x,y,gm_leg)
@@ -235,7 +235,6 @@ if (state="fall") {
         timer=0
         speed=0
         camera_shake(16)
-        getshot=1
         play_sound("metal2short")
     }
 }
@@ -262,6 +261,9 @@ if (state="roll") {
         x=800-32-95
         camera_shake(16)
         play_sound("sndRenBossWall")
+        hp-=5
+        effect_create_above(ef_firework,x+64,y,1,$ffff)
+        flash=20
         vspeed=-4
         hspeed=-3
         gravity=0.2
@@ -271,6 +273,9 @@ if (state="roll") {
         x=32+95
         camera_shake(16)
         play_sound("sndRenBossWall")
+        hp-=5
+        flash=20
+        effect_create_above(ef_firework,x-64,y,1,$ffff)
         vspeed=-4
         hspeed=3
         gravity=0.2
@@ -380,4 +385,12 @@ if (!getcandy) with (GMBonus) draw_text(x+16,y-32,"Get!")
 if (getshot) draw_text(x,y-92,"Shoot!")
 draw_set_halign(0)
 
+if (flash) {
+    if (flash mod 5<3)
+        d3d_set_fog(1,$ffffff,0,0)
+}
 draw_self()
+if (flash) {
+    d3d_set_fog(0,0,0,0)
+    flash-=1
+}

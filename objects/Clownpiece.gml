@@ -11,6 +11,7 @@ vulnerable=0
 
 gameover=0
 deathbg=-1
+alpha=0
 
 plrc=2
 plra=0
@@ -200,7 +201,8 @@ if (phase==10) {
     exit
 } else {
     //draw boss indicator
-    alpha=min(1,rad/50)
+    if (!vulnerable) alpha=max(0,alpha-0.05)
+    else alpha=min(1,rad/50,alpha+0.05)
     draw_set_alpha(alpha)
     draw_set_blend_mode(bm_subtract)
     draw_ellipse_color(x-32,608-40,x+32,608,merge_color(0,$ffffff,alpha),0,0)

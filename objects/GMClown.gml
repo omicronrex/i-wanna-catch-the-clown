@@ -26,6 +26,15 @@ if (speed=0 && !active && instance_exists(Player) && !ShovelBoss.go) if (Player.
         hspeed=8*sign(Player.x-x)
         play_sound("sndRenClown")
     }
+
+if (!active && speed=0 && instance_exists(Player)) {
+    if (place_meeting(x,Player.y,Player)) {
+        active=1
+        play_sound("sndRenClown")
+        hspeed=0
+        vspeed=-8
+    }
+}
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1

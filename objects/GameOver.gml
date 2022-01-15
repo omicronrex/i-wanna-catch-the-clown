@@ -37,7 +37,7 @@ if (visible) {
     if (scale>0) {
         scale=min(1,scale)
         d3d_transform_add_scaling(1,scale,1)
-        d3d_transform_add_translation(x,608-16,0)
+        d3d_transform_add_translation(x,608-16-32*(room=rRenClown),0)
         draw_set_halign(1)
         draw_set_valign(1)
         draw_set_font(fntFileSmall)

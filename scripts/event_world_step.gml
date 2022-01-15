@@ -55,6 +55,8 @@ if (fading) {
     }
 }
 
+if (fps_real) cpu_usage=ceil(min(1,room_speed/fps_real)*100)
+
 if (keyboard_check_pressed(vk_f1) && (room==rmTitle || room==rmMenu || room==rmOptions || room==rAfterlife)) show_info()
 
 if (is_ingame()) {
@@ -66,7 +68,7 @@ if (is_ingame()) {
 
     update_caption_deathtime()
 
-    if (room!=rmHub && !instance_exists(ClownPortal)) {
+    if (!instance_exists(ClownPortal)) {
         //pause
         if (pause_delay<=0) {
             if (global.key_pressed[key_menu]) {

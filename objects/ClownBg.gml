@@ -79,15 +79,15 @@ if (instance_exists(Clownpiece)) if (Clownpiece.spellcardbga==1) draw=false
 if (draw && instance_exists(Clownpiece)) {
     {//distort V
         s=dx8_surface_engage(s,w,h)
-        for (u=0;u<w;u+=2)
+        for (u=max(0,Clownpiece.x-250);u<min(w,Clownpiece.x+250);u+=2) //limit the distortion to the area around her
             draw_surface_part(s3,u,0,2,h,u,sin((time+u*vamp)*vfac)*voff)
     }
 
     s4=dx8_surface_engage(s4,800,608)
 
     {//distort H
-        for (v=0;v<h;v+=1)
-            draw_surface_part(s,0,v,w,1,sin((time+v*hamp)*hfac)*hoff,v)
+        for (v=max(0,Clownpiece.y-250);v<min(h,Clownpiece.y+250);v+=2)
+            draw_surface_part(s,0,v,w,2,sin((time+v*hamp)*hfac)*hoff,v)
     }
 
     {//erase alpha

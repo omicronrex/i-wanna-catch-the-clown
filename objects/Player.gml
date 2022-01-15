@@ -552,10 +552,14 @@ if (!place_free(x+hspeed,y+vspeed)) {
                 if (s==vflip) {
                     player_land()
                 } else if (bonk) {
-                    if (djump=1) sound_play("sndBonk")
-                    else {
+                    //The Super F Strat ft. Max || Crimson Needle 3 #10 07:32
+                    if (djump=1) {
                         snd=sound_play_paused("sndBonk")
-                        sound_pitch(snd,twelfthroot*twelfthroot)
+                        sound_pitch(snd,1/twelfthroot)
+                        sound_resume(snd)
+                    } else {
+                        snd=sound_play_paused("sndBonk")
+                        sound_pitch(snd,twelfthroot)
                         sound_resume(snd)
                     }
                 }

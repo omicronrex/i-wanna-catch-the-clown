@@ -5,9 +5,9 @@ action_id=603
 applies_to=self
 */
 image_speed=0
-image_index=(difficulty==2)
+image_index=difficulty
 
-if (room=rHerman) image_index+=2
+if (room=rHerman) image_index+=3
 
 gravity=0.3
 alarm[0]=5

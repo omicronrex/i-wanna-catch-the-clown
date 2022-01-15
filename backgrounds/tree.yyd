@@ -1,20 +1,8 @@
 |tile_IWBTG
 |tile_Colors
-|tile_Rainbow
 |bgGameMakerBlock
-|texBlock
-|bgRuinedBlock
-|bgSmallBlock
-|bgMegaman
-|bgFortress
 |bgTree
-|bgTree2
-|bgTree3
-|bgCartParallax3
 |bgTestGrid
-|bgClear
-|bgRail
-|bgAlphaGradient
 +catch the clown
 	|tileRen
 	|tileRen2
@@ -32,12 +20,20 @@
 	|bgRenStars
 	|bgRenNight
 	|bgRenWater
+	|bgAlphaGradient
+	|bgRail
+	|bgClear
+	|texBlock
+	|bgRuinedBlock
+	|bgSmallBlock
 +bosses
 	+gamemaker
 		|bgGMGradient
 	+car
 		|bgCar
 		|bgCrossing
+		|bgMist
+		|bgCartParallax3
 	+Clownpiece
 		|bgMoonSurface
 		|bgClownRoom
@@ -54,4 +50,3 @@
 	|bgHistory2
 	|bgHistory3
 	|bgHistory4
-|bgMist

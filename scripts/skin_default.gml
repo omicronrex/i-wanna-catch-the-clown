@@ -64,7 +64,7 @@ if (argument0=="draw") {
 
     if (oldspr=sprPlayerDeadLmaoNo) {bowx+=8 bowy+=16}
     if (bow) {
-        draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+        draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+((sprite_index=sprPlayerIdleN || sprite_index=sprPlayerIdleNo) && floor(oldfr)==3)+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     }
 
     if (dot_hitbox) {

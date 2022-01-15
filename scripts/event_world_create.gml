@@ -21,9 +21,17 @@ message2text=""
 minalpha=0
 curalpha=0
 minclick=0
-mincolor1=window_get_caption_color()
-if (color_get_luminance(mincolor1)>128) mincolor2=0
-else mincolor2=$ffffff
+
+global.xp_mode=(windows_version()==5)
+
+if (global.xp_mode) {
+    mincolor1=$e55500
+    mincolor2=$ffffff
+} else {
+    mincolor1=window_get_caption_color()
+    if (color_get_luminance(mincolor1)>128) mincolor2=0
+    else mincolor2=$ffffff
+}
 
 input_init()
 
@@ -47,6 +55,8 @@ global.storetime=get_timer()/1000-current_time
 
 globalvar difficulty;
 difficulty=0
+
+globalvar cpu_usage;
 
 //one screen frame, in microseconds, with a 5% margin for error
 oneframe=(1000000/display_get_frequency())*0.95

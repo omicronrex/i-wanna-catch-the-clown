@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 ren=0
-if (room!=rmIntro) {
+if (room!=rmIntro && room!=rmOptions) {
     ren=1
     sprite_index=sprRenBullet
     image_speed=0.1

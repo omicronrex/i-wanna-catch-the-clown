@@ -119,7 +119,6 @@
 	|key_draw
 +bosses
 	|once_every
-	|Utah_boss
 +avoidances
 	+YoYoYo tools
 		|scrMakeCircle

@@ -9,6 +9,8 @@ height=256+224
 smooth=-8
 bepp=0
 
+blocksize=1
+
 mode=0
 
 for (i=0;i<height/32;i+=1) rotlist[i]=random_range(10,80)
@@ -56,8 +58,8 @@ if (mode=2) {
 }
 if (mode=4) {
     if (height>256) {
-        effect_create_above(ef_firework,x+80-200+random(400),random_range(y+height+32,512),0,$808080)
-        effect_create_above(ef_smoke,x+80-200+random(400),random_range(y+height+32,512),1,$808080)
+        if (cpu_usage<80) effect_create_above(ef_firework,x+80-200+random(400),random_range(y+height+32,512),0,$808080)
+        if (cpu_usage<100) effect_create_above(ef_smoke,x+80-200+random(400),random_range(y+height+32,512),1,$808080)
         camera_shake(4,30)
         height-=1
         if (!(height mod 8)) sound_play("earthquaketest (2)")
@@ -90,7 +92,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-for (j=max(0,view_yview);j<y+height;j+=1) {
+//use optimized modes to keep fps near 50
+if (cpu_usage=100) {
+    if (fps_fast>45) blocksize=2
+    else blocksize=3
+}
+if (cpu_usage<60) blocksize=1
+if (mode=0 || mode=1) blocksize=32
+
+for (j=max(0,floorto(view_yview,blocksize));j<y+height;j+=blocksize) {
     i=j-y
     k=i mod 32
     img=0
@@ -115,7 +125,7 @@ for (j=max(0,view_yview);j<y+height;j+=1) {
         displace=80*sin(5+timer*1.851+i/452)*sin(19+timer*1.13+i/579)*f
     }
 
-    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90),y+i,dcos(rot),1,merge_color($404040,$ffffff,dcos(rot)),1)
-    draw_sprite_part_ext(sprite_index,img,0,k,160,1,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90)+160*dcos(rot),y+i,dsin(rot),1,merge_color($404040,$ffffff,dsin(rot)),1)
+    draw_sprite_part_ext(sprite_index,img,0,k,160,blocksize,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90),y+i,dcos(rot),1,merge_color($404040,$ffffff,dcos(rot)),1)
+    draw_sprite_part_ext(sprite_index,img,0,k,160,blocksize,x+80+displace+lengthdir_x(-80,rot)+lengthdir_x(-80,rot-90)+160*dcos(rot),y+i,dsin(rot),1,merge_color($404040,$ffffff,dsin(rot)),1)
 }
 if (smooth<height) draw_sprite_ext(sprGreenGlow,0,x,y+smooth,5,1,0,$ffffff,1)

@@ -174,7 +174,7 @@ texture_set_interpolation(0)
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
 texture_reset_interpolation()
 draw_sprite(sprite_index,-1,dx,y+310)
-if (bow) draw_sprite(sprBow,0,dx,y+310)
+if (bow) draw_sprite(sprBow,0,dx,y+310+(floor(image_index)==3))
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 
 if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-64,608-112) else draw_sprite(sprUnknown,0,400-64,608-112)

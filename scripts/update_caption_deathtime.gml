@@ -6,7 +6,7 @@ if (room=rmHub || room=rmHistory || room=rmClear || room=rmSecretEnd) {
     if (instance_exists(ClownPortal)) room_caption="Score: "+ClownPortal.points
 } else if (global.show_deathtime) {
     itemstring=""
-    if (settings("fullscreen")) {
+    if (settings("fullscreen") || global.xp_mode) {
         c=0 for (i=0;i<8;i+=1) c+=has_item("Item"+string(i+1))
         itemstring=string(c)+"/8"
     } else {

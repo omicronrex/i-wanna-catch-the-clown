@@ -120,7 +120,7 @@ if (!win) {
         save+=1
         if (save=200) {
             i=instance_create(x+dcos(angle+90)*20,y-dsin(angle+90)*20,Bullet)
-            i.direction=point_direction(i.x,i.y,RenSave.x,RenSave.y)
+            i.direction=point_direction(i.x,i.y,RenSave.x+16,RenSave.y+16)
             i.owner=id
             i.speed=16
             sound_play("sndRenShot")
@@ -594,7 +594,7 @@ applies_to=self
 //draw_text(10,10,timer)
 
 image_angle=angle-90
-draw_self()
+draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 if (save>150 && save<250) draw_sprite_ext(sprPlayerHead,difficulty==2,x,y,1,1,image_angle,$ffffff,1)
 image_angle=0
 

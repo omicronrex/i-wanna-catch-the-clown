@@ -10,4 +10,6 @@ settings("fullscreen",0)
 settings("bonk",true)
 settings("filter",2)
 
+settings("lastfile",1)
+
 input_default()

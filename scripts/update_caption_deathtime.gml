@@ -26,7 +26,7 @@ if (room=rmHub || room=rmHistory || room=rmClear || room=rmSecretEnd) {
         " - Resets: ",savedata("deaths"),
         " - Time: ",format_time(savedata("time")),
         pick(global.lastjoyname!="",""," "+global.lastjoyname),
-        " - Items: ["+itemstring+"]",
+        " - Keys: ["+itemstring+"]",
         pick(savedata("clear"),""," - Clear!")
     )
 }

@@ -28,7 +28,7 @@ applies_to=self
 */
 if (!instance_exists(Player)) exit
 
-if (!active) if (place_meeting(x,y-2,Player)) {
+if (!active) if (place_meeting(x,y-2,Player)) if (Player.vspeed>=0) {
     active=1
     lock_controls()
     Player.x=median(Player.x,x-2,x+32+2)

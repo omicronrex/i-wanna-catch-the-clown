@@ -20,4 +20,4 @@ memcamt=-1
 
 global.room_started=false
 
-camera_shake(0)
+World.camera_shaketime=0

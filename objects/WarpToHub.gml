@@ -10,7 +10,7 @@ applies_to=self
 
 if (!savedata("clear")) instance_destroy()
 
-msg="UP to return"
+msg="Press UP to return to hub."
 
 font=fntSignpost
 color=$ffffff

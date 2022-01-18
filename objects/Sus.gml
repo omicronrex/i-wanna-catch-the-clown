@@ -47,3 +47,4 @@ for (i=0;i<360;i+=10) {
     draw_line_width(dx+lengthdir_x(32,i),dy+lengthdir_y(32,i),dx+lengthdir_x(32,i+10),dy+lengthdir_y(32,i+10),4)
 }
 draw_set_color($ffffff)
+if (ItemKeyBlock.color==0) draw_sprite_ext(sprGoku,0,768,480,1,1,0,$ffffff,0.125)

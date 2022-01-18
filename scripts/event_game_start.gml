@@ -22,6 +22,8 @@ draw_set_color($ffffff)
 
 global.infocus=true
 
+global.sign_direction=0
+
 //you can multiply things by dt to get the correct 50hz animation speed
 globalvar dt;
 dt=50/global.game_speed

@@ -123,7 +123,7 @@
 
 //bonus / funny stuff
     //original iwbtg player mask
-    global.use_original_mask=false
+    global.use_original_mask=true
     //original iwbtg walking and jump animations
     global.use_original_animations=true
     //original iwbtg cherry aligns

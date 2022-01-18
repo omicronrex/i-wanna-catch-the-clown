@@ -5,4 +5,4 @@ action_id=603
 applies_to=self
 */
 with (Signpost) active=0
-active=2
+active=1.5*room_speed

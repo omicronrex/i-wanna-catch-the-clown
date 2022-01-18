@@ -6,6 +6,6 @@ applies_to=self
 */
 event_inherited()
 with (AutoSign) {
-    msg="Items Are Collected When#Saved Or Left Area."
+    msg="Items are collected when#saved or left area."
     active=0
 }

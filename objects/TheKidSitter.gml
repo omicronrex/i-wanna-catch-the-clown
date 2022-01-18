@@ -31,6 +31,7 @@ if (!instance_exists(Player)) exit
 if (!active) if (place_meeting(x,y-2,Player)) {
     active=1
     lock_controls()
+    Player.x=median(Player.x,x-2,x+32+2)
     sound_play("block")
     vspeed=1
     TheGunEater.vspeed=-1

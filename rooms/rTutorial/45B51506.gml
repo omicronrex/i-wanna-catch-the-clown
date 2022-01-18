@@ -1,1 +1,0 @@
-msg="Careful#Shooting Star"

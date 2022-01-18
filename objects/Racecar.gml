@@ -26,6 +26,7 @@ fadehud=0
 saved=0
 vol3=1
 t=0
+crated=0
 
 diff=1
 if (difficulty==0) diff=1.25
@@ -194,7 +195,8 @@ if (!win) {
                 instance_create(400+irandom_range(-180,180),-32,Gas)
             }
             if (!(timer mod 2500)) {
-                instance_create(400+irandom_range(-180,180),-32,Crate)
+                (instance_create(400+irandom_range(-180,180),-32,Crate)).get=!crated
+                crated=1
             }
 
             if (timer<5000 && !(timer>2500 && timer<3000)) {

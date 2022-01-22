@@ -39,9 +39,9 @@ width = min(radius,80);
 offset = (200-radius)/3
 d = 360/64;
 
-tex_x=1/800
-tex_y=1/608
 tex = surface_get_texture(application_surface);
+tex_x=texture_get_width(tex)/800
+tex_y=texture_get_height(tex)/608
 texture_set_repeat(true);
 
 draw_primitive_begin_texture(pr_trianglestrip,tex);

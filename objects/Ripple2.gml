@@ -31,8 +31,9 @@ y=ystart-view_yview
 
 draw_set_color(c_white);
 tex = surface_get_texture(application_surface);
-xtex = 1/800;
-ytex = 1/608;
+xtex=texture_get_width(tex)/800
+ytex=texture_get_height(tex)/608
+
 
 _offset = minradius-offset;
 

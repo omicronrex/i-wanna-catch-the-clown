@@ -119,8 +119,9 @@ if (surface_exists(s)) {
         d3d_start()
         d3d_set_hidden(0)
         d3d_set_fog(1,0,0,800)
-        if (room=rTutorial) d3d_draw_cylinder(0,-100,-200,800,700,800,surface_get_texture(s),1,1,0,32)
-        else d3d_draw_cylinder(0,-150,-200,800,650,800,surface_get_texture(s),1,1,0,32)
+        tex2=surface_get_texture(s)
+        if (room=rTutorial) d3d_draw_cylinder(0,-100,-200,800,700,800,tex2,texture_get_width(tex2),texture_get_height(tex2),0,32)
+        else d3d_draw_cylinder(0,-150,-200,800,650,800,tex2,texture_get_width(tex2),texture_get_height(tex2),0,32)
         d3d_set_hidden(1)
     }
 }

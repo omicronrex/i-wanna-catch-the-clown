@@ -14,8 +14,9 @@ if (win=1) {
     if (t>=10100 && t<=10150) {
         f=(t-10100)/50
         camera_set(400,304+cosine(0,200,f),1,0)
-        background_y[0]+=(view_yview+304)-Racecar.y
-        Racecar.y=mean(Racecar.y,view_yview+304)
+        ystore=Racecar.y
+        Racecar.y=(Racecar.y*19+view_yview+304)/20
+        background_y[0]+=Racecar.y-ystore
     }
     if (t>=10150 && t<=10250) {
         f=(t-10150)/100

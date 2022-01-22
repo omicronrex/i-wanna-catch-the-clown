@@ -41,8 +41,10 @@ fresh=0
 
 m2=model2
 
-u=1/800
-v=1/608
+if (!surface_exists(s)) s=surface_create(800,608)
+
+u=texture_get_width(surface_get_texture(s))/800
+v=texture_get_height(surface_get_texture(s))/608
 
 vx=-view_xview[0]*u
 vy=-view_yview[0]*v

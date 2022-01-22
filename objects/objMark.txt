@@ -2,6 +2,6 @@ sprite=sprMarkOvermars
 visible=1
 solid=0
 persistent=0
-depth=1001
+depth=1020
 parent=
 mask=

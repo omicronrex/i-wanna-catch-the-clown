@@ -120,7 +120,7 @@ var i;
 draw_set_halign(1)
 draw_set_font(fntFileBig)
 draw_set_color(0)
-draw_text(400,64,"Welcome to Game Maker.")
+draw_text(400,48,"Welcome to Game Maker.")
 
 bow=0
 
@@ -173,18 +173,18 @@ draw_set_color(0)
 texture_set_interpolation(0)
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
 texture_reset_interpolation()
-draw_sprite(sprite_index,-1,dx,y+310)
-if (bow) draw_sprite(sprBow,0,dx,y+310+(floor(image_index)==3))
-draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
+draw_sprite(sprite_index,-1,dx,y+308)
+if (bow) draw_sprite(sprBow,0,dx,y+308+(floor(image_index)==3))
+draw_sprite(sprDynamicPlatform,0,dx-17,y+317)
 
-if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-64,608-112) else draw_sprite(sprUnknown,0,400-64,608-112)
-if (has_item("GlobalItem2")) draw_sprite(sprGlobalItem2,0,400-32,608-112) else draw_sprite(sprUnknown,0,400-32,608-112)
-if (has_item("GlobalItem3")) draw_sprite(sprGlobalItem3,0,400,608-112) else draw_sprite(sprUnknown,0,400,608-112)
-if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400+32,608-112) else draw_sprite(sprUnknown,0,400+32,608-112)
-if (settings("herman")) draw_sprite(sprGlobalItemHerman,0,400-64,608-80) else draw_sprite(sprUnknown,0,400-64,608-80)
-if (settings("joker")) draw_sprite(sprGlobalItemJoker,0,400-32,608-80) else draw_sprite(sprUnknown,0,400-32,608-80)
-if (settings("home")) draw_sprite(sprGlobalItemHouse,0,400,608-80) else draw_sprite(sprUnknown,0,400,608-80)
-if (settings("clown")) draw_sprite(sprGlobalItemClown,0,400+32,608-80) else draw_sprite(sprUnknown,0,400+32,608-80)
+if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-64,608-124) else draw_sprite(sprUnknown,0,400-64,608-124)
+if (has_item("GlobalItem2")) draw_sprite(sprGlobalItem2,0,400-32,608-124) else draw_sprite(sprUnknown,0,400-32,608-124)
+if (has_item("GlobalItem3")) draw_sprite(sprGlobalItem3,0,400,608-124) else draw_sprite(sprUnknown,0,400,608-124)
+if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400+32,608-124) else draw_sprite(sprUnknown,0,400+32,608-124)
+if (settings("herman")) draw_sprite(sprGlobalItemHerman,0,400-64,608-92) else draw_sprite(sprUnknown,0,400-64,608-92)
+if (settings("joker")) draw_sprite(sprGlobalItemJoker,0,400-32,608-92) else draw_sprite(sprUnknown,0,400-32,608-92)
+if (settings("home")) draw_sprite(sprGlobalItemHouse,0,400,608-92) else draw_sprite(sprUnknown,0,400,608-92)
+if (settings("clown")) draw_sprite(sprGlobalItemClown,0,400+32,608-92) else draw_sprite(sprUnknown,0,400+32,608-92)
 
 //option info
 draw_set_font(fntFileSmall)

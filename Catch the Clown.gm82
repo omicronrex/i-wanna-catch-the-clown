@@ -2,12 +2,12 @@ gm82_version=3
 gameid=813626
 
 info_author=
-info_version=renex engine v1.3.0 clown edition
+info_version=renex engine v1.3 clown edition
 info_information=post tourney tasks:\r\n- make the secret area thing just say secret area\r\n- remove the tourney -> sign in the clear screen
 
 exe_company=
 exe_product=
 exe_copyright=
 exe_description=Catch the Clown
-exe_version=1.3.0.8
+exe_version=1.4.0.0
 

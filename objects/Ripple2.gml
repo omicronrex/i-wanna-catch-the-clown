@@ -40,11 +40,13 @@ d = 360/30;
 
 draw_primitive_begin_texture(pr_trianglefan,tex);
 draw_vertex_texture(x,y,xtex*x,ytex*y);
+a=random(1)
+
 for (i=0;i<=30;i+=1) {
-    xx[i] = x+lengthdir_x(minradius,i*d);
-    yy[i] = y+lengthdir_y(minradius,i*d);
-    xo[i] = x+lengthdir_x(_offset,i*d);
-    yo[i] = y+lengthdir_y(_offset,i*d);
+    xx[i] = x+lengthdir_x(minradius,i*d+a);
+    yy[i] = y+lengthdir_y(minradius,i*d+a);
+    xo[i] = x+lengthdir_x(_offset,i*d+a);
+    yo[i] = y+lengthdir_y(_offset,i*d+a);
     draw_vertex_texture(xx[i],yy[i],xtex*xo[i],ytex*yo[i]);
     }
 
@@ -53,8 +55,8 @@ draw_primitive_end();
 draw_primitive_begin_texture(pr_trianglestrip,tex);
 for (i=0;i<=30;i+=1) {
     draw_vertex_texture(xx[i],yy[i],xtex*xo[i],ytex*yo[i]);
-    xt = x+lengthdir_x(maxradius,i*d);
-    yt = y+lengthdir_y(maxradius,i*d);
+    xt = x+lengthdir_x(maxradius,i*d+a);
+    yt = y+lengthdir_y(maxradius,i*d+a);
     draw_vertex_texture(xt,yt,xtex*xt,ytex*yt);
     }
 

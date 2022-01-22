@@ -1,4 +1,4 @@
-re_version="renex engine v1.3.0 clown edition"
+re_version="renex engine v1.3 clown edition"
 lf=chr(13)+chr(10)
 key_left=0
 key_right=1

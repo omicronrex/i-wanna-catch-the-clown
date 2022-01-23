@@ -13,7 +13,7 @@
 ||     =======================                                       | |
 ||     An adventure game by renex                                    | |
 ||                                                                   | |
-||     version 1.4 - jan 2022                                        | | 
+||     version 1.4.1 - jan 2022                                      | | 
 ||                                                                   | |
 || The goal of this simple action game is to catch the moving clown  | |
 || by clicking with your mouse on him. Whenever you succeed your     | |
@@ -30,7 +30,7 @@
 || requires 4 million colors (true color, 32-bit).                   | |
 || It requires at least 1024x768 screen resolution.                  | |
 || DirectX 8 or higher is required (not included).                   | |
-|| Visual C++ runtime 2015 is required (not included).               | |
+|| Visual C++ Runtime 2015 32-bit is required (not included).        | |
 ||                                                                   | |
 || ----------------------------------------------------------------- | |
 ||                                                                   | |

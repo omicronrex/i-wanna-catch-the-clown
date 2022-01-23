@@ -1,7 +1,7 @@
 if (!global.pause) {
     with (WarpToHub) if (active) draw_sign_text(x+16,y-10,font,color,msg,true)
-    with (Signpost) if (active) {if (instance_exists(Player)) active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}
     with (GameOver) if (visible) event_user(0)
+    with (Signpost) if (active) {if (instance_exists(Player)) active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}
 
     //draw slow motion effect
     with (Player) if (slomo<1) {

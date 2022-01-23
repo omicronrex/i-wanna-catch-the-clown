@@ -248,7 +248,7 @@ if (state="getup")  {
     y-=1
     if (h>180) {
         state="roll"
-        go=0.5*sign(x-Player.x)
+        if (instance_exists(Player)) go=0.5*sign(x-Player.x)
     }
 }
 
@@ -283,7 +283,9 @@ if (state="roll") {
     if (h<170) {
         gravity=0
         speed=0
-        if (x>400) go=-0.5 else go=0.5
+        if (instance_exists(Player)) {
+            if (x>400) go=-0.5 else go=0.5
+        }
     }
 }
 

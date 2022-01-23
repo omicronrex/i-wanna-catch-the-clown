@@ -28,7 +28,7 @@ applies_to=self
 */
 if (hastomove && speed=0) {
     hastomove=0
-    if (mp_grid_path(grid,path,x+16,y+16,Player.x,Player.y,0)) {
+    if (instance_exists(Player)) if (mp_grid_path(grid,path,x+16,y+16,Player.x,Player.y,0)) {
         p1x=path_get_point_x(path,0)
         p1y=path_get_point_y(path,0)
         p2x=path_get_point_x(path,1)

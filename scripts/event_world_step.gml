@@ -68,7 +68,7 @@ if (is_ingame()) {
 
     update_caption_deathtime()
 
-    if (!instance_exists(ClownPortal)) {
+    if (!instance_exists(ClownPortal) && !instance_exists(AreaNamer)) {
         //pause
         if (pause_delay<=0) {
             if (global.key_pressed[key_menu]) {

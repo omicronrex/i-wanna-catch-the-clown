@@ -98,6 +98,7 @@ if (!going) {
     active=1
 
     if (global.key_pressed[key_up]) {
+        collect_items()
         instance_destroy_id(Player)
         room_goto(global.hub_room)
     }

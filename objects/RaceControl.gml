@@ -17,7 +17,7 @@ with (PoliceBomb) draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,0
 with (PoliceHeli) draw_sprite_ext(sprite_index,0,x,y+z,2,2,image_angle,0,0.5)
 d3d_set_fog(0,0,0,0)
 
-col1=rgb_to_bgr($735a42)
+col1=color_reverse($735a42)
 col3=$80ccff
 col2=merge_color(col1,col3,0.5)
 

@@ -22,7 +22,7 @@ minalpha=0
 curalpha=0
 minclick=0
 
-global.xp_mode=(windows_version()==5)
+global.xp_mode=(windows_version==5)
 
 if (global.xp_mode) {
     mincolor1=$e55500

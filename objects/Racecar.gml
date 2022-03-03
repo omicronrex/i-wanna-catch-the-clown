@@ -628,7 +628,7 @@ if (fadehud<1) {
     draw_sprite(sprWeapon,i,dx,dy-70)
 
     if (fadehud>0) {
-        rect(dx,dy-80,180,250,rgb_to_bgr($735a42),fadehud)
+        rect(dx,dy-80,180,250,color_reverse($735a42),fadehud)
     }
 }
 

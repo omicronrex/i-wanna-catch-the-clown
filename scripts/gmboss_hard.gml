@@ -400,7 +400,7 @@ if (hp<=0 && !dead) {
     if (dying==100) {
         play_sound("sndRenGlass")
         clownbad=-1                                                                                                      //clown color :o)
-        repeat (50) (instance_create(x+random_range(-32,32),y+random_range(-32,32),GMBossGlass)).color=rgb_to_bgr(choose($1f7fcf,$efcf8f,$cf1f1f,$ffffff))
+        repeat (50) (instance_create(x+random_range(-32,32),y+random_range(-32,32),GMBossGlass)).color=color_reverse(choose($1f7fcf,$efcf8f,$cf1f1f,$ffffff))
     }
 
     if (dying>=200) {

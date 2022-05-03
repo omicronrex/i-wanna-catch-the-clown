@@ -151,6 +151,8 @@ if (go && instance_exists(Player)) {
         persistent=1
         go2=1
     }
+
+    global.perform_autosave=true
     room_goto(roomTo)
 }
 #define Collision_Player

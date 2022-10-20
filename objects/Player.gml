@@ -726,7 +726,7 @@ applies_to=self
 //this is necessary because the player can't
 //follow platforms during standstill frames
 
-move_player(x,y+vsplatform,1)
+if (!global.pause) move_player(x,y+vsplatform,1)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424

@@ -147,9 +147,6 @@ optext[6]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","S
 optext[7]=""
 optext[8]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
 
-if (sel=3 && settings("fullscreen")) background_visible[1]=1
-else background_visible[1]=0
-
 ycursor=inch(ycursor,ydraw+(ysep*sel)+18+6,16*dt)
 #define Other_5
 /*"/*'/**//* YYD ACTION

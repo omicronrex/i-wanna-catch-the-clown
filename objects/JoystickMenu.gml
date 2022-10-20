@@ -73,7 +73,7 @@ if (global.key_pressed[key_shoot]) {
             i.ycursor=i.ydraw+(i.ysep*i.sel)+18
             instance_destroy()
         }
-    } else {
+    } else if (!setting) {
         World.message2=300
         World.message2text="Please use your keyboard here"
     }
@@ -102,7 +102,7 @@ if (global.key_pressed[key_shoot]) {
                 World.message2=300
                 World.message2text="Push buttons to select joystick"
             }
-        } else {
+        } else if (!setting) {
             World.message2=300
             World.message2text="Please use your keyboard here"
         }

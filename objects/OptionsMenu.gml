@@ -144,7 +144,7 @@ optext[3]=pick(settings("filter"),"Off","Bilinear","Trilinear")
 optext[4]=pick(settings("bonk"),"Off","On")
 optext[5]=pick(settings("gore"),"Off","On","","")
 optext[6]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
-optext[7]=""
+optext[7]=">>"
 optext[8]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
 
 ycursor=inch(ycursor,ydraw+(ysep*sel)+18+6,16*dt)

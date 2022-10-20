@@ -82,7 +82,18 @@ if (is_ingame()) {
             pause_delay-=1
         }
     }
-}
+}   
+
+//toggle mute
+if (keyboard_check_pressed(ord("M"))) {
+    var storevol;storevol=settings("stored mus vol")
+    settings("stored mus vol",settings("musvol"))
+    settings("musvol",storevol)
+    sound_kind_volume(1,settings("musvol"))
+    if (storevol>0) message2text="Unmuted music"
+    else message2text="Muted music"
+    message2=300
+}      
 
 //exit checks
 if (keyboard_check_pressed(vk_escape)) {

@@ -114,8 +114,8 @@ if (surface_exists(s)) {
     if (room=rRenClown) {
         draw_surface_stretched_ext(s,view_xview[0],view_yview[0],800,608,$808080,alpha)
     } else {
-        if (room=rTutorial) dx8_projection_simple(0,0,800,600,90.1,1,-200,0,1000)
-        else dx8_projection_simple(0,0,800,600,0.1,1,-200,0,1000)
+        if (room=rTutorial) dx8_projection_simple(0,0,800,600,90.1,1,-200,0,1000,0)
+        else dx8_projection_simple(0,0,800,600,0.1,1,-200,0,1000,0)
         d3d_start()
         d3d_set_hidden(0)
         d3d_set_fog(1,0,0,800)

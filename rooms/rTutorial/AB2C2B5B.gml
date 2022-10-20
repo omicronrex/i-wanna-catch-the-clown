@@ -1,1 +1,1 @@
-msg="Stone puzzle below."
+msg="Stone puzzle below.##Remember this."

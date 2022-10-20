@@ -10,6 +10,8 @@ if (orderTest==2) {
     exit
 }
 
+io_set_roomend_clear(0)
+
 global.num_difficulties=0
 
 engine_settings()

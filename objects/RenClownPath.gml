@@ -13,7 +13,7 @@ action_id=603
 applies_to=self
 */
 if (!go && instance_exists(Player)) {
-    if (Player.bbox_top<96 && Player.bbox_left<96) {
+    if (Player.bbox_top<120 && Player.bbox_left<96) {
         go=1
         image_speed=0.5
         with (PacDot) visible=1

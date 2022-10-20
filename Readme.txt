@@ -13,7 +13,7 @@
 ||     =======================                                       | |
 ||     An adventure game by renex                                    | |
 ||                                                                   | |
-||     version 1.4.2 - jan 2022                                      | | 
+||     version 1.5.0 - Oct 2022                                      | | 
 ||                                                                   | |
 || The goal of this simple action game is to catch the moving clown  | |
 || by clicking with your mouse on him. Whenever you succeed your     | |

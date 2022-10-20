@@ -1,39 +1,30 @@
 
-	CATCH THE CLOWN 1.4.2 Changes
+	CATCH THE CLOWN 1.5.0 Changes
 	=============================
 
 
 The following are the major changes in Catch the Clown
-version 1.4.2 compared to version 0.9.
+version 1.5.0 compared to version 1.4.2.
 
 If this is your first time playing Catch the Clown, it is
-highly adviced against reading this document, as it could
+highly advised against reading this document, as it could
 reveal surprises from later on in the game.
 
 
-New features
-------------
-- Added a new introduction before the first level.
-- Added a proper ending.
-- Added Hard and Easy difficulties, with modified layouts.
-            -Hard layouts are based on prototype levels and are much
-             more obtuse and difficult, to pose an extra challenge.
-            -Easy layouts were designed to allow younger or novice
-             players to experience the whole game.
-- Added collectible items and ending rewards for collecting all of them.
-- Added an intermission level in between Diamond Dust 2 and Diamond Dust 3.
+--------------------------------------------------------------------------------
 
-Corrected errors
-----------------
-- Fixed a bug where one of the traps in Clown Town 4 could activate early.
-- Fixed a few visual errors.
-- Fixed two crashes related to the Player object not existing.
+version 1.5.0
 
-Small changes
--------------
-- Car uses less petrol on lower difficulties.
-- It's impossible to exit the afterlife room by pressing Escape, to prevent
-  accidentally leaving the room.
-- Removed a few objects to reduce clutter from Normal difficulty layouts.
-- Improved the game's overall presentation and added code documentation.
-- Added a multitude of secrets, jokes and easter eggs. Find all of them!
+- removed some of the tourney branding
+- items collect if you teleport to hub
+- blue frog was made red to help with colorblindness
+- adjusted pacman trap trigger region
+- hitting goals autosaves at the next room
+- some messages have been clarified
+- imported many fixes from modern renex engine
+- adjusted the boss room on hard difficulty
+- lots of minor cosmetic fixes and additions here and there
+- input system & joystick support is fixed and improved
+- fixed some collision bugs
+
+--------------------------------------------------------------------------------

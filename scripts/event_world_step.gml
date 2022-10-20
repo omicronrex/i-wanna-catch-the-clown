@@ -145,7 +145,7 @@ if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_ch
 }
 
 //die key
-if (global.key_pressed[key_die]) {
+if (global.key_pressed[key_die] && !cutscene) {
     yes=1
     with (JokerKaboom) if (visible) yes=0
     with (Herman) if (speak) yes=0

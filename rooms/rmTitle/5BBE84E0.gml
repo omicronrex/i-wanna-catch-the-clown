@@ -1,4 +1,4 @@
-color=0
 halign=2
 valign=2
-text="I Wanna Tourney 2021"
+color=0
+text="Tested by Natsu, Metis,#Floogle, Draconical, Daglom,#roaming97 and Skulldude"

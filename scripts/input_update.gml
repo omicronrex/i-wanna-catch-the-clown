@@ -3,7 +3,7 @@ var i,h,keyboard;
 keyboard=false
 
 //check keyboard
-for (i=0;i<key_sizeof;i+=1) {
+if (global.infocus) for (i=0;i<key_sizeof;i+=1) {
     //we check the key direct twice because of how windows handles it
     //this fixes the input lag inherent to it
     keyboard_check_direct(global.keycode[i])
@@ -51,28 +51,30 @@ if (joystick_found() || global.joysupdated) {
             for (b=0;b<key_sizeof;b+=1) {
                 joy_button[i,b]=settings("joymap_"+name+"_"+string(b))
                 joy_lock[i,b]=0
+                global.key_old[i,b]=0
             }
         } else joy_set[i]=false
     }
 }
 
+//read joysticks
 global.lastjoystick=noone
-
 if (global.infocus) for (j=0;j<joystick_count();j+=1) if (joy_set[j]) {
     for (i=0;i<key_sizeof;i+=1) {
-        pressed=joy_get_map(j,i)
-        global.key[i]=global.key[i] || pressed
-        if (pressed && !joy_lock[j,i]) {
-            global.key_pressed[i]=1
-            global.lastjoystick=j
-            joy_lock[j,i]=1
-        }
-        if (!pressed && joy_lock[j,i]) {
-            global.key_released[i]=1
-            joy_lock[j,i]=0
-        }
+        reading_pressed=0
+        reading_released=0
+        reading_old=global.key_old[j,i]
+        get=joy_get_map(j,i)
+        global.key_old[j,i]=get
+        if (get) global.lastjoystick=j
+        global.key[i]=global.key[i] || get
+
+        global.key_pressed[i]=global.key_pressed[i] || reading_pressed
+        global.key_released[i]=global.key_released[i] || reading_released
+
     }
 }
+
 
 if (global.lastjoystick!=noone) {
     global.lastjoyname=joystick_name(global.lastjoystick)
@@ -81,8 +83,8 @@ if (keyboard) {
     global.lastjoyname=""
 }
 
+//store a copy of it for the player
 for (i=0;i<key_sizeof;i+=1) {
-    //store a copy of it for the player
     //this is necessary because the player might be running slower than the game
     //this allows the player to do 1fs more accurately
     if (global.key_pressed[i] && storekey_released[i]) {storekey_released_early[i]=1 storekey_released[i]=0}
